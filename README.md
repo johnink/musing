@@ -1,0 +1,2 @@
+# musing
+website for ideas
