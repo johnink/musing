@@ -8,6 +8,10 @@
 		<meta name="description" content="A website dedicated to helping you find ideas. Providing tools and games to help you explore your mind and see what you find."/>
 		<meta name="keywords" content="ideas, self improvement, play, creative" />
 		<meta name="author" content="John Ink" />
+
+		<!--temp nofollow -->
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+		<!--temp nofollow -->
 	</head>
 
 
