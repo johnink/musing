@@ -1,0 +1,16 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   games.php
+#	modified:   index.php
+#	new file:   musing.sublime-project
+#	new file:   musing.sublime-workspace
+#	new file:   php/foot.php
+#	modified:   php/head.php
+#	new file:   prompter/prompter.js
+#
+

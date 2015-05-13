@@ -1,4 +1,4 @@
-<? 
+<?php
 
 //base head content on every page
 

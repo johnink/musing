@@ -19,7 +19,10 @@
 
 
 	</body>
+	<footer>
+		<?php include("php/foot.php") ?>
 
+	</footer>
 
 
 
