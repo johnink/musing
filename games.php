@@ -15,12 +15,19 @@
 	<body>
 		<header>OhMusing!</header>
 
+		<div id="jayz">
+			<div id="widgets"></div>
+		</div>
+
 
 
 
 	</body>
 	<footer>
 		<?php include("php/foot.php") ?>
+		<script src="jquery/widgets/prompter/prompter.js"></script>
+		<script src="jquery/widgetadder.js"></script>
+		
 
 	</footer>
 
