@@ -27,7 +27,7 @@
 			"file": "getstarted.php",
 			"settings":
 			{
-				"buffer_size": 1690,
+				"buffer_size": 3243,
 				"line_ending": "Windows"
 			}
 		},
@@ -176,15 +176,15 @@
 					"file": "getstarted.php",
 					"settings":
 					{
-						"buffer_size": 1690,
+						"buffer_size": 3243,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1501,
-								1501
+								3088,
+								3088
 							]
 						],
 						"settings":
@@ -193,7 +193,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 488.0,
+						"translation.y": 1019.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

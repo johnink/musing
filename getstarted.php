@@ -30,10 +30,33 @@
 				<h1>What you'll need...</h1>
 				<h2>A notebook</h2>
 				<p>
-					You never know when inspiration will strike. So, it's important to be ready with paper. I prefer <a href="http://www.moleskine.com/us/">Moleskine notebooks</a> for durability.
+					You never know when inspiration will strike. So, it's important to be ready with paper. I prefer <a href="http://www.moleskine.com/us/">Moleskine notebooks</a> for durability. Alternatively, use your smartphone.
 				</p>
-
+				<h2>A pen</h2>
+				<p>
+					You know, a bic will do. If your an artist, maybe you want something fancy. To make sure you always have one, try a <a href="#">pen on your keychain.</a>
+				</p>
+				<h2>An account (Optional)</h2>
+				<p>
+					You don't need an account. An account allows you to save your favorite games and put widgets on your dashboard for easy access. Also, it will let you rate and comment. I see this site as a tool to help you. So, all you need to start an account is a valid email for validation.
+				</p>
 				<!--Start an account-->
+				<!--Tips and Tricks-->
+				<h1>Tips</h1>
+				<h2>Don't follow rigidly</h2>
+				<p>
+					If your mind starts to wander when you're playing a game it means your brain has found something interesting. As long as it's not about what you're having for lunch today, let youself explore. You might find something good.
+				</p>
+				<h2>Break the rules</h2>
+				<p>
+					These are just starting points. Change the rules or come up with your own games. If you come up with something that works better, <a href="#">send it over</a>, maybe we'll use it on the site (giving you credit of course). Alternatively, <a href="#">post it in the reddit.</a>
+				</p>
+				<h2>Wait before you trash</h2>
+				<p>
+					Don't throw your scrap paper away right away. Come back to it later. Many times, something that seemed obvious intially will appear genius later, and likewise a exciting idea today might seem bad tomorrow.
+				</p>
+				<h2>Share</h2>
+				<p>Share your ideas with friends and enemies. </p>
 				<!--Popular games-->
 
 			</div>
