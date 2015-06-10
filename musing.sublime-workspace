@@ -11,8 +11,8 @@
 			"file": "prompter/prompter.js",
 			"settings":
 			{
-				"buffer_size": 210,
-				"line_ending": "Windows"
+				"buffer_size": 0,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -51,8 +51,8 @@
 			"file": "games.php",
 			"settings":
 			{
-				"buffer_size": 580,
-				"line_ending": "Windows"
+				"buffer_size": 749,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -115,7 +115,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -123,15 +123,15 @@
 					"file": "prompter/prompter.js",
 					"settings":
 					{
-						"buffer_size": 210,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								210,
-								210
+								0,
+								0
 							]
 						],
 						"settings":
@@ -193,7 +193,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1019.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -255,15 +255,15 @@
 					"file": "games.php",
 					"settings":
 					{
-						"buffer_size": 580,
+						"buffer_size": 749,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								437,
-								437
+								0,
+								0
 							]
 						],
 						"settings":
