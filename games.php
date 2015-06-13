@@ -25,8 +25,10 @@
 	</body>
 	<footer>
 		<?php include("php/foot.php") ?>
-		<script src="jquery/widgets/prompter/prompter.js"></script>
-		<script src="jquery/widgetadder.js"></script>
+		<script src="jquery/widgets/prompter/prompter.js" ></script>
+		<script src="jquery/widgetadder.js" ></script>
+
+		
 		
 
 	</footer>
