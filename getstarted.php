@@ -56,7 +56,9 @@
 					Don't throw your scrap paper away right away. Come back to it later. Many times, something that seemed obvious intially will appear genius later, and likewise a exciting idea today might seem bad tomorrow.
 				</p>
 				<h2>Share</h2>
-				<p>Share your ideas with friends and enemies. </p>
+				<p>
+					Share your ideas with friends and enemies. Often times, it will save you effort if you figure out what's wrong before you invest a lot of time.
+				</p>
 				<!--Popular games-->
 
 			</div>
