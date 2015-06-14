@@ -37,6 +37,11 @@ function returnPrompt(options_list, option){
 		return randomFromArray(words["adjectives"]) + " " + randomFromArray(merged_words);
 	}
 
+	// For Profession
+	if(option==="Profession"){
+		return randomFromArray(words["professions"]);
+	}
+
 	// For Phrase
 	if(option==="Phrase"){
 		random_index=Math.floor((Math.random() * 13));//number of options

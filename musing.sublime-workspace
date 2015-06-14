@@ -8,62 +8,22 @@
 	"buffers":
 	[
 		{
-			"file": "prompter/prompter.js",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "index.php",
 			"settings":
 			{
 				"buffer_size": 580,
 				"line_ending": "Windows"
 			}
-		},
-		{
-			"file": "getstarted.php",
-			"settings":
-			{
-				"buffer_size": 3243,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "php/head.php",
-			"settings":
-			{
-				"buffer_size": 431,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "php/foot.php",
-			"settings":
-			{
-				"buffer_size": 110,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "games.php",
-			"settings":
-			{
-				"buffer_size": 749,
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -80,11 +40,23 @@
 	},
 	"file_history":
 	[
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/getstarted.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/php/head.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/php/foot.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/common.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/widgetadder.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/games.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/widgets/ChannelSwitcher/channelSwitcher.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/sharedfunctions",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/widgets/prompter/words.json",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/widgets/prompter/nounlist.csv",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/prompter/prompter.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/musing.sublime-project",
 		"/C/Users/john/musing/prompter/prompter.php"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -98,6 +70,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"prompter_option"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -105,6 +78,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"option"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -115,37 +89,11 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "prompter/prompter.js",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "index.php",
 					"settings":
 					{
@@ -158,112 +106,6 @@
 							[
 								429,
 								429
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "getstarted.php",
-					"settings":
-					{
-						"buffer_size": 3243,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3088,
-								3088
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "php/head.php",
-					"settings":
-					{
-						"buffer_size": 431,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								431,
-								431
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "php/foot.php",
-					"settings":
-					{
-						"buffer_size": 110,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								103,
-								103
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "games.php",
-					"settings":
-					{
-						"buffer_size": 749,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
 							]
 						],
 						"settings":
@@ -313,7 +155,7 @@
 	"menu_visible": true,
 	"replace":
 	{
-		"height": 0.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
