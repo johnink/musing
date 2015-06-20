@@ -79,7 +79,7 @@ function ChannelSwitcher(game_index){
 
 				//find random interval if varied selected
 				if(varied===true){
-					intervals=Math.floor((Math.random() * intervals));
+					intervals=Math.floor((Math.random() * intervals)+1000);
 				}
 			
 				// display output below
