@@ -19,5 +19,8 @@ ideas, self improvement, play, creative
 @stop
 
 @section('content')
-	<div id="widgets"></div>	
+	<div id="widgets">
+		<div class="channelSwitcher" id="channelSwitcher_0"><h5>Channel Switcher</h5></div>
+		<div class="prompter" id="prompter_1"><h5>Prompter</h5></div>
+	</div>	
 @stop

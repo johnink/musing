@@ -5,8 +5,17 @@ var words={
   			"professions":["Designer","Professor","Teacher","Preist","Philosopher","Chiropractor","Dentist","Nurse","Therapist","Optometrist","Pathologist","Pharmacist","Physical Therapist","Psycholotgist","Surgeon","Veterinarian","Accountant","Farmer","Architect","Economist","Engineer","Interpreter","Lawyer","Librarian","Firefighter","Judge","Paranormal Investigator","Private Investigator","Police Officer","Social Worker","Air Traffic Controller","Pilot","Sea Captain","Biologist","Sex Ed Teacher","History Teacher","Math Teacher","Physical Education Teacher","Web Developer","Artists","Game Developer","Makeup Artist","Data Entry Clerk","Computer Repair Technician","Security Guard","Backup Dancer","Pop Star","Showgirl","Journalist","Choreographer","Taxi Driver","Mailmen","Costume Designer","Weathermen","Anchormen","Mechanic","Plumber","Carpenter","School Counselor","Couples Therapist","Taxidermist","Tailor","Blogger","Video Blogger","Movie Critic","Music Critic","Book Critic","Bus Driver","Astronaut","President","King","Mad Scientist","Super Hero","Wizard","Knight","Pirate","Cowboy","Magician","Ninja","Thief","Spy","Assassin","Student","Baby","Toddler"],
   			"places":["vehicle","truck stop","bathroom","bedroom","kitchen","ocean","desert","France","Hawaii","fast-food joint","restaurant","Ancient Rome","Eygpt","carnival","cave","pirate ship","karate dojo","moutain","tundra","mansion","ski resort","tropical island","church","graveyard","Africa","airplane","airport","mall","board room","class room","lunchroom","locker room","power plant","inside of a volcano","the center of the earth","bottom of the ocean","the moon","Mars","International Space Station","movie theater","fancy restaurant","poop tower","niagra falls","castle","recycling center","super hero headquarters","villain hideout","back alley","park","beach","rainforest","used car dealership","pizza joint","inside of a human body","beehive","Santa's workshop","video game world","wonderland","M.C. Esher painting","Hell","Heaven","concert","barber","dentist's office","coffee shop","grandma's house","theme park","gym","yoga class","pool","Spain","90's","80's","70's","waterpark","bakery","skatepark","aquarium","UFO"]
 		}
+// Take divs in the #widgets and turn it into an array to be later populated with widgets
+function makeWidgetsArray(){
+	var widget_list = [];
+	$('#widgets').children('div').each(function(){
+		widget_list.push(this.className);
+	});
+	return widget_list;
 
+}
 
+//Produce a random
 function randomFromArray(theArray){
 		random_index=Math.floor((Math.random() * theArray.length));
 		return "<strong>" + capitalizeFirstLetter(theArray[random_index]) + "</strong>";

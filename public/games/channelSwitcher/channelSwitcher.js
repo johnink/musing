@@ -17,7 +17,7 @@ function ChannelSwitcher(game_index){
 				{"Short":"Phrase","Full":"Phrase"}];
 	
 
-	var $channelSwitcher = $('<div class="channelSwitcher" id="channelSwitcher_'+ game_index +'"></div>');
+	var $channelSwitcher = $('<div class="channelSwitcher_inner" id="channelSwitcher_inner_'+ game_index +'"></div>');
 
 	// Add form elements, including an option list and a submit button
 		var $form= $('<form id="channelSwitcher_form_'+ game_index +'"></form>');
@@ -36,7 +36,7 @@ function ChannelSwitcher(game_index){
 		$channelSwitcher.append($form);
 		$channelSwitcher.append('<span class="channelSwitcher_answer" id="channelSwitcher_answer_'+ game_index +'"></span>')
 
-		$('#widget_' + game_index).append($channelSwitcher);
+		$('#channelSwitcher_' + game_index).append($channelSwitcher);
 		$('#channelSwitcher_stop_' + game_index).hide();
 
 	// When started, switch text to "stop"

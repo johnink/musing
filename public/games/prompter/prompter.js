@@ -10,7 +10,7 @@ function Prompter(game_index){
 				{"Short":"Phrase","Full":"Phrase"}];
 	
 
-	var $prompter = $('<div class="prompter" id="prompter_'+ game_index +'"></div>');
+	var $prompter = $('<div class="prompter_inner" id="prompter_inner_'+ game_index +'"></div>');
 
 	// Add form elements, including an option list and a submit button
 		var $form= $('<form id="prompter_form_'+ game_index +'"></form>');
@@ -23,7 +23,7 @@ function Prompter(game_index){
 		$prompter.append($form);
 		$prompter.append('<span class="prompter_answer" id="prompter_answer_'+ game_index +'"></span>')
 
-		$('#widget_'+game_index).append($prompter);
+		$('#prompter_'+game_index).append($prompter);
 
 	// Receive user input from prompter_form and pull a random prompt with returnPrompt function
 	
