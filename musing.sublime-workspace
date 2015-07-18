@@ -8,11 +8,113 @@
 	"buffers":
 	[
 		{
-			"file": "index.php",
+			"file": "app/Http/Controllers/DashboardController.php",
 			"settings":
 			{
-				"buffer_size": 580,
-				"line_ending": "Windows"
+				"buffer_size": 1426,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/dashboard.blade.php",
+			"settings":
+			{
+				"buffer_size": 746,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/auth/register.blade.php",
+			"settings":
+			{
+				"buffer_size": 1390,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/Auth/AuthController.php",
+			"settings":
+			{
+				"buffer_size": 2067,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/migrations/2014_10_12_000000_create_users_table.php",
+			"settings":
+			{
+				"buffer_size": 754,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/User.php",
+			"settings":
+			{
+				"buffer_size": 920,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/routes.php",
+			"settings":
+			{
+				"buffer_size": 1248,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nuse App\\Game;\nuse Auth;\nuse App\\Http\\Requests;\nuse App\\Http\\Controllers\\Controller;\n\nclass UpdateDatabaseController extends Controller\n{\n\n    public function index()\n    {\n        //make sure all the games are in the database\n\n        if(Auth::user()->name==\"JohnInk\"){\n\n            $alreadyin=false;\n            //pull current games from the database\n            $games = Game::all();\n            //pull current games from games folder\n            $folders=scandir('games');\n            foreach($folders as $folder){\n                //if not invisible\n                if(substr($folder,0,1)!='.'){\n                    foreach($games as $game){\n                        //check to see if the game is already in the database. If not, add it.\n                        if($folder==$game->name){\n                            $alreadyin=true;\n                        }\n                    }\n                    if($alreadyin!=true){\n                        if(file_exists(\"games/$folder/info.json\")){\n                            $gameinforaw=file_get_contents(\"games/$folder/info.json\");\n                            $gameinfo=json_decode($gameinforaw);\n                        }else{$gameinfo=\"\";}\n                        // Game::create([\n                        //     'name' => $folder,\n                        //     'email' => $data['email'],\n                        //     'password' => bcrypt($data['password']),\n                        //     'dashboard' => '{}',\n                        //     'writing' => isset($data['writing']) ? 1:0,\n                        //     'stageimprov' => isset($data['stageimprov']) ? 1:0,\n                        //     'drawing' => isset($data['drawing']) ? 1:0,\n                        //     'standup' => isset($data['standup']) ? 1:0,\n                        //     'music' => isset($data['music']) ? 1:0,\n                        // ]);;\n                    }\n                    else{$alreadyin=false;}\n                    }\n\n                    //where game = folder, update info for game\n\n                }\n            return var_dump($gameinfo);//\"games database updated\";\n        }\n        else{return \"no permission\";}\n    }\n}",
+			"file": "app/Http/Controllers/UpdateDatabaseController.php",
+			"file_size": 2253,
+			"file_write_time": 1436028881000000,
+			"settings":
+			{
+				"buffer_size": 2239,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/layouts/game.blade.php",
+			"settings":
+			{
+				"buffer_size": 818,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "composer.json",
+			"settings":
+			{
+				"buffer_size": 1257,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/games/channelSwitcher/info.json",
+			"settings":
+			{
+				"buffer_size": 328,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{\n	\"full_name\":\"Prompter\",\n	\"short_desc\":\"Find a jumping off point for a game.\",\n	\"what_youll_need\":\"\",\n	\"long_desc\":\"<p>Prompts are just random starting points to be used in games. It’s the equivalent of when an improv troupe asking the audience for suggestions for their next scene. OhMusing features and in-browser prompter that can be used to get you started. Here are other sources of prompts:</p><ul><li>Friends</li><li>Social Media streams</li><li>Newspapers/Magazines</li><li>A Random Page from a Book</li><li>Twitter Tags</li>\n		<li>Billboards (when driving)</li>\n		<li>Tumblr (or other blog sites)</li>\n		<li>Or just look around.</li>\n		</ul>\n		\",\n	\"variations\":\"\",\n	\"writing\":1,\n	\"blogging\":1,\n	\"socialmedia\":1,\n	\"stageimprov\":1,\n	\"drawing\":1,\n	\"standup\":1,\n	\"music\":1\n\n\n}",
+			"file": "public/games/prompter/info.json",
+			"file_size": 806,
+			"file_write_time": 1436028609000000,
+			"settings":
+			{
+				"buffer_size": 783,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/johnbreslin/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 82,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -40,6 +142,15 @@
 	},
 	"file_history":
 	[
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_07_04_145635_add_info_to_games_table.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_07_04_152320_add_tags_to_users_table.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/channelSwitcher/info.json",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/auth/login.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/auth/register.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/composer.json",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/index.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Models/Game.php",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/getstarted.php",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/php/head.php",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/php/foot.php",
@@ -89,29 +200,357 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 12,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.php",
+					"file": "app/Http/Controllers/DashboardController.php",
 					"settings":
 					{
-						"buffer_size": 580,
+						"buffer_size": 1426,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								429,
-								429
+								337,
+								358
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/dashboard.blade.php",
+					"settings":
+					{
+						"buffer_size": 746,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								544,
+								556
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/views/auth/register.blade.php",
+					"settings":
+					{
+						"buffer_size": 1390,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1244,
+								1249
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/Http/Controllers/Auth/AuthController.php",
+					"settings":
+					{
+						"buffer_size": 2067,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1586,
+								2058
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "database/migrations/2014_10_12_000000_create_users_table.php",
+					"settings":
+					{
+						"buffer_size": 754,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								582,
+								582
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/User.php",
+					"settings":
+					{
+						"buffer_size": 920,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								751,
+								751
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/Http/routes.php",
+					"settings":
+					{
+						"buffer_size": 1248,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								808,
+								808
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/Http/Controllers/UpdateDatabaseController.php",
+					"settings":
+					{
+						"buffer_size": 2239,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1212,
+								1212
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 70.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "resources/views/layouts/game.blade.php",
+					"settings":
+					{
+						"buffer_size": 818,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "composer.json",
+					"settings":
+					{
+						"buffer_size": 1257,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								279,
+								279
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "public/games/channelSwitcher/info.json",
+					"settings":
+					{
+						"buffer_size": 328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								200,
+								200
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "public/games/prompter/info.json",
+					"settings":
+					{
+						"buffer_size": 783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								514,
+								514
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/Users/johnbreslin/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+					"settings":
+					{
+						"buffer_size": 82,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20,
+								20
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -178,6 +617,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 331.0,
 	"status_bar_visible": true
 }

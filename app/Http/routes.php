@@ -14,16 +14,35 @@
 /*
 
 /=dashboard
+/widgets/ = widget controls
 /games/ = search and list of best games
 /games/{game} = description of game
 /prompter/ = description of prompter
 /getstarted/ = info page what you'll need to get started
-/user/ = a place to sign up, log in, or change profile
-
+/user/ = a place to update user data.
+/user/login = log in
+/user/logout = out
+/user/register = register
 */
 
-Route::resource('/', 'DashboardController');
-Route::get('/db',function(){
+Route::get('/', 'DashboardController@index');
+Route::get('home', 'DashboardController@index');
 
-	return DB::select('select database();');
-});
+//widget controls
+
+Route::resource('widget','WidgetController');
+Route::post('widget/up/{id}','WidgetController@up');
+Route::post('widget/down/{id}','WidgetController@down');
+
+//update games database
+Route::get('update','UpdateDatabaseController@index');
+
+//user routes
+// Authentication routes
+Route::get('user/login', 'Auth\AuthController@getLogin');
+Route::post('user/login', 'Auth\AuthController@postLogin');
+Route::get('user/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('user/register', 'Auth\AuthController@getRegister');
+Route::post('user/register', 'Auth\AuthController@postRegister');

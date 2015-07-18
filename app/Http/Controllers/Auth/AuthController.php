@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Widget;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -27,6 +28,9 @@ class AuthController extends Controller
      *
      * @return void
      */
+
+    protected $redirectPath = '/';
+
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
@@ -55,10 +59,20 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'writing' => isset($data['writing']) ? 1:0,
+            'blogging' => isset($data['blogging']) ? 1:0,
+            'socialmedia' => isset($data['socialmedia']) ? 1:0,
+            'stageimprov' => isset($data['stageimprov']) ? 1:0,
+            'drawing' => isset($data['drawing']) ? 1:0,
+            'standup' => isset($data['standup']) ? 1:0,
+            'music' => isset($data['music']) ? 1:0
         ]);
+
+
     }
 }
