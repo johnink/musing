@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-OhMusing! Register
+Omusing! Register
 @stop
 
 @section('description')

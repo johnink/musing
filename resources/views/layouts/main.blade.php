@@ -16,7 +16,7 @@
 	</head>
 
 	<body>
-		<header>OhMusing!</header>
+		<header>Omusing!</header>
 		<div id="userlogin">
 			@if(Auth::user())
 				Yo, {{{Auth::user()->name}}}, sup. <a href="/user/logout">logout?</a>

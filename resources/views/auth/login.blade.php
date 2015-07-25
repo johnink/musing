@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-OhMusing! Log in
+Omusing! Log in
 @stop
 
 @section('description')
