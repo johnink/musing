@@ -17,7 +17,6 @@
 /widgets/ = widget controls
 /games/ = search and list of best games
 /games/{game} = description of game
-/prompter/ = description of prompter
 /getstarted/ = info page what you'll need to get started
 /user/ = a place to update user data.
 /user/login = log in
@@ -25,14 +24,22 @@
 /user/register = register
 */
 
-Route::get('/', 'DashboardController@index');
+Route::get('/', function(){
+	return view('welcome');
+});
 Route::get('home', 'DashboardController@index');
 
 //widget controls
 
-Route::resource('widget','WidgetController');
+Route::resource('widget','WidgetController',['except' => ['create', 'show', 'edit']]);
 Route::post('widget/up/{id}','WidgetController@up');
 Route::post('widget/down/{id}','WidgetController@down');
+
+//games
+
+Route::get('/game/','GameController@index');
+Route::get('/game/{game}','GameController@show');
+
 
 //update games database
 Route::get('update','UpdateDatabaseController@index');

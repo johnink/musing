@@ -19,7 +19,8 @@ class UpdateDatabaseController extends Controller
     {
         //make sure all the games are in the database
 
-        if(Auth::user()->name=="JohnInk"){
+        if(Auth::user()){
+        if(Auth::user()->name=="Admin"){
 
             //pull current games from games folder
             $folders=scandir('games');
@@ -29,6 +30,7 @@ class UpdateDatabaseController extends Controller
             if(substr($folder,0,1)!='.'){
                 $games=Game::where('name',$folder)->get();
                 if(file_exists("games/$folder/info.json")){
+                        $widgetexists=file_exists("games/$folder/$folder.js");
                         $gameinforaw=file_get_contents("games/$folder/info.json");
                         $gameinfo=json_decode($gameinforaw,true);
                 }else{$gameinfo="";}
@@ -46,7 +48,8 @@ class UpdateDatabaseController extends Controller
                             'stageimprov' => $gameinfo['stageimprov'],
                             'drawing' => $gameinfo['drawing'],
                             'standup' => $gameinfo['standup'],
-                            'music' => $gameinfo['music']
+                            'music' => $gameinfo['music'],
+                            'widget' => $widgetexists
                         ]);
                 }
                 
@@ -56,6 +59,7 @@ class UpdateDatabaseController extends Controller
 
                     //where game = folder, update info for game
                     if(file_exists("games/$folder/info.json")){
+                        $widgetexists=file_exists("games/$folder/$folder.js");
                         $games=Game::where('name',$folder)->get();
                         foreach($games as $game){
                             if($game->full_name!=$gameinfo['full_name']){$game->full_name=$gameinfo['full_name'];}
@@ -70,13 +74,14 @@ class UpdateDatabaseController extends Controller
                             if($game->drawing!=$gameinfo['drawing']){$game->drawing=$gameinfo['drawing'];}
                             if($game->standup!=$gameinfo['standup']){$game->standup=$gameinfo['standup'];}
                             if($game->music!=$gameinfo['music']){$game->music=$gameinfo['music'];}
+                            if($game->widget!=$widgetexists){$game->widget=$widgetexists;}
                             $game->save();
                         }
                     }
                 }
             }
             return "games database updated";
-        }
+        }}
         else{return "no permission";}
     }
 }

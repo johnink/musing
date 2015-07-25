@@ -25,14 +25,15 @@ class DashboardController extends Controller
 
     public function index()
     {
+        $newGames=Game::all()->sortByDesc('created_at')->take(3);
+        $topGames=Game::all()->sortByDesc('popularity')->take(3);
         if(Auth::user()){
             $user=Auth::user();
             $widgets = $user->widgets->sortBy('widget_num');
-            return view('dashboard')->with('widgets',$widgets);
         }else{
-            $availablegames=Game::all();
-            return view('dashboard');
+            $widgets="";
         }
+        return view('dashboard')->with(['widgets'=>$widgets,'topGames'=>$topGames,'newGames'=>$newGames]);
     }
 
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Widget extends Model
 {
-    protected $fillable = ['game_id','widget_num','game_options'];
+    protected $fillable = ['game_id','user_id','widget_num','game_options'];
 
     public function user()
     {

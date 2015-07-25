@@ -112,7 +112,7 @@ function returnPrompt(options_list, option){
 		        break;
 		    case 14:
 		    	merged_words = $.merge(words["professions"],words["interests"]);
-		    	return "A(n) " + randomFromArray(merged_words) + "themed theme park";
+		    	return "A(n) " + randomFromArray(merged_words) + " themed theme park";
 		        break;
 		    case 15:
 		    	merged_words = $.merge(words["nouns"],words["professions"],words["interests"]);

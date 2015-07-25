@@ -1,5 +1,13 @@
-// Channel Switcher 1.0.0
-// An app that will generate a prompt at intervals
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Channel Switcher 1.0.0
+
+An app that will generate a prompt at intervals
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
+
+
 
 function ChannelSwitcher(game_index){
 

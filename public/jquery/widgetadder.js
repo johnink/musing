@@ -1,14 +1,34 @@
-//adds widgets to the page
+/* + * x * + * x * + * x * + * x * + * x * + * x
 
-//recieve list of active widgets
+widgetadder.js
+
+PHP adds the divs for the users widgets. This
+script is responsible for populating those
+widget divs with the correct game.
+
+Widgets are the personalized divs on the users
+homepage.
+
+Games refer to the actual app running in said
+div. Perhaps in the future, differentate games
+and apps.
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
+
+
+var MAX_WIDGETS = $('#max').val();
 
 var users_widgets = makeWidgetsArray();
 var token = $('#token').val();
-$.getJSON('/widget/',function(available_widgets){
+var addMenuOpen = false;
+var available_widgets=[];
+$.getJSON('/widget/',function(results){
 
 //add widgets
-
+	available_widgets=results;
 	for (var i=0 ; i<users_widgets.length ; i++){
+
 		$.each(available_widgets,function(index,value){
 			if(users_widgets[i]==value['name']){
 
@@ -24,16 +44,25 @@ $.getJSON('/widget/',function(available_widgets){
 			}
 		});
 
+		if(users_widgets.length>=MAX_WIDGETS){$('.widget_add').animate({'opacity':.5});}
+
 	}
 
 });
 
 
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Widget_Controls
+
+If the user is logged in, there is a div for
+widget controls. This function populates
+that div.
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
 
 function Widget_Controls(i,tot,name){
-	/*
-	*  Add controls to widgets
-	*/
 
 	var $widget_controls=$('<span></span>');
 	//push up button
@@ -58,21 +87,33 @@ function Widget_Controls(i,tot,name){
 
 }
 
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+upbutton(), downbutton(), addbutton(), subbutton
+
+These are the individual button click behaviors 
+for Widget_Controls()
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+
 //when controls up button is pressed
 
 function upbutton(i){
-	//Play swap animation first for responsiveness.
-	//We run the risk of AJAX failing and them not switching in the database.
-	swapAnimation(i);
-	//AJAX to server so it makes moves in the database
-	$.ajax({
-			url: '/widget/up/' + i,
-			type: 'post',
-			data: {_token :token}
-		}
-	).fail(function(){
-	console.log("Swap failed")
-    });
+	if(addMenuOpen!=true){
+		//Play swap animation first for responsiveness.
+		//We run the risk of AJAX failing and them not switching in the database.
+		swapAnimation(i);
+		//AJAX to server so it makes moves in the database
+		$.ajax({
+				url: '/widget/up/' + i,
+				type: 'post',
+				data: {_token :token}
+			}
+		).fail(function(){
+		console.log("Swap failed")
+	    });
+	}    
 }
 
 //when controls down button is pressed
@@ -80,45 +121,90 @@ function upbutton(i){
 function downbutton(i){
 	//Play swap animation first for responsiveness.
 	//We run the risk of AJAX failing and them not switching in the database.
-	swapAnimation(i+1);
-	//AJAX to server so it makes moves in the database
-	$.ajax({
-			url: '/widget/down/' + i,
-			type: 'post',
-			data: {_token :token}
-		}).fail(function(){
-		console.log("Swap failed")
-    });
+	if(addMenuOpen!=true){
+		swapAnimation(i+1);
+		//AJAX to server so it makes moves in the database
+		$.ajax({
+				url: '/widget/down/' + i,
+				type: 'post',
+				data: {_token :token}
+			}).fail(function(){
+			console.log("Swap failed")
+	    });
+	}
 }
 
+//when controls add button is pressed
+
 function addbutton(i){
-	$addMenu = '<div class="addMenu" id="addmenu_' + i + '" style="background-color:red; width:550px; height:550px; position:\'fixed\'">poop</div>'
-	$('widget_controls_' + i).append($addMenu);
+
+	if(addMenuOpen === false && users_widgets.length<MAX_WIDGETS){
+		addMenuOpen = true;
+		$('.widget_controls span').animate({'opacity':.5},'slow');
+		var $addMenu = $('<div class="addMenu" id="addmenu_' + i + '" style="background-color:red; width:450px; "></div>');
+		var $addMenuCloseButton = $('<span class= "addMenuCloseButton" id ="addMenuCloseButton_' + i + '" >x</span>');
+		var $addMenuGameUL=$('<ul></ul>');
+		$.each(available_widgets,function(index,value){
+			$addMenuGameUL.append('<li onClick="storeWidget(\'' + value['name'] + '\',\'' + value['full_name'] + '\',' + i + ')">' + value['full_name'] + '</li>');
+		});
+		$addMenu.append($addMenuCloseButton,$addMenuGameUL).hide();
+		
+		$('#widget_controls_' + i).append($addMenu);
+		$addMenu.slideDown(200,'easeOutBounce');
+
+		//the logic to close the menu.
+		$addMenuCloseButton.click(function(){
+			$addMenu.slideUp(200,'easeOutBounce',function(){$addMenu.remove();});
+			addMenuOpen = false;
+			$('.widget_controls span').animate({'opacity':1});
+		});
+	}
 }
 
 //when controls delete button is pressed
 
 function subbutton(i){
+	if(addMenuOpen!=true){
 
-	var selWid = $('#' + users_widgets[i] + '_' + i);
+		var selWid = $('#' + users_widgets[i] + '_' + i);
 
-	if (confirm('Delete this widget?')){
-		$.ajax({
-			url: '/widget/' + i,
-			type: 'post',
-			data: {_method: 'delete' , _token :token},
-			success: function(){
-				selWid.animate({
-					opacity: "toggle",
-					height: "toggle",
-					width: "toggle"
-				},500,"easeInElastic").remove();
-			}
-		}).fail(function(){
-			console.log("Delete failed")
-    	});
+		if (confirm('Delete this widget?')){
+			$.ajax({
+				url: '/widget/' + i,
+				type: 'post',
+				data: {_method: 'delete' , _token :token},
+				success: function(){
+
+					selWid.animate({
+						opacity: "toggle",
+						height: "toggle",
+						width: "-=20"
+					},500,"easeOutExpo",function(){
+						selWid.attr("id","delete").empty();
+						shifter(i+1,-1);
+						selWid.remove();
+						users_widgets = makeWidgetsArray();
+						if(users_widgets.length<MAX_WIDGETS){$('.widget_add').animate({'opacity':1});}
+					});
+				}
+			}).fail(function(){
+				console.log("Delete failed")
+	    	});
+		}
 	}
 }
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+swapAnimation()
+
+The animation of the widgets swapping, and all
+the divs attributes correcting themselves to 
+fit.
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
 
 function swapAnimation(i){
 	if(i>0 && i<users_widgets.length){
@@ -171,7 +257,79 @@ function swapAnimation(i){
 	}
 }
 
+/* + * x * + * x * + * x * + * x * + * x * + * x
 
+storeWidget()
+
+The function for adding a new widget from the
+plus button in widget controls.
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+function storeWidget(gamename, fullgamename, i){
+
+	$.ajax({
+		url: '/widget',
+		type: 'post',
+		data: { _method :'post', _token :token, widget_num :i, game_name :gamename },
+		success: function(){
+			$('addmenu').remove();
+			shifter(i,1);//shift widgets down by one
+			if(i>0){
+				$('#' + users_widgets[i-1] + '_' + (i-1)).after('<div class="' + gamename + '" id="' + gamename + '_' + i + '" style="position:relative;"><h5>' + fullgamename + '</h5><div class="widget_controls" id="widget_controls_' + i + '"></div></div>');
+			}else{
+				$('#' + users_widgets[i+1] + '_' + (i+1)).before('<div class="' + gamename + '" id="' + gamename + '_' + i + '" style="position:relative;"><h5>' + fullgamename + '</h5><div class="widget_controls" id="widget_controls_' + i + '"></div></div>');
+
+			}
+			widget=$('#' + gamename +'_' + i);
+			widget.hide();
+			//For the div #widgetname_1, add the appropriate game to
+			//the widget div.
+			widget.append( newWidget(gamename, i) );
+			widget.slideDown(300,'easeOutExpo');
+			users_widgets = makeWidgetsArray();
+			$('#widget_controls_' + i).append(new Widget_Controls(i,users_widgets.length-1, gamename));
+			addMenuOpen = false;
+			$('.widget_controls span').animate({'opacity':1});
+
+			users_widgets = makeWidgetsArray();
+			if(users_widgets.length>=MAX_WIDGETS){$('.widget_add').animate({'opacity':.5});}
+
+		}
+	}).fail(function(){
+		console.log("Add failed")
+	});
+
+}
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+shifter()
+
+shifts the other widgets up or down
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+function shifter(i,mod){
+	users_widgets = makeWidgetsArray();
+    var newi=0;
+    for(index=i; index<=users_widgets.length-1 ; index++){
+
+    	newi = index + mod;
+    	var selWid = $('#' + users_widgets[index] + '_' + index);
+    	//while incrementing, you'll sometimes end up with two widgets with the same id. Check for that to make sure
+    	//we don't grab the same one twice.
+    	if(selWid.attr('id') == selWid.next().attr('id') && mod>-1){
+    		selWid=selWid.next();
+    	}
+    	selWid.attr('id',selWid.attr('class') + '_' + newi);
+	    selWid.children('.widget_controls')
+	    	.attr('id','widget_controls_' + newi)
+	    	.empty().append( new Widget_Controls( newi , users_widgets.length - 1 + mod, selWid.attr('class') ) );
+	    selWid.children('.' + selWid.attr('class') + '_inner').replaceWith( newWidget( selWid.attr('class'),newi ) );
+	}
+
+}
 
 
 

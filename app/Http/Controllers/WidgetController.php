@@ -10,6 +10,7 @@ use App\User;
 use App\Widget;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Config;
 
 class WidgetController extends Controller
 {
@@ -20,19 +21,11 @@ class WidgetController extends Controller
      */
     public function index()
     {
-        $games=Game::all();
+        if(Auth::user()){$this->fixOffset(Auth::user()->widgets->sortBy('widget_num'));}
+        $games=Game::where('widget','1')->get();
         return $games;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -41,29 +34,22 @@ class WidgetController extends Controller
      */
     public function store()
     {
-        //
-    }
+        $userwidgets=Auth::user()->widgets->sortBy('widget_num');
+        $maxwidgets = Config::get('constants.MAX_WIDGETS');
+        $this->fixOffset($userwidgets);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($widget)
-    {
-        return $widget;
-    }
+        if(isset($_POST['widget_num']) && isset($_POST['game_name']) && $userwidgets->count()<$maxwidgets){
+            $widget_num=$_POST['widget_num'];
+            Widget::where('user_id',Auth::user()->id)->where("widget_num",">=",$widget_num)->increment('widget_num');
+            $game=Game::where('name',$_POST['game_name'])->firstOrFail();
+ 
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
+            Widget::create([
+                "user_id" => Auth::user()->id,
+                "game_id" => $game->id,
+                "widget_num" => $widget_num
+                ]);
+        }
     }
 
     /**
@@ -85,10 +71,16 @@ class WidgetController extends Controller
      */
     public function destroy($id)
     {
-        if(Auth::user()->widgets->where('widget_num',$id)->first()){
-            
+
+        $kill= Auth::user()->widgets->where('widget_num',$id)->first();
+        if($kill->count()>0){
+            $kill->delete();
+            Widget::where('user_id',Auth::user()->id)->where("widget_num",">",$id)->decrement('widget_num');
         }
-        //return $id;
+ 
+        
+
+
     }
     /**
      * Move a widget up.
@@ -98,10 +90,11 @@ class WidgetController extends Controller
      */
     public function up($id)
     {
+        $widgets = Auth::user()->widgets;
         if($id>0){
-            $selwidget=Auth::user()->widgets->where('widget_num',$id)->first();
+            $selwidget=$widgets->where('widget_num',$id)->first();
             $id2=$id-1 . "";//for some stupid reason, this will only work if $id is a string.
-            $abovewidget=Auth::user()->widgets->where('widget_num',$id2)->first();
+            $abovewidget=$widgets->where('widget_num',$id2)->first();
             $selwidget->widget_num--;
             $selwidget->save();
             $abovewidget->widget_num++;
@@ -119,10 +112,11 @@ class WidgetController extends Controller
      */
     public function down($id)
     {
-        if($id<Auth::user()->widgets->count()){
-            $selwidget=Auth::user()->widgets->where('widget_num',$id)->first();
+        $widgets = Auth::user()->widgets;
+        if($id<$widgets->count()){
+            $selwidget=$widgets->where('widget_num',$id)->first();
             $id2=$id+1 . "";//for some stupid reason, this will only work if $id is a string.
-            $belowwidget=Auth::user()->widgets->where('widget_num',$id2)->first();
+            $belowwidget=$widgets->where('widget_num',$id2)->first();
             $selwidget->widget_num++;
             $selwidget->save();
             $belowwidget->widget_num--;
@@ -130,5 +124,22 @@ class WidgetController extends Controller
             return $id;
         }
         else{fail;}
+    }
+
+    /**
+     * fixOffset()
+     *
+     *  A fun little function that will sort the users widgets and make sure they're incremented.
+     *
+     */
+    function fixOffset($widgets){
+        $i=0;
+        foreach($widgets as $widget){
+            $widget->widget_num=$i;
+            $widget->save();
+            $i++;
+        }
+        return $widgets;
+
     }
 }

@@ -1,0 +1,12 @@
+<p>Prompts are just random starting points to be used in games. It’s the equivalent of when an improv troupe asking the audience for suggestions for their next scene. OhMusing features and in-browser prompter that can be used to get you started. Here are other sources of prompts:</p>
+
+<ul>
+	<li>Friends</li>
+	<li>Social Media streams</li>
+	<li>Newspapers/Magazines</li>
+	<li>A Random Page from a Book</li>
+	<li>Twitter Tags</li>
+	<li>Billboards (when driving)</li>
+	<li>Tumblr (or other blog sites)</li>
+	<li>Or just look around.</li>
+</ul>
