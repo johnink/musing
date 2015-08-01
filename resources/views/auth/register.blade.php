@@ -20,39 +20,41 @@ ideas, self improvement, play, creative
 <form method="POST" action="/user/register">
     {!! csrf_field() !!}
 
-    <div class="col-md-6">
-        User Name
-        <input type="text" name="name" value="{{ old('name') }}">
+    <h1>Register</h1>
+
+    <div class="loginfield">
+        <label for="name">User Name</label>
+        <input type="text" name="name" id="name" value="{{ old('name') }}">
     </div>
 
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
+    <div class="loginfield">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="{{ old('email') }}">
     </div>
 
-    <div>
-        Password
-        <input type="password" name="password">
+    <div class="loginfield">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
     </div>
 
-    <div class="col-md-6">
-        Confirm Password
-        <input type="password" name="password_confirmation">
+    <div class="loginfield">
+        <label for="password_confirmation">Confirm Password</label>
+        <input type="password" name="password_confirmation" id="password_confirmation">
     </div>
 
     <div class="tags" >
-        <input type="checkbox" name="writing" id="writing"><label for="writing">Fiction Writing</label>
-        <input type="checkbox" name="blogging" id="blogging"><label for="blogging">Blogging</label>
-        <input type="checkbox" name="socialmedia" id="socialmedia"><label for="socialmedia">Posting on Twitter/Facebook</label>
-        <input type="checkbox" name="stageimprov" id="stageimprov"><label for="stageimprov">Stage Improv</label>
-        <input type="checkbox" name="drawing" id="drawing"><label for="drawing">Drawing</label>
-        <input type="checkbox" name="standup" id="standup"><label for="standup">Stand Up Comedy</label>
-        <input type="checkbox" name="music" id="music"><label for="Music">Music</label>
+        <div class="tag"><input type="checkbox" name="writing" id="writing"><label for="writing">Fiction Writing</label></div>
+        <div class="tag"><input type="checkbox" name="blogging" id="blogging"><label for="blogging">Blogging</label></div>
+        <div class="tag"><input type="checkbox" name="socialmedia" id="socialmedia"><label for="socialmedia">Posting on Twitter/Facebook</label></div>
+        <div class="tag"><input type="checkbox" name="stageimprov" id="stageimprov"><label for="stageimprov">Stage Improv</label></div>
+        <div class="tag"><input type="checkbox" name="drawing" id="drawing"><label for="drawing">Drawing</label></div>
+        <div class="tag"><input type="checkbox" name="standup" id="standup"><label for="standup">Stand Up Comedy</label></div>
+        <div class="tag"><input type="checkbox" name="music" id="music"><label for="Music">Music</label></div>
 
     </div>
 
     <div>
-        <button type="submit">Register</button>
+        <button type="submit" class="button">Register</button>
     </div>
 </form>
 @stop

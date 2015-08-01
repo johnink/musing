@@ -3,7 +3,7 @@
 
 	<!-- John Ink © 2015 www.johnink.com www.barelyanimated.com-->
 	<head>
-		<title>OhMusing! Getting Started</title>
+		<title>Omusing! Getting Started</title>
 		<meta name="description" content="A website dedicated to helping you find ideas. Providing tools and games to help you explore your mind and see what you find."/>
 		<meta name="keywords" content="ideas, self improvement, play, creative" />
 		<?php include("php/head.php") ?>
@@ -11,7 +11,7 @@
 	</head>
 
 	<body>
-		<header>OhMusing!</header>
+		<header>Omusing!</header>
 		<div id="jayz">
 			<div id="get_started">
 

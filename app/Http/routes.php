@@ -41,6 +41,10 @@ Route::get('/game/','GameController@index');
 Route::get('/game/{game}','GameController@show');
 
 
+//get started
+Route::get('/getstarted',function(){return view('getstarted');});
+
+
 //update games database
 Route::get('update','UpdateDatabaseController@index');
 

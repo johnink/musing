@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-OhMusing! {{{$game->full_name}}}!
+Omusing! {{{$game->full_name}}}!
 @stop
 
 @section('description')
@@ -17,14 +17,14 @@ ideas, self improvement, play, creative
 
 @section('scripts')
 
-	@if($game->widget==1 && Auth::user())
+	@if($game->widget==1)
 		<script src="/games/{{{$game->name}}}/{{{$game->name}}}.js" ></script>
 		
 		<script type="text/javascript">
 			function newWidget(name, i){
 				new {{{ucfirst($game->name)}}}(0);
 			}
-
+			@if(Auth::user())
 			function widgetButton(){
 				if($('#max').val()>{{{Auth::user()->widgets->count()}}}){
 					$.when( storeWidget('{{{$game->name}}}','{{{$game->full_name}}}','0') ).done(window.location.href = "/home");
@@ -32,6 +32,7 @@ ideas, self improvement, play, creative
 					$('#widget_button').animate({'opacity':.5}).html('Too many widgets...');
 				}
 			}
+			@endif
 		</script>
 
 		<script src="/jquery/widgetadder.js" ></script>
@@ -52,7 +53,9 @@ ideas, self improvement, play, creative
 		<div id="widgets">
 			<div class="{{{$game->name}}}" id="{{{$game->name}}}_0" ></div>
 			@if(Auth::user())
-				<div id="widget_button" onClick="widgetButton()">Add Widget to Homepage</div>
+				<div id="widget_button" onClick="widgetButton()" class="button">Add Widget to Homepage</div>
+			@else
+				<a href="/user/register" class="button"><div id="widget_button">Register to Add Widget to Homepage</div></a>
 			@endif
 		</div>
 

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-OhMusing! Ideas on how to find ideas
+Omusing! Ideas to find ideas
 @stop
 
 @section('description')
@@ -97,12 +97,11 @@ ideas, self improvement, play, creative
 @section('content')
 
 
-	<div id="widgets" style="position:relative;">
-
 
 		<?php
 		//This will make the divs for Jquery to add the widgets
 		if(Auth::user()){
+			echo '<div id="widgets">';
 			$i=0;
 			if(Auth::user()->widgets->count()>0){
 				echo"<h4>Widgets</h4>";
@@ -115,15 +114,14 @@ ideas, self improvement, play, creative
 					<?php $i++;
 				}
 			}
+			echo '</div>';
 		}
 		else{
-			// echo '<div class="channelSwitcher" id="channelSwitcher_0"><h5>Channel Switcher</h5></div>';
-			// echo '<div class="prompter" id="prompter_1"><h5>Prompter</h5></div>';
+			echo "<div id='calltoaction'><p>In this age of streaming content, it can be hard for a creator to keep up. Seach engines are now giving priority to those sites that update more frequently. So, while we can’t help with the creation of content, this site aims to help you to keep coming up with a steady stream of exciting ideas to make it a little bit easier. It’s a collection of improv games you can play by yourself to find ideas.</p><a class='button' href='/getstarted'>Get Started</a></div>";
 		}
 
 		?>
 
-	</div>
 
 
 	<div id="newGames">

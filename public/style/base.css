@@ -1,2 +1,427 @@
 /*default css*/
 
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Common CSS
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+body{
+	width:100%;
+	overflow-x:hidden;
+	font-family: 'Roboto', sans-serif;
+}
+
+a{
+	text-decoration:none;
+	color:#51387D;
+	transition:.5s;
+}
+
+a:hover{
+	color:#B15061;
+}
+
+a:active{
+	color:#EE3F2A;
+	transition:0s;
+}
+
+.button{
+	background: #EE3F2A;
+	border-radius:.3em;
+	border:0;
+	box-shadow:2px 2px 5px 0 rgba(0, 0, 0, 0.3) ;
+	color:#E4F4FD;
+	display:block;
+	font-size:18pt;
+	margin:auto;
+	padding:.8em;
+	text-align:center;
+	text-decoration:none;
+	transition:.5s;
+
+}
+
+.button:hover{
+	background-color:#EF5B2A;
+	color:white;
+	box-shadow:0 0 5px;
+	transition:0s;
+}
+
+.button:active{
+	background-color:#FCD6C4;
+	color:black;
+
+}
+
+h1,h4{
+	font-family: 'Nunito', sans-serif;
+}
+
+h1{
+	text-align: center;
+}
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Header styles
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
+
+#header{
+	background-color:#E4F5FD;
+	border:2em solid #565F65;
+	border-radius:100%;
+	position: relative;
+    right: 50%;
+    bottom:4em;
+    height:12em;
+    width:170%;
+    margin-bottom:-2.5em;
+}
+
+header img{width:19em;}
+header{
+	position:absolute;
+	left:23%;
+	top:1.9em;
+	display:inline-block;
+}
+
+@media screen and (min-width: 500px) {
+    header {
+        left:30%;
+    }
+}
+
+#userlogin{
+	position:absolute;
+	text-align:right;
+	right:17.5%;
+	top:2.8em;
+	font-size:20pt;
+}
+
+#welcomephrase{
+	font-size:14pt;
+	display:block;
+	width:6em;
+}
+
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Dashboard / Call to Action
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+
+#calltoaction{
+	padding:0 3em;
+	font-size:14pt;
+	text-align:justify;
+}
+
+#calltoaction .button{
+	width:5.1em;
+	margin-top:2em;
+	margin-bottom:4em;
+}
+
+#widgets{
+	margin:0 2.5em;
+	position:relative;
+	background-color:rgba(255, 255, 255, 1);
+	line-height:2;
+}
+
+#widgets>div{
+	margin:3em .5em;
+	padding:.2em 1.5em 2em;
+	box-shadow:2px 2px 15px 0 rgba(0, 0, 0, 0.3) ;
+	border-radius:1em;
+}
+
+#widgets>div h5{
+	font-size:14pt;
+	width:50%;
+	display:inline-block;
+}
+
+.widget_controls{
+	display:inline-block;
+	position:absolute;
+	right:.2em;
+	float:right;
+}
+
+.widget_up, .widget_down, .widget_add, .widget_sub{
+	background-color:#EE3F2A;
+	border-radius:50%;
+	display:inline-block;
+	padding:auto;
+	width:.8em;
+	height:.8em;
+	margin:.1em;
+	font-size:25pt;
+	position:relative;
+	font-family: 'Nunito', sans-serif;
+	color:white;
+	text-align:center;
+	line-height:.68em;
+}
+
+.widget_up{
+	background-color:#81B6E2;
+	line-height:1em;
+	top:.16em;
+}
+
+.widget_down{
+	background-color: #819CD0;
+}
+
+.widget_add{
+	background-color: #51387D;
+}
+
+#widgets select{
+	background: transparent;
+	font-size:15pt;
+	border:1px solid black;
+
+}
+
+#widgets button{
+	background: transparent;
+	border:0;
+	color:white;
+	background-color:#EE3F2A;
+	padding:0 1em;
+	border-radius: .5em;
+}
+
+#widgets button:hover{
+	background-color:#EF5B2A;
+}
+
+#widgets button:active{
+	background-color:#FCD6C4;
+	color:black;
+}
+
+#widgets input{
+	background:transparent;
+	border:1px solid black;
+}
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Get Started Page
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
+#getstarted{
+	position:relative;
+	bottom:4em;
+	margin:3em;
+	text-align: justify;
+
+}
+
+#getstarted h3, #getstarted h4{
+	margin-left:-0.5em;
+}
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Log in / Register
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+.loginfield{
+	margin:1em 3em;
+}
+
+.loginfield input{
+	display:block;
+	width:100%;
+	font-size:20pt;
+	height:2em;
+}
+
+.tags{
+	margin:2em 2em 5em;
+	text-align:center;
+}
+
+
+.tag input, .rememberme input{
+	margin:.2em;
+}
+
+.tag {
+	display:inline-block;
+	margin:0 1em;
+	position:relative;
+
+}
+
+label{
+	cursor:pointer;
+}
+
+.tag:nth-child(3n+1){
+	float:left;
+}
+
+.tag:nth-child(3n+2), .tag:nth-child(6){
+	float:right;
+}
+
+.tag:nth-child(3){
+	text-align:center;
+	width:100%;
+	margin-left:0;
+}
+
+.rememberme{
+	margin:0 3em 1.5em;
+}
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Single Game Pages
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+
+#what_youll_need, #long_desc, #variations{
+	margin:1em 3em;
+}
+
+#what_youll_need h2, #long_desc h2, #variations h2{
+	margin:0 -.5em;
+}
+
+
+    
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Top Games / New Games
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+
+#newGames, #topGames{
+
+	padding:0 2.5em;
+
+}
+
+.newGame, .topGame{
+
+	padding:0 .5em;
+}
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Footer
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
+#footer{
+	padding:5.5em;
+	margin-top:2.8em;
+	font-size:8pt;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Widget Specific
+
+Prompter
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
+
+select.prompter_options{
+	width:60%;
+	margin-right:5%;
+}
+
+.prompter_submit{
+	width:35%;
+	
+}
+
+.prompter_answer{
+	display:block;
+	font-size:23pt;
+	margin:1em 0;
+	line-height:1;
+	text-align:center;
+}
+
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Channel Switcher
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+
+.channelSwitcher_options{
+	width:100%;
+}
+
+.channelSwitcher_start, .channelSwitcher_stop{
+	float:right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
