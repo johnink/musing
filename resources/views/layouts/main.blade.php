@@ -9,8 +9,8 @@
 		<meta name="author" content="John Ink" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="UTF-8" />
-		<link rel="stylesheet" type="style/css" href="/style/normalize.css" />
-		<link rel="stylesheet" type="style/css" href="/style/base.css" />
+		<link rel="stylesheet" type="text/css" href="/style/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/style/base.css" />
 		<link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
@@ -18,9 +18,11 @@
 	</head>
 
 	<body>
-		
+		<div id="ultraWraper">
 		<div id="header">
-			<header><img src="/images/LogoV1.svg" alt="Omusing Logo Ideas to find Ideas"/></header>
+			<header>
+				<a href="/"><img src="/images/LogoV1.svg" alt="Omusing Logo Ideas to find Ideas"/></a>
+			</header>
 				@if(Auth::user())
 					<div id="userlogin" class="loggedin">
 						<span id="welcomephrase">Yo, {{{Auth::user()->name}}}, wassup. </span><a href="/user/logout">logout?</a>
@@ -40,7 +42,7 @@
 		</div>
 
 		<div id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />Omusing content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>
-
+	</div><!--end ultrawrapper-->
 
 	</body>
 

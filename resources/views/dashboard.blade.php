@@ -22,9 +22,9 @@ ideas, self improvement, play, creative
 
 
 		//This will add only the javascripts for the users widgets
+		//Temporarily disabled to fix a bug.
 
-
-		if(Auth::user()){
+		if(false/*Auth::user()*/){
 			$scripts=$widgets->unique("game_id");
 			foreach($scripts as $script){
 				$game=$script->game;
@@ -63,24 +63,24 @@ ideas, self improvement, play, creative
 		<?php }//end newWidget
 
 
-		else{
+		else{ 
 
-		// 	//if the user is not logged in use standard widgets. Also a
-		// 	// handy reference for what the above is outputting.
+			//if the user is not logged in use standard widgets. Also a
+			// handy reference for what the above is outputting.
+			?>
+			<script src="games/prompter/prompter.js" ></script>
+			<script src="games/channelSwitcher/channelSwitcher.js" ></script>
+			<script type="text/javascript">
+				function newWidget(name, i){
+					switch(name){
+						case "prompter":new Prompter(i);break;
+						case "channelSwitcher":new ChannelSwitcher(i);break;
+					}
+				}
+			</script>
 
-		// 	<script src="games/prompter/prompter.js" ></script>
-		// 	<script src="games/channelSwitcher/channelSwitcher.js" ></script>
-		// 	<script type="text/javascript">
-		// 		function newWidget(name, i){
-		// 			switch(name){
-		// 				case "prompter":new Prompter(i);break;
-		// 				case "channelSwitcher":new ChannelSwitcher(i);break;
-		// 			}
-		// 		}
-		// 	</script>
 
-
-		// <?php 
+		<?php 
 
 		} ?>
 		

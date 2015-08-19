@@ -12,7 +12,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 function ChannelSwitcher(game_index){
 
 	var started=false;
-	var intervals=15;
+	var intervals=30;
 	var err="";
 
 	var channelSwitcher_option="";
@@ -34,9 +34,9 @@ function ChannelSwitcher(game_index){
 					$options.append('<option value="' + options_list[i]["Short"] +'">' + options_list[i]["Full"] + '</option>');
 				}
 			$form.append($options);
-			var $channelSwitcher_intervals='<label for="channelSwitcher_intervals'+ game_index +'"> Intervals</label><input type="text" size=4 maxlength=4 value='+intervals+' class="channelSwitcher_intervals" id="channelSwitcher_intervals_' + game_index + '" />(in seconds) ';
+			var $channelSwitcher_intervals='<div class="channelSwitcher_intervals"><label for="channelSwitcher_intervals_'+ game_index +'">Intervals </label><input type="text" size=4 maxlength=4 value='+intervals+' id="channelSwitcher_intervals_' + game_index + '" /> <span class="inseconds">(in seconds)</span> </div>';
 			$form.append($channelSwitcher_intervals);
-			var $channelSwitcher_varied= '<input type="checkbox" class="channelSwitcher_varied" id="channelSwitcher_varied_' + game_index + '" /><label for="channelSwitcher_varied' + game_index +'">varied </label>'
+			var $channelSwitcher_varied= '<div class="channelSwitcher_varied"> <input type="checkbox" id="channelSwitcher_varied_' + game_index + '" /><label for="channelSwitcher_varied_' + game_index +'"> varied </label></div>'
 			$form.append($channelSwitcher_varied);
 			var $channelSwitcher_start = '<button class="channelSwitcher_start" id="channelSwitcher_start_'+ game_index +'" type="button">Start?</button>';
 			var $channelSwitcher_stop = '<button class="channelSwitcher_stop" id="channelSwitcher_stop_'+ game_index +'" type="button">Stop!</button>';

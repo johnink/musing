@@ -24,9 +24,10 @@
 /user/register = register
 */
 
-Route::get('/', function(){
+/*Route::get('/', function(){
 	return view('welcome');
-});
+});*/
+Route::get('/','DashboardController@index');
 Route::get('home', 'DashboardController@index');
 
 //widget controls

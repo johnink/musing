@@ -141,7 +141,7 @@ function addbutton(i){
 	if(addMenuOpen === false && users_widgets.length<MAX_WIDGETS){
 		addMenuOpen = true;
 		$('.widget_controls span').animate({'opacity':.5},'slow');
-		var $addMenu = $('<div class="addMenu" id="addmenu_' + i + '" style="background-color:red; width:450px; "></div>');
+		var $addMenu = $('<div class="addMenu" id="addmenu_' + i + '"></div>');
 		var $addMenuCloseButton = $('<span class= "addMenuCloseButton" id ="addMenuCloseButton_' + i + '" >x</span>');
 		var $addMenuGameUL=$('<ul></ul>');
 		$.each(available_widgets,function(index,value){
@@ -217,8 +217,8 @@ function swapAnimation(i){
 
 		var selWid = $('#' + users_widgets[i] + '_' + i),
 			prevWid = selWid.prev(),
-			distance = selWid.outerHeight()+25;
-			distance2= prevWid.outerHeight()+25;
+			distance = selWid.outerHeight()+55;
+			distance2= prevWid.outerHeight()+55;
 
 		if (prevWid.length){
 			animating = true;
@@ -276,9 +276,9 @@ function storeWidget(gamename, fullgamename, i){
 			$('addmenu').remove();
 			shifter(i,1);//shift widgets down by one
 			if(i>0){
-				$('#' + users_widgets[i-1] + '_' + (i-1)).after('<div class="' + gamename + '" id="' + gamename + '_' + i + '" style="position:relative;"><h5>' + fullgamename + '</h5><div class="widget_controls" id="widget_controls_' + i + '"></div></div>');
+				$('#' + users_widgets[i-1] + '_' + (i-1)).after('<div class="' + gamename + '" id="' + gamename + '_' + i + '" style="position:relative;"><h5><a href="/game/' + gamename + '">' + fullgamename + '</a></h5><div class="widget_controls" id="widget_controls_' + i + '"></div></div>');
 			}else{
-				$('#' + users_widgets[i+1] + '_' + (i+1)).before('<div class="' + gamename + '" id="' + gamename + '_' + i + '" style="position:relative;"><h5>' + fullgamename + '</h5><div class="widget_controls" id="widget_controls_' + i + '"></div></div>');
+				$('#' + users_widgets[i] + '_' + (i+1)).before('<div class="' + gamename + '" id="' + gamename + '_' + i + '" style="position:relative;"><h5><a href="/game/' + gamename + '">' + fullgamename + '</a></h5><div class="widget_controls" id="widget_controls_' + i + '"></div></div>');
 
 			}
 			widget=$('#' + gamename +'_' + i);

@@ -7,11 +7,13 @@ Common CSS
 
 x * + * x * + * x * + * x * + * x * + * x * + */
 
-body{
+html,body,#ultraWrapper{
 	width:100%;
 	overflow-x:hidden;
+	-ms-overflow-y: hidden
 	font-family: 'Roboto', sans-serif;
 }
+
 
 a{
 	text-decoration:none;
@@ -84,11 +86,11 @@ x * + * x * + * x * + * x * + * x * + * x * + */
     margin-bottom:-2.5em;
 }
 
-header img{width:19em;}
+header img{width:16em;}
 header{
 	position:absolute;
 	left:23%;
-	top:1.9em;
+	top:2.3em;
 	display:inline-block;
 }
 
@@ -101,7 +103,7 @@ header{
 #userlogin{
 	position:absolute;
 	text-align:right;
-	right:17.5%;
+	right:18.5%;
 	top:2.8em;
 	font-size:20pt;
 }
@@ -153,6 +155,8 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	display:inline-block;
 }
 
+/*     Widget Controls      */
+
 .widget_controls{
 	display:inline-block;
 	position:absolute;
@@ -161,6 +165,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 }
 
 .widget_up, .widget_down, .widget_add, .widget_sub{
+	cursor: pointer;
 	background-color:#EE3F2A;
 	border-radius:50%;
 	display:inline-block;
@@ -182,13 +187,72 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	top:.16em;
 }
 
+.widget_up:hover{
+    background-color: #96AFC7;
+}
+
 .widget_down{
 	background-color: #819CD0;
+}
+
+.widget_down:hover{
+	background-color:#9999B9;
 }
 
 .widget_add{
 	background-color: #51387D;
 }
+
+.widget_add:hover{
+	background-color:#6F3A51;
+}
+
+.widget_sub:hover{
+	background-color:#EC5625;
+}
+
+.widget_up:active, .widget_down:active, .widget_add:active, .widget_sub:active{
+	background-color:#FCD6C4;
+	color:black;
+}
+
+
+/*       Add Menu      */
+
+.addMenu{
+	background-color:#51387D;
+	color:white;
+	width:15em;
+	padding:1em;
+	position:absolute;
+	right:1em;
+	border-radius: 1em;
+
+}
+
+.addMenu li{
+	list-style:none;
+}
+
+.addMenu li:hover, .addMenuCloseButton:hover{
+	color:#D7D1E8;
+	cursor:pointer;
+}
+
+.addMenuCloseButton{
+	float:right;
+	color:#51387D;
+	border-radius:50%;
+	width:1em;
+	height:1em;
+	text-align:center;
+	line-height:1;
+	background-color:white;
+}
+
+
+
+/*    Widget Inputs    */
 
 #widgets select{
 	background: transparent;
@@ -202,7 +266,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	border:0;
 	color:white;
 	background-color:#EE3F2A;
-	padding:0 1em;
+	padding:0 .5em;
 	border-radius: .5em;
 }
 
@@ -409,10 +473,33 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 }
 
 .channelSwitcher_start, .channelSwitcher_stop{
+	position:relative;
+	width:30%;
 	float:right;
+	bottom:2em;
 }
 
+.channelSwitcher_answer{
+	display:block;
+	width:100%;
+	font-size:23pt;
+	margin:2em 0;
+	line-height:1;
+	text-align:center;
+}
 
+.channelSwitcher_intervals{
+	margin:1em 0;
+	display:block;
+}
+
+.channelSwitcher_varied{
+	display:block;
+}
+
+.inseconds{
+	font-style:italic;
+}
 
 
 
