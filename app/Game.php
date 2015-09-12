@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
 {
-    protected $fillable = ['name', 'full_name', 'short_desc','what_youll_need','long_desc','writing','blogging','socialmedia','stageimprov','drawing','standup','music','widget'];
+    protected $fillable = ['name', 'full_name', 'short_desc','what_youll_need','long_desc','primary_tag','widget'];
 
-    /*public function widget()
+    /**
+	 * Get the tags associated with the given game.
+	 */
+
+    public function tags()
     {
-        return $this->hasMany('App\Widget');
-    }*/
+        return $this->belongsToMany('App\Tag')->withTimestamps();
+    }
 }

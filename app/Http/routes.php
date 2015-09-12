@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -40,6 +39,7 @@ Route::post('widget/down/{id}','WidgetController@down');
 
 Route::get('/game/','GameController@index');
 Route::get('/game/{game}','GameController@show');
+Route::get('/gamelist/{modifier?}/{offset?}','GameController@index');
 
 
 //get started

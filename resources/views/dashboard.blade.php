@@ -127,7 +127,14 @@ ideas, self improvement, play, creative
 	<div id="newGames">
 		<h4>New Games</h4>
 			@foreach($newGames as $newGame)
-				<div class="newGame"><h5><a href="/game/{{{$newGame->name}}}" >{{{$newGame->full_name}}}</a></h5><div class="newGameDesc">{{{$newGame->short_desc}}}</div></div>
+				<div class="newGame">
+					<a href="/game/{{{$newGame->name}}}" >
+					<img class="newGameIcon" src="/images/icons/icons_{{{$newGame->primary_tag}}}.svg" alt="{{{$newGame->name}}} icon" onerror="this.onerror=null; this.src='/images/icons/icons_{{{$newGame->primary_tag}}}.png'"></a>
+					<div class="newGameText">
+						<h5 class="newGameTitle"><a href="/game/{{{$newGame->name}}}" >{{{$newGame->full_name}}}</a></h5>
+						<div class="newGameDesc">{{{$newGame->short_desc}}}</div>
+					</div>
+				</div>
 			@endforeach
 
 
@@ -136,7 +143,14 @@ ideas, self improvement, play, creative
 	<div id="topGames">
 		<h4>Top Games</h4>
 			@foreach($topGames as $topGame)
-				<div class="topGame"><h5><a href="/game/{{{$topGame->name}}}" >{{{$topGame->full_name}}}</a></h5><div class="topGameDesc">{{{$topGame->short_desc}}}</div></div>
+				<div class="topGame">
+					<a href="/game/{{{$topGame->name}}}" >
+					<img class="topGameIcon" src="/images/icons/icons_{{{$topGame->primary_tag}}}.svg" alt="{{{$topGame->name}}} icon" onerror="this.onerror=null; this.src='/images/icons/icons_{{{$topGame->primary_tag}}}.png'"></a>
+					<div class="topGameText">
+						<h5 class="topGameTitle"><a href="/game/{{{$topGame->name}}}" >{{{$topGame->full_name}}}</a></h5>
+						<div class="topGameDesc">{{{$topGame->short_desc}}}</div>
+					</div>
+				</div>
 			@endforeach
 
 	</div>

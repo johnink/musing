@@ -64,7 +64,8 @@ h1,h4{
 }
 
 h1{
-	text-align: center;
+	margin:1em 5em;
+	/*text-align: center;*/
 }
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
@@ -322,7 +323,8 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 .tags{
 	margin:2em 2em 5em;
-	text-align:center;
+	text-align:left;
+	
 }
 
 
@@ -331,28 +333,22 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 }
 
 .tag {
-	display:inline-block;
-	margin:0 1em;
+	display:block;
+	margin:.4em 1em;
 	position:relative;
+	font-size:2em;
 
+}
+
+.registerIcons{
+	height:1em;
+	margin-right:.4em;
+	position:relative;
+	top:.2em;
 }
 
 label{
 	cursor:pointer;
-}
-
-.tag:nth-child(3n+1){
-	float:left;
-}
-
-.tag:nth-child(3n+2), .tag:nth-child(6){
-	float:right;
-}
-
-.tag:nth-child(3){
-	text-align:center;
-	width:100%;
-	margin-left:0;
 }
 
 .rememberme{
@@ -394,8 +390,21 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 .newGame, .topGame{
 
 	padding:0 .5em;
+	margin:3em 0;
 }
 
+.newGameIcon, .topGameIcon{
+	height:3em;
+	float:left;
+}
+
+.newGameTitle, .topGameTitle{
+	margin-bottom:.5em;
+}
+
+.newGameText, .topGameText{
+	margin-left:4em;
+}
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
 

@@ -43,13 +43,17 @@ ideas, self improvement, play, creative
     </div>
 
     <div class="tags" >
-        <div class="tag"><input type="checkbox" name="writing" id="writing"><label for="writing">Fiction Writing</label></div>
-        <div class="tag"><input type="checkbox" name="blogging" id="blogging"><label for="blogging">Blogging</label></div>
-        <div class="tag"><input type="checkbox" name="socialmedia" id="socialmedia"><label for="socialmedia">Posting on Twitter/Facebook</label></div>
-        <div class="tag"><input type="checkbox" name="stageimprov" id="stageimprov"><label for="stageimprov">Stage Improv</label></div>
-        <div class="tag"><input type="checkbox" name="drawing" id="drawing"><label for="drawing">Drawing</label></div>
-        <div class="tag"><input type="checkbox" name="standup" id="standup"><label for="standup">Stand Up Comedy</label></div>
-        <div class="tag"><input type="checkbox" name="music" id="music"><label for="Music">Music</label></div>
+        <h1>check all that apply to you</h1>
+        <!--$tag is an array where 0 is the tag and 1 is the readable version-->
+        @foreach(Config::get('constants.TAGS') as $tag)
+
+         <div class="tag"><input type="checkbox" name="{{{$tag[0]}}}" id="{{{$tag[0]}}}">
+            <label for="{{{$tag[0]}}}">
+                <img class="registerIcons"src="/images/icons/icons_{{{$tag[0]}}}.svg" alt='$tag[1]'>{{{$tag[1]}}}
+            </label>
+        </div>
+
+        @endforeach
 
     </div>
 

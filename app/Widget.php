@@ -8,10 +8,9 @@ class Widget extends Model
 {
     protected $fillable = ['game_id','user_id','widget_num','game_options'];
 
-    public function user()
-    {
-        return $this->belongsTo('App\User');
-    }
+    /**
+	 * Get the game associated with the given Widget.
+	 */
 
     public function game()
     {

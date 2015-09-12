@@ -24,7 +24,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password','writing','blogging','socialmedia','stageimprov','drawing','standup','music'];
+    protected $fillable = ['name', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -33,8 +33,22 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
+    /**
+     * Get the widgets associated with the given user.
+     */
+
     public function widgets()
         {
             return $this->hasMany('App\Widget');
         }
-}
+
+
+    /**
+     * Get the tags associated with the given user.
+     */
+
+    public function tags()
+        {
+            return $this->belongsToMany('App\Tag')->withTimestamps();
+        }
+    }

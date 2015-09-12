@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Widget;
+use App\Tag;
 use Validator;
+use Config;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -30,6 +32,7 @@ class AuthController extends Controller
      */
 
     protected $redirectPath = '/';
+    protected $loginPath = '/user/login';
 
     public function __construct()
     {
@@ -45,11 +48,12 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'name' => 'required|max:15',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
     }
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -57,22 +61,37 @@ class AuthController extends Controller
      * @param  array  $data
      * @return User
      */
+
     protected function create(array $data)
     {
+        //collect the users tags
 
-        return User::create([
+        $tags=Config::get('constants.TAGS');
+        $userTags=[];
+        foreach($tags as $tag){
+            if(isset($data[$tag[0]])){
+                $tagId=IntVal(Tag::where('name',$tag[0])->pluck('id'));
+                array_push($userTags,$tagId);
+            }
+        }
+
+        //make the new user
+
+        $newUser = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'writing' => isset($data['writing']) ? 1:0,
-            'blogging' => isset($data['blogging']) ? 1:0,
-            'socialmedia' => isset($data['socialmedia']) ? 1:0,
-            'stageimprov' => isset($data['stageimprov']) ? 1:0,
-            'drawing' => isset($data['drawing']) ? 1:0,
-            'standup' => isset($data['standup']) ? 1:0,
-            'music' => isset($data['music']) ? 1:0
+            'password' => bcrypt($data['password'])
         ]);
+
+        //attach the tags
+        $newUser->tags()->attach($userTags);
+
+        \Session::flash('success_message','You are now logged in as you! Thanks for registering.');
+
+        return $newUser;
 
 
     }
+
+    
 }

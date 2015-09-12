@@ -38,6 +38,24 @@
 		</div>
 
 		<div id="jayz">
+			@if(Session::has('success_message'))
+				<div class="success_message">{{Session::get('success_message')}}</div>
+
+			@endif
+			@if(Session::has('failure_message'))
+				<div class="failure_message">{{Session::get('failure_message')}}</div>
+
+			@endif
+			
+			@if (count($errors) > 0)
+			    <div class="failure_message">
+			        <ul>
+			            @foreach ($errors->all() as $error)
+			                <li>{{ $error }}</li>
+			            @endforeach
+			        </ul>
+			    </div>
+			@endif
 			@yield('content')
 		</div>
 

@@ -36,8 +36,10 @@ class Authenticate
     {
         if ($this->auth->guest()) {
             if ($request->ajax()) {
+                \Session::flash('failure_message','Unauthorized.');
                 return response('Unauthorized.', 401);
             } else {
+                \Session::flash('failure_message','Please login to see.');
                 return redirect()->guest('auth/login');
             }
         }
