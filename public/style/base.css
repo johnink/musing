@@ -12,8 +12,12 @@ html,body,#ultraWrapper{
 	overflow-x:hidden;
 	-ms-overflow-y: hidden
 	font-family: 'Roboto', sans-serif;
-}
+	background-color:#e0f1f9;
+	}
 
+#jayz{
+	
+}
 
 a{
 	text-decoration:none;
@@ -30,6 +34,10 @@ a:active{
 	transition:0s;
 }
 
+li{
+	list-style-type:none;
+}
+
 .button{
 	background: #EE3F2A;
 	border-radius:.3em;
@@ -42,7 +50,7 @@ a:active{
 	padding:.8em;
 	text-align:center;
 	text-decoration:none;
-	transition:.5s;
+	transition:.3s;
 
 }
 
@@ -64,48 +72,97 @@ h1,h4{
 }
 
 h1{
-	margin:1em 5em;
-	/*text-align: center;*/
+	text-align: center;
+}
+
+#jayz{
+	margin:0 2.5em;
+	background-color:#FFF;
+	border:1px solid lightgrey;
+
 }
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
 
-Header styles
+Header styles 
+
 
 x * + * x * + * x * + * x * + * x * + * x * + */
     
 
-#header{
-	background-color:#E4F5FD;
-	border:2em solid #565F65;
-	border-radius:100%;
-	position: relative;
-    right: 50%;
-    bottom:4em;
-    height:12em;
-    width:170%;
-    margin-bottom:-2.5em;
+#menu{
+	font-size:1.5em;
+	position:absolute;
+	z-index:50;
+	background-color:#565F65;
+	padding-top:1em;
+	/*top:6em;*/
+	top:-5em;
+	width:100%;
+	
 }
 
-header img{width:16em;}
-header{
+#menu a{
+	color:white;
+}
+
+#menu li{
+	z-index:150;
+}
+
+#menuBottomBorder{
 	position:absolute;
-	left:23%;
-	top:2.3em;
+	bottom:-2em;
+	height:4em;
+	z-index:-100;
+	width:100%;
+}
+
+
+
+#header{
+	background-color:#E4F5FD;
+	position: relative;
+	height:10em;
+	margin-bottom:4.5em;
+	z-index:100;
+
+    }
+
+ header img{width:13em;}
+
+ header{
+	position:absolute;
+	left:1em;
+	top:1em;
 	display:inline-block;
 }
 
-@media screen and (min-width: 500px) {
-    header {
-        left:30%;
-    }
+.menuButton{visibility:hidden;}
+
+.mobileMenuButton{
+	position:absolute;
+	left:47%;
+	bottom:1em;
+	width:39px;
+	background: url('/images/menuButton.png') no-repeat;
+	transition:.1s;
+	z-index:100;
+}
+
+.mobileMenuButton:hover{
+	background-image: url('/images/menuButtonHover.png');
+}
+
+.mobileMenuButton:active{
+	background-image: url('/images/menuButtonActive.png');
 }
 
 #userlogin{
 	position:absolute;
 	text-align:right;
-	right:18.5%;
-	top:2.8em;
+	right:1em;
+	top:1.3em;
 	font-size:20pt;
 }
 
@@ -115,7 +172,12 @@ header{
 	width:6em;
 }
 
-
+#headerBottomBorder{
+	position:absolute;
+	bottom:-2em;
+	height:4em;
+	width:100%;
+}
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
 
@@ -125,7 +187,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 
 #calltoaction{
-	padding:0 3em;
+	padding:0 .5em;
 	font-size:14pt;
 	text-align:justify;
 }
@@ -137,7 +199,6 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 }
 
 #widgets{
-	margin:0 2.5em;
 	position:relative;
 	background-color:rgba(255, 255, 255, 1);
 	line-height:2;
@@ -380,12 +441,6 @@ Top Games / New Games
 
 x * + * x * + * x * + * x * + * x * + * x * + */
 
-
-#newGames, #topGames{
-
-	padding:0 2.5em;
-
-}
 
 .newGame, .topGame{
 

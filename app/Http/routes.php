@@ -40,6 +40,7 @@ Route::post('widget/down/{id}','WidgetController@down');
 Route::get('/game/','GameController@index');
 Route::get('/game/{game}','GameController@show');
 Route::get('/gamelist/{modifier?}/{offset?}','GameController@index');
+Route::post('/gamelist','GameController@selectbox');
 
 
 //get started

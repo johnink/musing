@@ -1,0 +1,45 @@
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Styles for /gamelist
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+.newGameBox{
+	width:30%;
+	margin:auto 1%;
+	display:inline-block;
+	vertical-align:top;
+	}
+
+.gameName h5{
+	margin:1em 0 .3em;
+	font-size:1.01em;
+	font-family: 'Nunito', sans-serif;
+	display:inline-block;
+}
+
+.gameDesc{
+	color:#544D66;
+	margin-left:.5em;
+}
+
+.gameListIcons{
+	display:inline-block;
+	padding-top:.3em;
+	height:1em;
+	overflow:visible;
+}
+
+.gameListIcon{
+	position:relative;
+	height:1.1em;
+	float:left;
+	top:.2em;
+	padding:0 .1em;
+}
+
+.gameListIcon:hover{
+	height:3em;
+	top:-.8em;
+	padding:0;
+}

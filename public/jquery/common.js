@@ -9,7 +9,15 @@ var words={
 
   			"places":["vehicle","truck stop","bathroom","bedroom","kitchen","ocean","desert","France","Hawaii","fast-food joint","restaurant","Ancient Rome","Eygpt","carnival","cave","pirate ship","karate dojo","moutain","tundra","mansion","ski resort","tropical island","church","graveyard","Africa","airplane","airport","mall","board room","class room","lunchroom","locker room","power plant","inside of a volcano","the center of the earth","bottom of the ocean","the moon","Mars","International Space Station","movie theater","fancy restaurant","poop tower","niagra falls","castle","recycling center","super hero headquarters","villain hideout","back alley","park","beach","rainforest","used car dealership","pizza joint","inside of a human body","beehive","Santa's workshop","video game world","wonderland","M.C. Esher painting","Hell","Heaven","concert","barber","dentist's office","coffee shop","grandma's house","theme park","gym","yoga class","pool","Spain","90's","80's","70's","waterpark","bakery","skatepark","aquarium","UFO"]
 		}
-// Take divs in the #widgets and turn it into an array to be later populated with widgets
+
+var menuOpen=false;
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Take divs in the #widgets and turn it into an
+array to be later populated with widgets
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
 function makeWidgetsArray(){
 	var widget_list = [];
 	$('#widgets').children('div').each(function(){
@@ -19,13 +27,54 @@ function makeWidgetsArray(){
 
 }
 
-//Produce a random
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Pull a random value from array
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
 function randomFromArray(theArray){
 		random_index=Math.floor((Math.random() * theArray.length));
 		return "<strong>" + capitalizeFirstLetter(theArray[random_index]) + "</strong>";
 	}
 
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Capitalize the first letter of a string
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
+
 function capitalizeFirstLetter(string) {return string.charAt(0).toUpperCase() + string.slice(1);}
+
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Open the Menu
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
+function openMenu(){
+	if(menuOpen===false){
+		$('#menu').animate({'top':'6em'},400,'easeOutQuart');
+		menuOpen=true;
+	}
+	else{
+		$('#menu').animate({'top':'-4em'},400,'easeOutBounce');
+		menuOpen=false;
+	}
+	
+}
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Return a Random Prompt
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
 
 function returnPrompt(options_list, option){
 	var random_index=0;
