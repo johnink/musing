@@ -12,12 +12,13 @@ html,body,#ultraWrapper{
 	overflow-x:hidden;
 	-ms-overflow-y: hidden
 	font-family: 'Roboto', sans-serif;
-	background-color:#e0f1f9;
+	background-color:#fcfdfd;
 	}
 
-#jayz{
-	
+#ultraWrapper{
+	position:relative;
 }
+
 
 a{
 	text-decoration:none;
@@ -76,9 +77,11 @@ h1{
 }
 
 #jayz{
-	margin:0 2.5em;
+	margin:0 1em;
 	background-color:#FFF;
+	position:relative;
 	border:1px solid lightgrey;
+	padding:3em 1em 0 1em;
 
 }
 
@@ -118,13 +121,12 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	width:100%;
 }
 
-
+#sideMenu{display:none;}
 
 #header{
 	background-color:#E4F5FD;
 	position: relative;
 	height:10em;
-	margin-bottom:4.5em;
 	z-index:100;
 
     }
@@ -177,6 +179,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	bottom:-2em;
 	height:4em;
 	width:100%;
+	z-index:-100;
 }
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
@@ -205,10 +208,11 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 }
 
 #widgets>div{
-	margin:3em .5em;
-	padding:.2em 1.5em 2em;
-	box-shadow:2px 2px 15px 0 rgba(0, 0, 0, 0.3) ;
-	border-radius:1em;
+	margin:0 .5em;
+	padding:.5em 0 .5em;
+	border-bottom:1px solid lightgrey;
+	/*box-shadow:2px 2px 15px 0 rgba(0, 0, 0, 0.3) ;
+	border-radius:1em;*/
 }
 
 #widgets>div h5{
@@ -471,9 +475,22 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	padding:5.5em;
 	margin-top:2.8em;
 	font-size:8pt;
+	float:left;
 }
 
 
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Ads
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+.googleAd{
+	border-top:1px solid lightgrey;
+	border-bottom:1px solid lightgrey;
+	padding:2.5em 0;
+}
 
 
 

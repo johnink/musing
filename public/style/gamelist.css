@@ -9,6 +9,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	margin:auto 1%;
 	display:inline-block;
 	vertical-align:top;
+	border:1px solid lightgrey;
 	}
 
 .gameName h5{
@@ -21,6 +22,15 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 .gameDesc{
 	color:#544D66;
 	margin-left:.5em;
+}
+
+#gameListTitle{
+	display:inline-block;
+}
+
+#gameListChanger{
+	float:right;
+	margin: 1.33em 0;
 }
 
 .gameListIcons{

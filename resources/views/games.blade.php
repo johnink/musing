@@ -27,6 +27,7 @@ ideas, self improvement, play, creative
 
 @section('content')
 
+<div class="primary">
 @foreach($newGames as $newGame)
 	<div class="newGameBox">
 		<h5><a href="/game/{{{$newGame['name']}}}">{{{$newGame['full_name']}}}</a></h5>
@@ -75,7 +76,7 @@ ideas, self improvement, play, creative
 
 
 </div>
-
+</div>
 
 
 

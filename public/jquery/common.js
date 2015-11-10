@@ -11,6 +11,29 @@ var words={
 		}
 
 var menuOpen=false;
+$( window ).resize(function() {adjustPrimary()});
+$( window ).load(function() {adjustPrimary()});
+$(document).ready(function () {adjustPrimary()});
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Make primary constantly remain fully spaced
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
+function adjustPrimary(){
+	if( $( window ).width() >= 480 ){
+		var totalHeight=$('#jayz').height();
+		$('.primary').height(totalHeight);
+	}
+	else{
+		$('.primary').css('height','auto');
+	}
+}
+
+
+
 /* + * x * + * x * + * x * + * x * + * x * + * x
 
 Take divs in the #widgets and turn it into an

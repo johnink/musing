@@ -5,11 +5,11 @@ Omusing! Ideas to find ideas
 @stop
 
 @section('description')
-A website dedicated to helping you find ideas. Providing tools and games to help you explore your mind and see what you find.
+A website dedicated to helping you find ideas. Good for writing, drawing, blogging, social media, music composition and more. Providing tools and games to help you explore your mind and see what you find.
 @stop
 
 @section('keywords')
-ideas, self improvement, play, creative
+ideas, self improvement, play, creative, writing, drawing, blogging, social media, music composition
 @stop
 
 
@@ -96,7 +96,7 @@ ideas, self improvement, play, creative
 
 @section('content')
 
-
+	<div class="primary">
 
 		<?php
 		//This will make the divs for Jquery to add the widgets
@@ -104,7 +104,7 @@ ideas, self improvement, play, creative
 			echo '<div id="widgets">';
 			$i=0;
 			if(Auth::user()->widgets->count()>0){
-				echo"<h4>Widgets</h4>";
+				//echo"<h4>Widgets</h4>";
 				foreach($widgets as $widget){
 					$game=$widget->game; ?>
 					<div class="{{{$game->name}}}" id="{{{$game->name}}}_{{{$i}}}" style="position:relative;">
@@ -121,9 +121,10 @@ ideas, self improvement, play, creative
 		}
 
 		?>
+	</div><!--end primary -->
 
 
-
+	<div class="thirdary">
 	<div id="newGames">
 		<h4>New Games</h4>
 			@foreach($newGames as $newGame)
@@ -140,6 +141,23 @@ ideas, self improvement, play, creative
 
 	</div>
 
+	<!-- Google Ad -->
+	<div class="googleAd">
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- omusing -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-2424963268946018"
+		     data-ad-slot="7983075933"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+	</div>
+	<!-- end Google Ad -->
+
 	<div id="topGames">
 		<h4>Top Games</h4>
 			@foreach($topGames as $topGame)
@@ -154,4 +172,5 @@ ideas, self improvement, play, creative
 			@endforeach
 
 	</div>
+	</div><!--end thirdary -->
 @stop

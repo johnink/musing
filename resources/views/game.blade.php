@@ -46,10 +46,11 @@ ideas, self improvement, play, creative
 
 
 @section('content')
-
+	<div class="primary">
 	<h1>{{{$game->full_name}}}</h1>
 
 	@if($game->widget==1)
+
 		<div id="widgets">
 			<div class="{{{$game->name}}}" id="{{{$game->name}}}_0" ></div>
 			@if(Auth::user())
@@ -83,5 +84,6 @@ ideas, self improvement, play, creative
 	@endif
 
 	<h1>Keep Exploring...</h1>
+	</div>
 
 @stop

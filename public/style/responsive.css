@@ -1,0 +1,200 @@
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Start with any CSS for non mobile sceens
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+@media screen and (min-width: 480px){
+
+	#jayz{
+		margin:0 2%;
+		width:96%;
+		float:left;
+		padding:0;
+		position:relative;
+	}
+
+	.primary, .secondary, .thirdary, .fullwidth{
+		padding:0 .9%;
+		display:inline-block;
+		position:relative;
+		padding-top:4em;
+		height:100%;
+	}
+
+	#header{
+		height:5.5em;
+		width:100%;
+		position:fixed;
+		top:0;
+    }
+
+	header img{width:10em;}
+
+	header{
+		top:.1em;
+		left:2em;
+	}
+
+	#userlogin{
+		position:absolute;
+		text-align:right;
+		right:1.5em;
+		top:.9em;
+		font-size:13pt;
+	}
+
+	#sideMenu{display:block;}
+	#menu{display:none;}
+	.mobileMenuButton{display:none;}
+
+	ul{padding:0;}
+
+
+	.button{
+		font-size:14pt;
+	}
+
+	#welcomephrase{
+		font-size:11pt;
+		width:auto;
+	}
+
+
+	/* Call to Action / Dashboard */
+
+	#calltoaction{
+		font-size:12pt;
+	}
+
+	#widgets>div h5{
+		font-size:12pt;
+	}
+
+	.widget_up, .widget_down, .widget_add, .widget_sub{
+		padding:.15em;
+		font-size:14pt;
+	}
+
+
+	/* new games / top games */
+
+	.newGame, .topGame{
+		font-size:10pt;
+		padding:0 .5em;
+		margin:1em 0;
+	}
+
+	.newGame h4, .topGame h4 {
+		font-size:12pt;
+		padding:0;
+	}
+
+	.newGameIcon, .topGameIcon{
+		height:2.5em;
+		padding-right:1em;
+
+	}
+
+	.newGameTitle, .topGameTitle{
+		font-size:1.1em;
+		height:2em;
+	}
+
+	.topGameTitle a{
+		position:relative;
+		top:30%;
+	}
+
+	.newGameText, .topGameText{
+		margin-left:0em;
+	}
+
+} 
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Two column layout
+
+Spacing for Smallish Screens/windows
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
+
+@media screen and (min-width: 480px) and (max-width: 960px){
+
+	.primary{
+		width:62%;
+		float:right;
+		padding-top:8em;
+		border-left:1px solid lightgrey;
+	}
+
+	.secondary, .thirdary{
+		width:29%;
+		float:left;
+		
+	}
+
+	.secondary{
+		padding-top:6em;
+	}
+
+	/* Call to Action / Dashboard */
+
+
+
+
+}
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Three-column layout
+
+Spacing for Big Screens/windows
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+    
+
+@media screen and (min-width: 960px){
+
+	.primary{
+		width:63.2%;
+		padding:8em 2%;
+		border-right:1px solid lightgrey;
+		border-left:1px solid lightgrey;
+	}
+
+	.secondary{
+		float:left;
+	}
+
+	.thirdary{
+		float:right;
+	}
+
+	.secondary, .thirdary {
+		padding-top:6em;
+		width:14.3%;
+	}
+
+
+
+	/* Call to Action / Dashboard */
+
+
+	#calltoaction p{ 
+		padding:0 2em 1em 2em;
+		float:left;
+	}
+
+	#calltoaction .button{
+		display:inline-block;
+		width:95%;
+		margin:0;
+	}
+
+
+}
+

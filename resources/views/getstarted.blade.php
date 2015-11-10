@@ -24,6 +24,7 @@ ideas, self improvement, play, creative
 
 @section('content')
 
+<div class="primary">
 <div id="getstarted">
 
 <h3>Who we are.</h3>
@@ -64,6 +65,7 @@ ideas, self improvement, play, creative
 
 <a class='button' href='/user/register'>Register</a>
 
+</div>
 </div>
 
 @stop

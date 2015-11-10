@@ -11,6 +11,7 @@
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" type="text/css" href="/style/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="/style/base.css" />
+		<link rel="stylesheet" type="text/css" href="/style/responsive.css" />
 		@yield('extrastyle')
 		<link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -40,23 +41,32 @@
 
 	<body>
 		<div id="ultraWraper">
+		
+			<div id="menu">
+				<?php 
+				$menu='<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/game/prompter">Prompter</a></li>
+					<li><a href="/gamelist">Games</a></li>
+					<li><a href="/getstarted">Get Started</a></li>
+					';
 
-		<div id="menu">
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/game/prompter">Prompter</a></li>
-				<li><a href="/gamelist">Games</a></li>
-				<li><a href="/getstarted">Get Started</a></li>
-				@if(Auth::check())
-					<li><a href="/user/logout">Log Out</a></li>
-				@else
-					<li><a href="/user/register">Register</a></li>
-					<li><a href="/user/login">Log In</a></li>
-				@endif
-			</ul>
-			<img id="menuBottomBorder" src="/images/headerBG-02.svg" alt="bottom arc" onerror="this.onerror=null; document.getElementById('header').style.borderBottom = '2em solid #565F65'; this.remove();"/>
+					if(Auth::check()){
+						$menu.='<li><a href="/user/logout">Log Out</a></li>';
+					}
+					else{
+						$menu.='<li><a href="/user/register">Register</a></li>
+						<li><a href="/user/login">Log In</a></li>';
+					}
+				$menu.='</ul>';
+				echo $menu;
+				?>
 
-		</div>
+				<img id="menuBottomBorder" src="/images/headerBG-02.svg" alt="bottom arc" onerror="this.onerror=null; document.getElementById('header').style.borderBottom = '2em solid #565F65'; this.remove();"/>
+
+			</div>
+
+
 
 		<div id="header">
 			<header>
@@ -79,17 +89,23 @@
 		</div>
 
 		<div id="jayz">
+			<div class="secondary">
+				<div id="sideMenu">
+					{!! $menu !!}
+				</div>
+			</div>
+
 			@if(Session::has('success_message'))
-				<div class="success_message">{{Session::get('success_message')}}</div>
+				<div class="success_message primary">{{Session::get('success_message')}}</div>
 
 			@endif
 			@if(Session::has('failure_message'))
-				<div class="failure_message">{{Session::get('failure_message')}}</div>
+				<div class="failure_message primary">{{Session::get('failure_message')}}</div>
 
 			@endif
 			
 			@if (count($errors) > 0)
-			    <div class="failure_message">
+			    <div class="failure_message primary">
 			        <ul>
 			            @foreach ($errors->all() as $error)
 			                <li>{{ $error }}</li>
@@ -98,6 +114,7 @@
 			    </div>
 			@endif
 			@yield('content')
+			
 		</div>
 
 		<div id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />Omusing content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>

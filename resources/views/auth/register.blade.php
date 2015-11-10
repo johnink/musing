@@ -17,6 +17,7 @@ ideas, self improvement, play, creative
 
 @section('content')
 
+<div class="primary">
 <form method="POST" action="/user/register">
     {!! csrf_field() !!}
 
@@ -61,4 +62,5 @@ ideas, self improvement, play, creative
         <button type="submit" class="button">Register</button>
     </div>
 </form>
+</div>
 @stop
