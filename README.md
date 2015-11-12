@@ -1,4 +1,4 @@
-# musing 1.0.0 beta
+## musing 1.0.0 beta
 
 live at omusing.com
 
@@ -15,23 +15,23 @@ Current features include the ability to add widgets to games. These widgets can 
 a users homepage. From there, they can be bumped up or down the list, added or deleted.
 These changes are reflected immediately in the database.
 
-Working features
--a better README.md
--user thumbnail
--illustrations in games
--comments section on the games
--the ability to search and filter by interest
--a more fully featured 'Top Games' section
--several additons and subtractions from the prompt lists
--add graphic to channel switcher game
--a Mind Map game and widget
--an Idea Box game and widget
--an Mashing game and widget
--Leveling game
--Spectrum game
--Break it down game
--Captions game
--Devil's Advocate game
--Stewey Taunt game
+#Working features
+*a better README.md
+*user thumbnail
+*illustrations in games
+*comments section on the games
+*the ability to search and filter by interest
+*a more fully featured 'Top Games' section
+*several additons and subtractions from the prompt lists
+*add graphic to channel switcher game
+*a Mind Map game and widget
+*an Idea Box game and widget
+*an Mashing game and widget
+*Leveling game
+*Spectrum game
+*Break it down game
+*Captions game
+*Devil's Advocate game
+*Stewey Taunt game
 
 
