@@ -15,7 +15,7 @@ Current features include the ability to add widgets to games. These widgets can 
 a users homepage. From there, they can be bumped up or down the list, added or deleted.
 These changes are reflected immediately in the database.
 
-#Working features
+###Working features
 *a better README.md
 *user thumbnail
 *illustrations in games
