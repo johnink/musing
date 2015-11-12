@@ -113,7 +113,7 @@ class UpdateDatabaseController extends Controller
                         if($game->what_youll_need!=$gameinfo['what_youll_need']){$game->what_youll_need=$gameinfo['what_youll_need'];}
                         if($game->long_desc!=$gameinfo['long_desc']){$game->long_desc=$gameinfo['long_desc'];}
                         if($game->variations!=$gameinfo['variations']){$game->variations=$gameinfo['variations'];}
-                        if($game->primary_tag!=$gameinfo['primary']){$game->primary_tag=$gameinfo['primary']}
+                        if($game->primary_tag!=$gameinfo['primary']){$game->primary_tag=$gameinfo['primary'];}
                         if($game->widget!=$widgetexists){$game->widget=$widgetexists;}
                         $game->save();
 
