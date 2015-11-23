@@ -25,15 +25,9 @@ ideas, self improvement, play, creative
 
 
 
-@section('content')
+@section('primary')
 
-<div class="primary">
-@foreach($newGames as $newGame)
-	<div class="newGameBox">
-		<h5><a href="/game/{{{$newGame['name']}}}">{{{$newGame['full_name']}}}</a></h5>
-		{{{$newGame['short_desc']}}}
-	</div>
-@endforeach
+
 
 <div class="gameList">
 	<div class="gameListHeader">
@@ -68,14 +62,18 @@ ideas, self improvement, play, creative
 			</div>
 			@endforeach
 		</div>
-
-
-
 	</div>
 
 
+	<div class="newGameBoxes">
+		@foreach($newGames as $newGame)
+			<div class="newGameBox">
+				<h5 class="newGameBoxName"><a href="/game/{{{$newGame['name']}}}">{{{$newGame['full_name']}}}</a></h5>
+				{{{$newGame['short_desc']}}}
+			</div>
+		@endforeach
+	</div>
 
-</div>
 </div>
 
 

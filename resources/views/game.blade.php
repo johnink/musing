@@ -21,18 +21,61 @@ ideas, self improvement, play, creative
 		<script src="/games/{{{$game->name}}}/{{{$game->name}}}.js" ></script>
 		
 		<script type="text/javascript">
+			var widgetMenuOpen=false;
 			function newWidget(name, i){
 				new {{{ucfirst($game->name)}}}(0);
 			}
-			@if(Auth::user())
-			function widgetButton(){
-				if($('#max').val()>{{{Auth::user()->widgets->count()}}}){
-					$.when( storeWidget('{{{$game->name}}}','{{{$game->full_name}}}','0') ).done(window.location.href = "/home");
-				}else{
-					$('#widget_button').animate({'opacity':.5}).html('Too many widgets...');
+
+			function addWidgetToHomepage(){
+				@if(Auth::check())
+					if($('#max').val()>{{{Auth::user()->widgets->count()}}}){
+						//subtract one from max to prevent adding too many widgets.
+						$('#max').val(parseInt($('#max').val())-1);
+						$.when( storeWidget('{{{$game->name}}}','{{{$game->full_name}}}','0',false) ).done(function(){
+								var $widgetMenuOptionsUL=$('#widgetMenuOptionsUL');
+								$widgetMenuOptionsUL.animate({opacity:0},200,'easeOutQuad',function(){
+									$widgetMenuOptionsUL.html('<p>Successfully added to homepage.</p><p><a href="/">Go to homepage.</a></p>').animate({opacity:1},200,'easeInQuad');
+								});
+
+
+						});
+					}else{
+						var $widgetMenuOptionsUL=$('#widgetMenuOptionsUL');
+							$widgetMenuOptionsUL.animate({opacity:0},200,'easeOutQuad',function(){
+								$widgetMenuOptionsUL.html('<p>Too Many Widgets...</p><p><a href="/">Go to homepage.</a></p>').animate({opacity:1},200,'easeInQuad');
+							});
+					}
+				@else
+				var $widgetMenuOptionsUL=$('#widgetMenuOptionsUL');
+				$widgetMenuOptionsUL.animate({opacity:0},200,'easeOutQuad',function(){
+					$widgetMenuOptionsUL.html('<p>You need to register.</p><p><a href="/user/register">Register</a> | <a href="/user/login">Log in</a></p>').animate({opacity:1},200,'easeInQuad');
+				});
+				@endif
+
+			}
+
+			function openWidgetMenu(){
+				if(widgetMenuOpen===false){
+					widgetMenuOpen=true;
+					var $widgetMenu = $('<div id="widgetMenu"class="addMenu"></div>');
+					var $widgetMenuCloseButton = $('<span class= "addMenuCloseButton" onClick="closeWidgetMenu()">x</span>');
+					var $widgetMenuOptionsUL=$('<div id="widgetMenuOptionsUL"><ul></ul></div>');
+					$widgetMenuOptionsUL.append('<li onClick="addWidgetToHomepage()">Add Widget to Homepage</li>');
+					$widgetMenuOptionsUL.append('<li><a href="/widgetonly/{{{$game->name}}}" target="_blank">Open Widget in a New Window</a></li>');
+					$widgetMenu.append($widgetMenuCloseButton,$widgetMenuOptionsUL).hide();
+
+					$('.widget_options').append($widgetMenu);
+					$widgetMenu.slideDown(200,'easeOutBounce');
 				}
 			}
-			@endif
+
+			function closeWidgetMenu(){
+				$('#widgetMenu').slideUp(200,'easeOutBounce',function(){
+					$('#widgetMenu').remove();
+					widgetMenuOpen = false;
+				});
+			}
+
 		</script>
 
 		<script src="/jquery/widgetadder.js" ></script>
@@ -45,19 +88,14 @@ ideas, self improvement, play, creative
 
 
 
-@section('content')
-	<div class="primary">
+@section('primary')
 	<h1>{{{$game->full_name}}}</h1>
 
 	@if($game->widget==1)
 
 		<div id="widgets">
 			<div class="{{{$game->name}}}" id="{{{$game->name}}}_0" ></div>
-			@if(Auth::user())
-				<div id="widget_button" onClick="widgetButton()" class="button">Add Widget to Homepage</div>
-			@else
-				<a href="/user/register" class="button"><div id="widget_button">Register to Add Widget to Homepage</div></a>
-			@endif
+			<div class="widget_options" id="widget_options" onClick="openWidgetMenu()">Widget Actions</div>
 		</div>
 
 	@endif
@@ -84,6 +122,5 @@ ideas, self improvement, play, creative
 	@endif
 
 	<h1>Keep Exploring...</h1>
-	</div>
 
 @stop

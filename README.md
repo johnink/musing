@@ -1,4 +1,4 @@
-## musing 1.0.0 beta
+## musing 1.1.0
 
 live at omusing.com
 
@@ -15,8 +15,13 @@ Current features include the ability to add widgets to games. These widgets can 
 a users homepage. From there, they can be bumped up or down the list, added or deleted.
 These changes are reflected immediately in the database.
 
-### Working features
+### New this version
 * a better README.md
+* responsive CSS
+* added alerts/flash messaging
+* fixed bugs/animation
+
+### Working features
 * user thumbnail
 * illustrations in games
 * comments section on the games

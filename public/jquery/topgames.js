@@ -26,7 +26,6 @@ $('#gameListChanger').on('change',function(){
 					$game.append($gameDesc);
 					$games.append($game);
 				}
-				console.log(games);
 				$('#gameListTitle').replaceWith('<h4 id="gameListTitle">' + games[0]['title'] + '</h4>');
 				$('#games').replaceWith($games);
 

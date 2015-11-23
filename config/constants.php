@@ -11,13 +11,13 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 return [
     'MAX_WIDGETS' => 15,
     'TAGS' => [
-    			['writing','Creative Writing'],
-    			['blogging','Blogging'],
-    			['socialmedia','Social Media'],
-    			['stageimprov','Stage Improvisation'],
-    			['standup','Stand Up Comedy'],			
-    			['drawing','Drawing'],
-				['comics','Comics'],
-				['music','Music']
+    			['writing','Creative Writing','Creative Writer'],
+    			['blogging','Blogging','Blogger'],
+    			['socialmedia','Social Media','Social Media Writer'],
+    			['stageimprov','Stage Improvisation','Stage Improviser'],
+    			['standup','Stand Up Comedy','Stand Up Comedian'],			
+    			['drawing','Drawing / Design','Artist / Designer'],
+				['comics','Comics','Comic Artist'],
+				['music','Music','Musician']
 			]
 ];

@@ -63,6 +63,16 @@ class GameController extends Controller
         return view('game')->withGame($game);
     }
 
+    /**
+     * Display a game's widget only
+     */
+
+    public function widgetOnly($id)
+    {
+        $game=Game::where('name',$id)->firstOrFail();
+        return view('widgetonly')->withGame($game);
+    }
+
     function getGames($modifier=null,$offset=0){
 
         //If modifier 'top' or

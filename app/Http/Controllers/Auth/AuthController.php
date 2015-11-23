@@ -86,7 +86,7 @@ class AuthController extends Controller
         //attach the tags
         $newUser->tags()->attach($userTags);
 
-        \Session::flash('success_message','You are now logged in as you! Thanks for registering.');
+        \Session::flash('success_message','You are now logged in! Thanks for registering.');
 
         return $newUser;
 

@@ -21,8 +21,23 @@ class WidgetController extends Controller
      */
     public function index()
     {
-        if(Auth::user()){$this->fixOffset(Auth::user()->widgets->sortBy('widget_num'));}
-        $games=Game::where('widget','1')->get();
+        $widgets=Game::where('widget','1')->lists('name')->all();
+        if(isset($_SERVER['HTTP_REFERER'])){
+            $requestFrom=basename($_SERVER['HTTP_REFERER']);
+        }else{
+            $requestFrom="blank";
+        }
+        
+        //If the user is logged on and on the dashboard, only get the users widgets.
+        if(Auth::check()&&!in_array($requestFrom,$widgets)){
+            $this->fixOffset(Auth::user()->widgets->sortBy('widget_num'));
+            $widgets=Auth::user()->widgets->unique('game_id')->pluck('game_id');
+            $games=Game::whereIn('id',$widgets)->get();
+        }
+        else{
+            $games=Game::where('widget','1')->get();
+        }
+        //$games=Game::where('widget','1')->lists('name')->all();
         return $games;
     }
 
@@ -82,6 +97,7 @@ class WidgetController extends Controller
 
 
     }
+
     /**
      * Move a widget up.
      *

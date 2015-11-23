@@ -23,10 +23,10 @@
 /user/register = register
 */
 
-Route::get('/', function(){
+/*Route::get('/', function(){
 	return view('welcome');
-});
-//Route::get('/','DashboardController@index');
+});*/
+Route::get('/','DashboardController@index');
 Route::get('home', 'DashboardController@index');
 
 //widget controls
@@ -34,6 +34,7 @@ Route::get('home', 'DashboardController@index');
 Route::resource('widget','WidgetController',['except' => ['create', 'show', 'edit']]);
 Route::post('widget/up/{id}','WidgetController@up');
 Route::post('widget/down/{id}','WidgetController@down');
+Route::get('widgetonly/{game}',function($game){return view('widgetonly')->withGame($game);});
 
 //games
 
@@ -41,6 +42,7 @@ Route::get('/game/','GameController@index');
 Route::get('/game/{game}','GameController@show');
 Route::get('/gamelist/{modifier?}/{offset?}','GameController@index');
 Route::post('/gamelist','GameController@selectbox');
+Route::get('/widgetonly/{game}','GameController@widgetOnly');
 
 
 //get started

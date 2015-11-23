@@ -4,13 +4,23 @@ Styles for /gamelist
 
 x * + * x * + * x * + * x * + * x * + * x * + */
 
+.newGameBoxes{
+	margin:5em 0;
+	border-radius:1em;
+}
+
 .newGameBox{
-	width:30%;
+	width:85%;
+	padding:1em;
 	margin:auto 1%;
-	display:inline-block;
+	font-size:.9em;
 	vertical-align:top;
 	border:1px solid lightgrey;
 	}
+
+.newGameBoxName{
+	margin:0 0 .5em;
+}
 
 .gameName h5{
 	margin:1em 0 .3em;
@@ -52,4 +62,22 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	height:3em;
 	top:-.8em;
 	padding:0;
+}
+
+@media screen and (min-width: 480px){
+
+	.newGameBoxes{
+		display: table;
+	}
+
+
+	.newGameBox{
+		width:30%;
+		display: table-cell;
+
+	}
+
+
+
+
 }

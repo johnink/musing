@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+	<!--Omusing v1.1.0-->
+
 	<!-- John Ink CC 2015 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License www.johnink.com www.barelyanimated.com-->
 	<head>
 		<title>@yield('title')</title>
@@ -89,31 +91,46 @@
 		</div>
 
 		<div id="jayz">
+
 			<div class="secondary">
 				<div id="sideMenu">
 					{!! $menu !!}
 				</div>
+
+				@yield('secondary')
+
 			</div>
 
-			@if(Session::has('success_message'))
-				<div class="success_message primary">{{Session::get('success_message')}}</div>
+			<div class="primary">
 
-			@endif
-			@if(Session::has('failure_message'))
-				<div class="failure_message primary">{{Session::get('failure_message')}}</div>
+				@if(Session::has('success_message'))
+					<div class="success message_wrapper" onscroll="killDiv('.message_wrapper', 0)"><span class="message">{{Session::get('success_message')}}</span></div>
 
-			@endif
-			
-			@if (count($errors) > 0)
-			    <div class="failure_message primary">
-			        <ul>
-			            @foreach ($errors->all() as $error)
-			                <li>{{ $error }}</li>
-			            @endforeach
-			        </ul>
-			    </div>
-			@endif
-			@yield('content')
+				@endif
+				@if(Session::has('failure_message'))
+					<div class="failure message_wrapper"><span class="message">{{Session::get('failure_message')}}</span></div>
+
+				@endif
+				
+				@if (count($errors) > 0)
+				    <div class="failure message_wrapper">
+				        <ul>
+				            @foreach ($errors->all() as $error)
+				                <li>{{ $error }}</li>
+				            @endforeach
+				        </ul>
+				    </div>
+				@endif
+
+				@yield('primary')
+
+			</div>
+
+			<div class="thirdary">
+
+				@yield('thirdary')
+
+			</div>
 			
 		</div>
 

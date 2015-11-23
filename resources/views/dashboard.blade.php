@@ -24,7 +24,7 @@ ideas, self improvement, play, creative, writing, drawing, blogging, social medi
 		//This will add only the javascripts for the users widgets
 		//Temporarily disabled to fix a bug.
 
-		if(false/*Auth::user()*/){
+		if(Auth::user()){
 			$scripts=$widgets->unique("game_id");
 			foreach($scripts as $script){
 				$game=$script->game;
@@ -62,11 +62,12 @@ ideas, self improvement, play, creative, writing, drawing, blogging, social medi
 
 		<?php }//end newWidget
 
-
+		/*
 		else{ 
 
 			//if the user is not logged in use standard widgets. Also a
 			// handy reference for what the above is outputting.
+			
 			?>
 			<script src="games/prompter/prompter.js" ></script>
 			<script src="games/channelSwitcher/channelSwitcher.js" ></script>
@@ -80,9 +81,9 @@ ideas, self improvement, play, creative, writing, drawing, blogging, social medi
 			</script>
 
 
-		<?php 
+		<?php
 
-		} ?>
+		}*/ ?>
 		
 
 	<script src="jquery/widgetadder.js" ></script>
@@ -90,41 +91,40 @@ ideas, self improvement, play, creative, writing, drawing, blogging, social medi
 @stop
 
 
+@section('primary')
 
+	<?php
+	//This will make the divs for Jquery to add the widgets
+	if(Auth::check()&&count($widgets)<=0){
+		echo "<a href='/gamelist/widgets'><div class='noWidgets'>You have no widgets. Click here to find one you like.</div></a>";
+	}
 
-
-
-@section('content')
-
-	<div class="primary">
-
-		<?php
-		//This will make the divs for Jquery to add the widgets
-		if(Auth::user()){
-			echo '<div id="widgets">';
-			$i=0;
-			if(Auth::user()->widgets->count()>0){
-				//echo"<h4>Widgets</h4>";
-				foreach($widgets as $widget){
-					$game=$widget->game; ?>
-					<div class="{{{$game->name}}}" id="{{{$game->name}}}_{{{$i}}}" style="position:relative;">
-					<h5><a href="/game/{{{$game->name}}}">{{{$game->full_name}}}</a></h5>
-						<div class="widget_controls" id="widget_controls_{{{$i}}}">
-					</div></div>
-					<?php $i++;
-				}
+	elseif(Auth::user()){
+		echo '<div id="widgets">';
+		$i=0;
+		if(Auth::user()->widgets->count()>0){
+			//echo"<h4>Widgets</h4>";
+			foreach($widgets as $widget){
+				$game=$widget->game; ?>
+				<div class="{{{$game->name}}}" id="{{{$game->name}}}_{{{$i}}}" style="position:relative;">
+				<h5><a href="/game/{{{$game->name}}}">{{{$game->full_name}}}</a></h5>
+					<div class="widget_controls" id="widget_controls_{{{$i}}}">
+				</div></div>
+				<?php $i++;
 			}
-			echo '</div>';
 		}
-		else{
-			echo "<div id='calltoaction'><p>In this age of streaming content, it can be hard for a creator to keep up. Seach engines are now giving priority to those sites that update more frequently. So, while we can’t help with the creation of content, this site aims to help you to keep coming up with a steady stream of exciting ideas to make it a little bit easier. It’s a collection of improv games you can play by yourself to find ideas.</p><a class='button' href='/getstarted'>Get Started</a></div>";
-		}
+		echo '</div>';
+	}
+	else{
+		echo "<div id='calltoaction'><p>In this age of streaming content, it can be hard for a creator to keep up. Seach engines are now giving priority to those sites that update more frequently. So, while we can’t help with the creation of content, this site aims to help you to keep coming up with a steady stream of exciting ideas to make it a little bit easier. It’s a collection of improv games you can play by yourself to find ideas.</p><a class='button' href='/getstarted'>Get Started</a></div>";
+	}
 
-		?>
-	</div><!--end primary -->
+	?>
+	
+@stop
 
+@section('thirdary')
 
-	<div class="thirdary">
 	<div id="newGames">
 		<h4>New Games</h4>
 			@foreach($newGames as $newGame)
@@ -137,7 +137,6 @@ ideas, self improvement, play, creative, writing, drawing, blogging, social medi
 					</div>
 				</div>
 			@endforeach
-
 
 	</div>
 
@@ -172,5 +171,4 @@ ideas, self improvement, play, creative, writing, drawing, blogging, social medi
 			@endforeach
 
 	</div>
-	</div><!--end thirdary -->
 @stop

@@ -21,7 +21,7 @@ function Prompter(game_index){
 			$form.append($options);
 			$form.append('<button class="prompter_submit" id="prompter_submit_'+ game_index +'" type="button">Prompt</button>');
 		$prompter.append($form);
-		$prompter.append('<span class="prompter_answer" id="prompter_answer_'+ game_index +'"></span>')
+		$prompter.append('<div class="prompter_answer" id="prompter_answer_'+ game_index +'">: )</div>')
 
 		$('#prompter_'+game_index).append($prompter);
 
@@ -34,7 +34,7 @@ function Prompter(game_index){
 			
 			// Send option display output below
 			//returnPrompt in common.js
-			$('#prompter_answer_'+ game_index).append( returnPrompt( options_list, prompter_option ) );
+			$('#prompter_answer_'+ game_index).append( '<span>' + returnPrompt( options_list, prompter_option ) + '</span>' );
 
 	
 		});

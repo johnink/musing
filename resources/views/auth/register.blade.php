@@ -15,9 +15,8 @@ ideas, self improvement, play, creative
 @section('scripts')
 @stop
 
-@section('content')
+@section('primary')
 
-<div class="primary">
 <form method="POST" action="/user/register">
     {!! csrf_field() !!}
 
@@ -50,7 +49,7 @@ ideas, self improvement, play, creative
 
          <div class="tag"><input type="checkbox" name="{{{$tag[0]}}}" id="{{{$tag[0]}}}">
             <label for="{{{$tag[0]}}}">
-                <img class="registerIcons"src="/images/icons/icons_{{{$tag[0]}}}.svg" alt='$tag[1]'>{{{$tag[1]}}}
+                <img class="registerIcons"src="/images/icons/icons_{{{$tag[0]}}}.svg" alt='$tag[1]'>{{{$tag[2]}}}
             </label>
         </div>
 
@@ -62,5 +61,5 @@ ideas, self improvement, play, creative
         <button type="submit" class="button">Register</button>
     </div>
 </form>
-</div>
+
 @stop

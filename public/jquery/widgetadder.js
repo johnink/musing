@@ -24,7 +24,6 @@ var token = $('#token').val();
 var addMenuOpen = false;
 var available_widgets=[];
 $.getJSON('/widget/',function(results){
-
 //add widgets
 	available_widgets=results;
 	for (var i=0 ; i<users_widgets.length ; i++){
@@ -43,11 +42,10 @@ $.getJSON('/widget/',function(results){
 
 			}
 		});
-
 		if(users_widgets.length>=MAX_WIDGETS){$('.widget_add').animate({'opacity':.5});}
 
 	}
-
+	adjustPrimary();
 });
 
 
@@ -144,10 +142,11 @@ function addbutton(i){
 		var $addMenu = $('<div class="addMenu" id="addmenu_' + i + '"></div>');
 		var $addMenuCloseButton = $('<span class= "addMenuCloseButton" id ="addMenuCloseButton_' + i + '" >x</span>');
 		var $addMenuGameUL=$('<ul></ul>');
+		var $addMenuNewGame=$('<a href="/gamelist/widgets/" class="addMenuNewGame">Get a new widget</a>');
 		$.each(available_widgets,function(index,value){
 			$addMenuGameUL.append('<li onClick="storeWidget(\'' + value['name'] + '\',\'' + value['full_name'] + '\',' + i + ')">' + value['full_name'] + '</li>');
 		});
-		$addMenu.append($addMenuCloseButton,$addMenuGameUL).hide();
+		$addMenu.append($addMenuCloseButton,$addMenuGameUL,$addMenuNewGame).hide();
 		
 		$('#widget_controls_' + i).append($addMenu);
 		$addMenu.slideDown(200,'easeOutBounce');
@@ -186,6 +185,7 @@ function subbutton(i){
 						users_widgets = makeWidgetsArray();
 						if(users_widgets.length<MAX_WIDGETS){$('.widget_add').animate({'opacity':1});}
 					});
+
 				}
 			}).fail(function(){
 				console.log("Delete failed")
@@ -217,19 +217,19 @@ function swapAnimation(i){
 
 		var selWid = $('#' + users_widgets[i] + '_' + i),
 			prevWid = selWid.prev(),
-			distance = selWid.outerHeight()+55;
-			distance2= prevWid.outerHeight()+55;
+			distance = prevWid.height();
+			distance2= selWid.height();//prevWid.outerHeight()+55;
 
 		if (prevWid.length){
 			animating = true;
 			$.when(selWid.animate({
 		    top: -distance
-			}, 200, 'easeOutBack')
+			}, 450, 'easeOutElastic')
 
 			,
 			prevWid.animate({
 		    top: distance2
-			}, 200, 'easeOutBack')).done(function () {
+			}, 450, 'easeOutElastic')).done(function () {
 			    prevWid.css('top', '0px');
 			    selWid.css('top', '0px');
 			    selWid.attr('id',selWid.attr('class') + '_' + newi).insertBefore(prevWid);
@@ -261,43 +261,53 @@ function swapAnimation(i){
 
 storeWidget()
 
-The function for adding a new widget from the
-plus button in widget controls.
+The function for adding a new widget for a user
+and the animation if a user is on the homepage.
 
 x * + * x * + * x * + * x * + * x * + * x * + */
 
-function storeWidget(gamename, fullgamename, i){
+function storeWidget(gamename, fullgamename, i, animation){
 
+	//set the optional value.
+	if (typeof animation === "undefined" || animation === null) { 
+    	animation = true; 
+  	}
+  	
 	$.ajax({
 		url: '/widget',
 		type: 'post',
 		data: { _method :'post', _token :token, widget_num :i, game_name :gamename },
 		success: function(){
-			$('addmenu').remove();
-			shifter(i,1);//shift widgets down by one
-			if(i>0){
-				$('#' + users_widgets[i-1] + '_' + (i-1)).after('<div class="' + gamename + '" id="' + gamename + '_' + i + '" style="position:relative;"><h5><a href="/game/' + gamename + '">' + fullgamename + '</a></h5><div class="widget_controls" id="widget_controls_' + i + '"></div></div>');
-			}else{
-				$('#' + users_widgets[i] + '_' + (i+1)).before('<div class="' + gamename + '" id="' + gamename + '_' + i + '" style="position:relative;"><h5><a href="/game/' + gamename + '">' + fullgamename + '</a></h5><div class="widget_controls" id="widget_controls_' + i + '"></div></div>');
+			if(animation===true){
+				$('addmenu').remove();
+				shifter(i,1);//shift widgets down by one
+				if(i>0){
+					$('#' + users_widgets[i-1] + '_' + (i-1)).after('<div class="' + gamename + '" id="' + gamename + '_' + i + '" style="position:relative;"><h5><a href="/game/' + gamename + '">' + fullgamename + '</a></h5><div class="widget_controls" id="widget_controls_' + i + '"></div></div>');
+				}else{
+					$('#' + users_widgets[i] + '_' + (i+1)).before('<div class="' + gamename + '" id="' + gamename + '_' + i + '" style="position:relative;"><h5><a href="/game/' + gamename + '">' + fullgamename + '</a></h5><div class="widget_controls" id="widget_controls_' + i + '"></div></div>');
+
+				}
+				widget=$('#' + gamename +'_' + i);
+				widget.hide();
+				//For the div #widgetname_1, add the appropriate game to
+				//the widget div.
+				widget.append( newWidget(gamename, i) );
+				widget.slideDown(300,'easeOutExpo',adjustPrimary());
+				users_widgets = makeWidgetsArray();
+				$('#widget_controls_' + i).append(new Widget_Controls(i,users_widgets.length-1, gamename));
+				addMenuOpen = false;
+				$('.widget_controls span').animate({'opacity':1});
+
+				users_widgets = makeWidgetsArray();
+				if(users_widgets.length>=MAX_WIDGETS){
+					$('.widget_add').animate({'opacity':.5});
+					flagAlert("You've reached the maximum number of " + MAX_WIDGETS + " widgets.", '#widget_controls_' + i);
+				}
 
 			}
-			widget=$('#' + gamename +'_' + i);
-			widget.hide();
-			//For the div #widgetname_1, add the appropriate game to
-			//the widget div.
-			widget.append( newWidget(gamename, i) );
-			widget.slideDown(300,'easeOutExpo');
-			users_widgets = makeWidgetsArray();
-			$('#widget_controls_' + i).append(new Widget_Controls(i,users_widgets.length-1, gamename));
-			addMenuOpen = false;
-			$('.widget_controls span').animate({'opacity':1});
-
-			users_widgets = makeWidgetsArray();
-			if(users_widgets.length>=MAX_WIDGETS){$('.widget_add').animate({'opacity':.5});}
-
 		}
 	}).fail(function(){
-		console.log("Add failed")
+		console.log("Add failed");
 	});
 
 }
@@ -328,6 +338,7 @@ function shifter(i,mod){
 	    	.empty().append( new Widget_Controls( newi , users_widgets.length - 1 + mod, selWid.attr('class') ) );
 	    selWid.children('.' + selWid.attr('class') + '_inner').replaceWith( newWidget( selWid.attr('class'),newi ) );
 	}
+	adjustPrimary();
 
 }
 

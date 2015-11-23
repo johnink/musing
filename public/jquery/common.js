@@ -13,7 +13,10 @@ var words={
 var menuOpen=false;
 $( window ).resize(function() {adjustPrimary()});
 $( window ).load(function() {adjustPrimary()});
-$(document).ready(function () {adjustPrimary()});
+$(document).ready(function () {
+	adjustPrimary();
+	killDiv('.message_wrapper', 2000);
+});
 
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
@@ -24,6 +27,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
     
 function adjustPrimary(){
 	if( $( window ).width() >= 480 ){
+		$('.primary').css('height','auto');
 		var totalHeight=$('#jayz').height();
 		$('.primary').height(totalHeight);
 	}
@@ -91,6 +95,31 @@ function openMenu(){
 	
 }
 
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Open a flag notification
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+
+function flagAlert(alert,target){
+	var $alert=$('<div class="flagAlert">' + alert + '</div>');
+	$(target).append($alert);
+	killDiv($alert,4000);
+
+}
+
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Fade out a Div
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+function killDiv(target, delay){
+	$(target).delay(delay).fadeOut(400);
+}
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
 

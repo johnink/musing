@@ -15,8 +15,7 @@ ideas, self improvement, play, creative
 @section('scripts')
 @stop
 
-@section('content')
-<div class="primary">
+@section('primary')
     <form method="POST" action="/user/login">
         {!! csrf_field() !!}
         
@@ -38,5 +37,4 @@ ideas, self improvement, play, creative
             <button type="submit" class="button">Login</button>
         </div>
     </form>
-</div>
 @stop

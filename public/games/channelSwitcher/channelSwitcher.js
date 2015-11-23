@@ -94,7 +94,7 @@ function ChannelSwitcher(game_index){
 				//returnPrompt in common.js
 
 				if(err===""){
-					$('#channelSwitcher_answer_'+ game_index).append( returnPrompt( options_list, channelSwitcher_option ) );
+					$('#channelSwitcher_answer_'+ game_index).append( '<span>' + returnPrompt( options_list, channelSwitcher_option ) + '</span>');
 				}else{
 					$('#channelSwitcher_answer_'+ game_index).append( err );	
 				}

@@ -6,6 +6,8 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 @media screen and (min-width: 480px){
 
+	h1{font-size:16pt;}
+
 	#jayz{
 		margin:0 2%;
 		width:96%;
@@ -76,6 +78,24 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 		font-size:14pt;
 	}
 
+	/* widget inputs */
+
+	#widgets h5{
+		margin:.5em 0;
+	}
+
+	#widgets select{
+		font-size:12pt;
+	}
+
+	#widgets button{
+		font-size:12pt;
+	}
+
+	#widgets input{
+		font-size:12pt;
+	}
+
 
 	/* new games / top games */
 
@@ -85,9 +105,10 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 		margin:1em 0;
 	}
 
-	.newGame h4, .topGame h4 {
+	#newGames h4, #topGames h4 {
 		font-size:12pt;
 		padding:0;
+		margin-bottom:0;
 	}
 
 	.newGameIcon, .topGameIcon{
@@ -99,15 +120,141 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	.newGameTitle, .topGameTitle{
 		font-size:1.1em;
 		height:2em;
+		line-height:2em;
+		padding-top:.1em;
+		display:table;
 	}
 
-	.topGameTitle a{
-		position:relative;
-		top:30%;
+	.newGameTitle:nth-child(1),.newGameTitle:nth-child(1){
+		margin-top:.5em;
+	}
+
+	.newGameTitle a, .topGameTitle a{
+		display: table-cell;
+		vertical-align:middle;
+		line-height:normal;
 	}
 
 	.newGameText, .topGameText{
 		margin-left:0em;
+	}
+
+
+
+
+	/* login / register pages */
+
+
+
+	.loginfield{
+		text-align:right;
+	}
+
+	.loginfield label{
+		margin-right:1em;
+		width:30%;
+	}
+
+	.loginfield input{
+		display:inline-block;
+		width:70%;
+		font-size:12pt;
+		height:1em;
+		float:right;
+	}
+
+	.tag {
+		display:inline-block;
+		width:40%;
+		margin:.4em 1em;
+		position:relative;
+		font-size:1em;
+		float:left;
+	}
+
+	.tag:nth-child(2n+1){float:right;}
+
+	.registerIcons{
+		height:2em;
+		margin-right:.4em;
+		position:relative;
+		top:.2em;
+	}
+
+
+
+
+
+
+
+
+
+	/* Widget Specific */
+
+	/* Prompter */
+
+	.prompter_answer{
+		font-size:14pt;
+		height:5em;
+		width:100%;
+  		line-height: 5em;
+  		text-align:center;
+	}
+
+	.prompter_answer span{
+		display:inline-block;
+		vertical-align:center;
+		line-height:normal;
+
+	}
+
+
+
+
+	/* Channel Switcher */
+
+
+	.channelSwitcher_start, .channelSwitcher_stop{
+		float:right;
+		display:inline-block;
+		position:static;
+		margin-top:.5em;
+
+	}
+
+	.channelSwitcher_answer{
+		font-size:14pt;
+		height:5em;
+		width:100%;
+  		line-height: 5em;
+  		text-align:center;
+
+	}
+
+	.channelSwitcher_answer span{
+		display:inline-block;
+		vertical-align:center;
+		line-height:normal;
+
+	}
+
+	.channelSwitcher_intervals{
+		font-size:.7em;
+		display:inline-block;
+
+	}
+
+	.channelSwitcher_varied{
+		display:inline-block;
+		margin-left:2em;
+
+	}
+
+	.inseconds{
+		font-size:.5em;
+		line-height:1em;
+		color:grey;
+		vertical-align:middle;
 	}
 
 } 

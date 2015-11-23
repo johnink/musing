@@ -35,8 +35,12 @@ a:active{
 	transition:0s;
 }
 
-li{
+ul{
 	list-style-type:none;
+}
+
+li{
+	margin:.5em 1.25em;
 }
 
 .button{
@@ -84,6 +88,48 @@ h1{
 	padding:3em 1em 0 1em;
 
 }
+
+.success{
+	color:#565F65;
+	border:1px solid #565F65;
+}
+
+.failure{
+	color:#EE3F2A;
+	border:1px solid #EE3F2A;
+}
+
+.message_wrapper{
+	background-color:white;
+	border-radius:1em;
+	box-shadow:1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+	margin:0 .5em 1.5em;
+	text-align:center;
+}
+
+.message{
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+	padding:.6em;
+
+}
+
+.flagAlert{
+	position:absolute;
+	z-index:100;
+	background-color:white;
+	border:1px solid #51387D;
+	color:#51387D;
+	opacity:100%;
+	font-size:10pt;
+	padding:1em;
+	width:100px;
+	right:50%;
+	border-radius:1em;
+}
+
+
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
 
@@ -201,6 +247,28 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	margin-bottom:4em;
 }
 
+.noWidgets{
+	text-align:center;
+	border:1px dashed lightgrey;
+	color:grey;
+	padding:2em;
+	border-radius:1em;
+	transition:.1s;
+}
+
+.noWidgets:hover{
+	color:darkgrey;
+	-webkit-box-shadow: inset 0px 0px 17px -2px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0px 0px 17px -2px rgba(0,0,0,0.1);
+	box-shadow: inset 0px 0px 17px -2px rgba(0,0,0,0.1);
+}
+
+.noWidgets:active{
+	background-color:rgba(0,0,0,0.1);
+	color:white;
+}
+
+
 #widgets{
 	position:relative;
 	background-color:rgba(255, 255, 255, 1);
@@ -209,7 +277,6 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 #widgets>div{
 	margin:0 .5em;
-	padding:.5em 0 .5em;
 	border-bottom:1px solid lightgrey;
 	/*box-shadow:2px 2px 15px 0 rgba(0, 0, 0, 0.3) ;
 	border-radius:1em;*/
@@ -293,14 +360,17 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	position:absolute;
 	right:1em;
 	border-radius: 1em;
-
+	z-index:300;
+	box-shadow:2px 2px 5px 0 rgba(0, 0, 0, 0.3) ;
 }
 
 .addMenu li{
 	list-style:none;
 }
 
-.addMenu li:hover, .addMenuCloseButton:hover{
+.addMenu a{color:white;}
+
+.addMenu li:hover, .addMenuCloseButton:hover, .addMenuNewGame:hover, .addMenu a:hover{
 	color:#D7D1E8;
 	cursor:pointer;
 }
@@ -316,6 +386,10 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	background-color:white;
 }
 
+.addMenuNewGame{
+	color:white;
+	font-size:.75em;
+}
 
 
 /*    Widget Inputs    */
@@ -358,9 +432,8 @@ Get Started Page
 x * + * x * + * x * + * x * + * x * + * x * + */
     
 #getstarted{
-	position:relative;
-	bottom:4em;
-	margin:3em;
+
+	margin:1em;
 	text-align: justify;
 
 }
@@ -429,12 +502,40 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 
 #what_youll_need, #long_desc, #variations{
-	margin:1em 3em;
+	margin:3em 3em;
 }
 
 #what_youll_need h2, #long_desc h2, #variations h2{
 	margin:0 -.5em;
 }
+
+#widget_options{
+	float:right;
+	color:#FFF;
+	cursor: pointer;
+	background-color:lightgrey;
+	padding:.5em 1em;
+	font-size:.8em;
+	border-bottom-right-radius: 1em;
+	border-bottom-left-radius: 1em;
+	transition:.3s;
+}
+
+#widget_options:hover{
+	background-color:#51387D;
+}
+
+#widgetOnly{
+	margin:1em auto;
+	max-width:750px;
+	border:1px solid lightgrey;
+}
+
+#widgetOnly div{
+	border:none;
+}
+
+
 
 
     
