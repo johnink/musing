@@ -31,7 +31,7 @@ class DashboardController extends Controller
         $topGames=Game::all()->sortByDesc('popularity')->take(3);
         $articles = Article::latest('published_at')->published()->paginate(10);
 
-        for($i=0;$i<=9;$i++){
+        for($i=0;$i<=$articles->count()-1;$i++){
             $articles[$i]->assignFullCategory();
         }
 
