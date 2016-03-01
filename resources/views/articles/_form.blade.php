@@ -46,7 +46,7 @@
 
 			{!! Form::label('category','Category:')!!}
 
-			{!! Form::select('category',['Blog'=>'Blog','Things'=>'Things to Consider','Guest'=>'Guest Article','Game'=>'New Game','Recommendation'=>'Recommendation'],null,['class' => 'form-control'])!!}
+			{!! Form::select('category',['blog'=>'Blog','things'=>'Things to Consider','guest'=>'Guest article','game'=>'New Game','recommendation'=>'Recommendation'],null,['class' => 'form-control'])!!}
 
 		</div>
 
