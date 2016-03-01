@@ -10,8 +10,10 @@ use Auth;
 use App\Game;
 use App\User;
 use App\Widget;
+use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 
 
 class DashboardController extends Controller
@@ -27,13 +29,19 @@ class DashboardController extends Controller
     {
         $newGames=Game::all()->sortByDesc('created_at')->take(3);
         $topGames=Game::all()->sortByDesc('popularity')->take(3);
+        $articles = Article::latest('published_at')->published()->paginate(10);
+
+        for($i=0;$i<=9;$i++){
+            $articles[$i]->assignFullCategory();
+        }
+
         if(Auth::user()){
             $user=Auth::user();
             $widgets = $user->widgets->sortBy('widget_num');
         }else{
             $widgets="";
         }
-        return view('dashboard')->with(['widgets'=>$widgets,'topGames'=>$topGames,'newGames'=>$newGames]);
+        return view('dashboard',compact('widgets','topGames','newGames','articles'));
     }
 
 }

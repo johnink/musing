@@ -31,7 +31,7 @@ class WidgetController extends Controller
         //If the user is logged on and on the dashboard, only get the users widgets.
         if(Auth::check()&&!in_array($requestFrom,$widgets)){
             $this->fixOffset(Auth::user()->widgets->sortBy('widget_num'));
-            $widgets=Auth::user()->widgets->unique('game_id')->pluck('game_id');
+            $widgets=Auth::user()->widgets->unique('game_id')->lists('game_id');
             $games=Game::whereIn('id',$widgets)->get();
         }
         else{

@@ -1,4 +1,4 @@
-## musing 1.1.0
+## musing 1.2.0
 
 live at omusing.com
 
@@ -16,18 +16,19 @@ a users homepage. From there, they can be bumped up or down the list, added or d
 These changes are reflected immediately in the database.
 
 ### New this version
-* a better README.md
-* responsive CSS
-* added alerts/flash messaging
-* fixed bugs/animation
+* a new game, Acronym. What do these letters stand for
+* articles
+* graphics
+* user thumbnails
+* several additons and subtractions from the prompt lists
 
 ### Working features
-* user thumbnail
+* widget template
+* favorite functionality
 * illustrations in games
 * comments section on the games
 * the ability to search and filter by interest
 * a more fully featured 'Top Games' section
-* several additons and subtractions from the prompt lists
 * add graphic to channel switcher game
 * a Mind Map game and widget
 * an Idea Box game and widget

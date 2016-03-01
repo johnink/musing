@@ -59,6 +59,7 @@
 	<footer>
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="/jquery/jquery-ui.min.js"></script>
+		<script src="/jquery/pluralize.js"></script>
 		<script src="/jquery/common.js"></script>
 		@yield('scripts')
 

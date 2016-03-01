@@ -7,6 +7,7 @@ function Prompter(game_index){
 				{"Short":"Noun","Full":"Noun"},
 				{"Short":"AdjectiveNoun","Full":"Adjective + Noun"},
 				{"Short":"Profession","Full":"Profession"},
+				{"Short":"Places","Full":"Places"},
 				{"Short":"Phrase","Full":"Phrase"}];
 	
 
@@ -21,7 +22,7 @@ function Prompter(game_index){
 			$form.append($options);
 			$form.append('<button class="prompter_submit" id="prompter_submit_'+ game_index +'" type="button">Prompt</button>');
 		$prompter.append($form);
-		$prompter.append('<div class="prompter_answer" id="prompter_answer_'+ game_index +'">: )</div>')
+		$prompter.append('<div class="prompter_answer widget_answer" id="prompter_answer_'+ game_index +'">: )</div>')
 
 		$('#prompter_'+game_index).append($prompter);
 

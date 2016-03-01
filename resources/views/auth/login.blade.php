@@ -16,25 +16,36 @@ ideas, self improvement, play, creative
 @stop
 
 @section('primary')
-    <form method="POST" action="/user/login">
+    <form method="POST" action="/auth/login" id="loginForm">
         {!! csrf_field() !!}
         
-        <div class="loginfield">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" value="{{ old('email') }}">
+        <div class="form-group">
+            <label for="user">Email or Username</label>
+            <input type="name" name="name" class="form-control" id="name" placeholder="Username / Email" value="{{ old('user') }}">
         </div>
 
-        <div class="loginfield">
+        <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password">
+            <input type="password" class="form-control" name="password" placeholder="Password" id="password">
         </div>
 
-        <div class="rememberme">
-            <input type="checkbox" name="remember" id="remember"><label for="remember">Remember Me</label>
+        <div class="clearfix">
+            <div class="checkbox rememberme">
+                <label for="remember">
+                    <input type="checkbox" name="remember" id="remember">Remember Me
+                </label>
+            </div>
+            <div class="forgotpassword">
+                <a href="/password/email">Forgot Password?</a>
+            </div>
         </div>
 
         <div>
             <button type="submit" class="button">Login</button>
+        </div><br/><br/>
+        <div>
+            <a href="/auth/register" style="position:relative;bottom:0;padding-top:1em;">Need an account? Click here to register.</a>
         </div>
+
     </form>
 @stop

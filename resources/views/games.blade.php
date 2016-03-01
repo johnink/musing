@@ -79,3 +79,9 @@ ideas, self improvement, play, creative
 
 
 @stop
+
+@section('thirdary')
+
+	@include('_sidebar')
+
+@stop

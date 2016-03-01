@@ -1,9 +1,6 @@
 {
 	"full_name":"Theme Song",
 	"short_desc":"Attempt to capture a subject in it's own theme song.",
-	"what_youll_need":"Your voice or instrument",
-	"long_desc":"Start by finding a person, picture, or story that inspires you, or just a random prompt. Now attempt to capture the feeling in it’s own theme song. You choose the method. Improvise a little humming, or play around on an instrument. If you don’t know your subject's background, imagine it.",
-	"variations":"Try changing genres of film. Reimagine the subject as tragic, heroic, happy, or sad. Or pull a prompt for a different adjective.",
 	"primary":"music",
 	"tags":["music"]
 

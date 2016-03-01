@@ -42,7 +42,7 @@ function ChannelSwitcher(game_index){
 			var $channelSwitcher_stop = '<button class="channelSwitcher_stop" id="channelSwitcher_stop_'+ game_index +'" type="button">Stop!</button>';
 			$form.append($channelSwitcher_start,$channelSwitcher_stop);
 		$channelSwitcher.append($form);
-		$channelSwitcher.append('<span class="channelSwitcher_answer" id="channelSwitcher_answer_'+ game_index +'"></span>')
+		$channelSwitcher.append('<span class="channelSwitcher_answer widget_answer" id="channelSwitcher_answer_'+ game_index +'"></span>')
 
 		$('#channelSwitcher_' + game_index).append($channelSwitcher);
 		$('#channelSwitcher_stop_' + game_index).hide();
@@ -74,7 +74,6 @@ function ChannelSwitcher(game_index){
 
 				//pull values from form
 				intervals=$('#channelSwitcher_intervals_'+ game_index).val()*1000;
-				varied=$('#channelSwitcher_varied_'+ game_index).val();
 
 				//check user input
 				if(typeof(intervals)!=="number" || isNaN(intervals)===true){
@@ -86,7 +85,7 @@ function ChannelSwitcher(game_index){
 				}
 
 				//find random interval if varied selected
-				if(varied===true){
+				if($('#channelSwitcher_varied_'+ game_index).is(':checked')){
 					intervals=Math.floor((Math.random() * intervals)+1000);
 				}
 			

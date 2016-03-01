@@ -13,7 +13,7 @@ return [
     'TAGS' => [
     			['writing','Creative Writing','Creative Writer'],
     			['blogging','Blogging','Blogger'],
-    			['socialmedia','Social Media','Social Media Writer'],
+    			['socialmedia','Social Media','Social Media'],
     			['stageimprov','Stage Improvisation','Stage Improviser'],
     			['standup','Stand Up Comedy','Stand Up Comedian'],			
     			['drawing','Drawing / Design','Artist / Designer'],

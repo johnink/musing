@@ -1,9 +1,6 @@
 {
 	"full_name":"Channel Switcher",
 	"short_desc":"Come up with scenes as if you're a television and someone is randomly switching channels.",
-	"what_youll_need":"A clock, friend, or the app",
-	"long_desc":"<p>First, you need a switcher. Use a clock or the app. Pick a length for your scenes, say fifteen seconds.</p><p>Now, you’re a television. Start improvising a commercial or a scene from a show, using your writing or acting skills. Every time you hit your mark on the clock, it’s as if someone has switched your channel, and you have to start a new scene.</p>",
-	"variations":"<p>Use a friend to switch your channels whenever you get boring. You can also start with a prompt, or, using the app, start each scene with a new prompt.</p><p>The app can be just kept running in the background while you write or work, and considering it lightly as you go may inspire new directions and metaphors.",
 	"primary":"stageimprov",
 	"tags":["writing","socialmedia","stageimprov","standup","music"]
 

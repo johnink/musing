@@ -93,13 +93,16 @@ ideas, self improvement, play, creative, writing, drawing, blogging, social medi
 
 @section('primary')
 
+
 	<?php
+
+
 	//This will make the divs for Jquery to add the widgets
 	if(Auth::check()&&count($widgets)<=0){
 		echo "<a href='/gamelist/widgets'><div class='noWidgets'>You have no widgets. Click here to find one you like.</div></a>";
 	}
 
-	elseif(Auth::user()){
+	elseif(Auth::check()){
 		echo '<div id="widgets">';
 		$i=0;
 		if(Auth::user()->widgets->count()>0){
@@ -116,59 +119,40 @@ ideas, self improvement, play, creative, writing, drawing, blogging, social medi
 		echo '</div>';
 	}
 	else{
-		echo "<div id='calltoaction'><p>In this age of streaming content, it can be hard for a creator to keep up. Seach engines are now giving priority to those sites that update more frequently. So, while we can’t help with the creation of content, this site aims to help you to keep coming up with a steady stream of exciting ideas to make it a little bit easier. It’s a collection of improv games you can play by yourself to find ideas.</p><a class='button' href='/getstarted'>Get Started</a></div>";
+		echo "<div id='calltoaction'>" . 
+
+			/*<img class='calltoactionimg' alt='need ideas?' src='/images/needideas.png'/>" 
+
+			<div style='float:left;clear:left;height:1.30em;width:230px;margin-top:2.6em'></div>
+			<div style='float:left;clear:left;height:1.35em;width:192px;'></div>
+			<div style='float:left;clear:left;height:1.35em;width:105px;'></div>
+			<div style='float:left;clear:left;height:1.35em;width:0;'></div>
+			<div style='float:left;clear:left;height:1.35em;width:0'></div>*/
+
+				"<p><span>ideas to find ideas...  </span>In this age of streaming content, it can be hard for a creator to keep up.  This site aims to help you come up with a steady stream of exciting ideas to make it a little bit easier.</p><a class='button' href='/getstarted'>Get Started</a></div>";
 	}
 
 	?>
+
+	<div id="articles">
+		<img src="/images/adventure.jpg" class='adventure' alt="Adventurer" />
+			<div class="spacing">
+				<div style='float:right;clear:right;height:2em;width:250px'></div>
+				<div style='float:right;clear:right;height:2em;width:230px'></div>
+				<div style='float:right;clear:right;height:2em;width:220px'></div>
+				<div style='float:right;clear:right;height:2em;width:210px'></div>
+				<div style='float:right;clear:right;height:2em;width:200px'></div>
+				<div style='float:right;clear:right;height:2em;width:200px'></div>
+				<div style='float:right;clear:right;height:1em;width:190px'></div>
+			</div>
+		@include('articles._articles')
+	</div>
+	<a class="nextPage button" href="http://localhost:8888/articles?page=2">More Articles</a>
 	
 @stop
 
 @section('thirdary')
 
-	<div id="newGames">
-		<h4>New Games</h4>
-			@foreach($newGames as $newGame)
-				<div class="newGame">
-					<a href="/game/{{{$newGame->name}}}" >
-					<img class="newGameIcon" src="/images/icons/iconspurple/icons_{{{$newGame->primary_tag}}}.svg" alt="{{{$newGame->name}}} icon" onerror="this.onerror=null; this.src='/images/icons/iconspurple/icons_{{{$newGame->primary_tag}}}.png'"></a>
-					<div class="newGameText">
-						<h5 class="newGameTitle"><a href="/game/{{{$newGame->name}}}" >{{{$newGame->full_name}}}</a></h5>
-						<div class="newGameDesc">{{{$newGame->short_desc}}}</div>
-					</div>
-				</div>
-			@endforeach
+	@include('_sidebar')
 
-	</div>
-
-	<!-- Google Ad -->
-	<div class="googleAd">
-
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- omusing -->
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-2424963268946018"
-		     data-ad-slot="7983075933"
-		     data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-
-	</div>
-	<!-- end Google Ad -->
-
-	<div id="topGames">
-		<h4>Top Games</h4>
-			@foreach($topGames as $topGame)
-				<div class="topGame">
-					<a href="/game/{{{$topGame->name}}}" >
-					<img class="topGameIcon" src="/images/icons/iconspurple/icons_{{{$topGame->primary_tag}}}.svg" alt="{{{$topGame->name}}} icon" onerror="this.onerror=null; this.src='/images/icons/iconspurple/icons_{{{$topGame->primary_tag}}}.png'"></a>
-					<div class="topGameText">
-						<h5 class="topGameTitle"><a href="/game/{{{$topGame->name}}}" >{{{$topGame->full_name}}}</a></h5>
-						<div class="topGameDesc">{{{$topGame->short_desc}}}</div>
-					</div>
-				</div>
-			@endforeach
-
-	</div>
 @stop

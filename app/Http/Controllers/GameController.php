@@ -17,7 +17,7 @@ class GameController extends Controller
      *
      * @return Response
      */
-    public function index($modifier=null,$offset=0)
+    public function index($modifier="top",$offset=0)
     {
         //Collect new games
         $newGames=Game::all()->sortByDesc('created_at')->take(3);
@@ -110,7 +110,7 @@ class GameController extends Controller
         }
         //If modifier is in tags, show only games with that tag
         elseif(in_array($modifier, Tag::all()->lists('name')->toArray())){
-            $tagId=[Tag::where('name',$modifier)->pluck('id')];
+            $tagId=[Tag::where('name',$modifier)->value('id')];
             $games=Game::whereHas('tags', function($query) use($tagId){
                 $query->whereIn('id',$tagId);
             })->orderBy('popularity','desc')->skip($offset)->take(10);
@@ -123,5 +123,8 @@ class GameController extends Controller
         return $games;
 
     }
+
+    
+
 
 }

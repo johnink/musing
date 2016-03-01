@@ -89,6 +89,12 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'terms' => [
+            'required' => 'Please agree to the terms of service.',
+        ],
+        'recaptcha' => [
+            'required' => 'You have failed Recaptcha. You may be a robot.',
+        ],
     ],
 
     /*

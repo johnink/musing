@@ -48,7 +48,7 @@ ideas, self improvement, play, creative
 				@else
 				var $widgetMenuOptionsUL=$('#widgetMenuOptionsUL');
 				$widgetMenuOptionsUL.animate({opacity:0},200,'easeOutQuad',function(){
-					$widgetMenuOptionsUL.html('<p>You need to register.</p><p><a href="/user/register">Register</a> | <a href="/user/login">Log in</a></p>').animate({opacity:1},200,'easeInQuad');
+					$widgetMenuOptionsUL.html('<p>You need to register.</p><p><a href="/auth/register">Register</a> | <a href="/auth/login">Log in</a></p>').animate({opacity:1},200,'easeInQuad');
 				});
 				@endif
 
@@ -60,7 +60,7 @@ ideas, self improvement, play, creative
 					var $widgetMenu = $('<div id="widgetMenu"class="addMenu"></div>');
 					var $widgetMenuCloseButton = $('<span class= "addMenuCloseButton" onClick="closeWidgetMenu()">x</span>');
 					var $widgetMenuOptionsUL=$('<div id="widgetMenuOptionsUL"><ul></ul></div>');
-					$widgetMenuOptionsUL.append('<li onClick="addWidgetToHomepage()">Add Widget to Homepage</li>');
+					$widgetMenuOptionsUL.append('<li onClick="addWidgetToHomepage()">Add Widget to Homepage</li><hr>');
 					$widgetMenuOptionsUL.append('<li><a href="/widgetonly/{{{$game->name}}}" target="_blank">Open Widget in a New Window</a></li>');
 					$widgetMenu.append($widgetMenuCloseButton,$widgetMenuOptionsUL).hide();
 
@@ -100,27 +100,17 @@ ideas, self improvement, play, creative
 
 	@endif
 
-	@if($game->what_youll_need!=="")
-		<div id="what_youll_need">
-			<h2>What You'll Need:</h2>
-			{!!$game->what_youll_need!!}
-		</div>
-	@endif
+	@include("games.$game->name")
 
-	@if($game->long_desc!=="")
-		<div id="long_desc">
-			<h2>Basic Rules</h2>
-			{!!$game->long_desc!!}
-		</div>
-	@endif
-
-	@if($game->variations!=="")
-		<div id="variations">
-			<h2>Variations</h2>
-			{!!$game->variations!!}
-		</div>
-	@endif
 
 	<h1>Keep Exploring...</h1>
 
+
 @stop
+
+@section('thirdary')
+
+	@include('_sidebar')
+
+@stop
+

@@ -24,7 +24,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password','avatar','website'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -41,7 +41,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         {
             return $this->hasMany('App\Widget');
         }
-
 
     /**
      * Get the tags associated with the given user.

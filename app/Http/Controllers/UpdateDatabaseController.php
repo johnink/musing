@@ -16,6 +16,9 @@ use Config;
 
 class UpdateDatabaseController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
 
     public function index()
     {
@@ -73,8 +76,6 @@ class UpdateDatabaseController extends Controller
                             'name' => $folder,
                             'full_name' => $gameinfo['full_name'],
                             'short_desc' => $gameinfo['short_desc'],
-                            'what_youll_need' => $gameinfo['what_youll_need'],
-                            'long_desc' => $gameinfo['long_desc'],
                             'primary_tag' => $gameinfo['primary'],
                             'widget' => $widgetexists
                         ]);
@@ -82,7 +83,7 @@ class UpdateDatabaseController extends Controller
                     //create tags array
                     $tagIds=[];
                     foreach($gameinfo['tags'] as $tag){
-                        $tagId=IntVal(Tag::where('name',$tag)->pluck('id'));
+                        $tagId=IntVal(Tag::where('name',$tag)->value('id'));
                         array_push($tagIds,$tagId);
 
                     }
@@ -110,9 +111,6 @@ class UpdateDatabaseController extends Controller
                     foreach($games as $game){
                         if($game->full_name!=$gameinfo['full_name']){$game->full_name=$gameinfo['full_name'];}
                         if($game->short_desc!=$gameinfo['short_desc']){$game->short_desc=$gameinfo['short_desc'];}
-                        if($game->what_youll_need!=$gameinfo['what_youll_need']){$game->what_youll_need=$gameinfo['what_youll_need'];}
-                        if($game->long_desc!=$gameinfo['long_desc']){$game->long_desc=$gameinfo['long_desc'];}
-                        if($game->variations!=$gameinfo['variations']){$game->variations=$gameinfo['variations'];}
                         if($game->primary_tag!=$gameinfo['primary']){$game->primary_tag=$gameinfo['primary'];}
                         if($game->widget!=$widgetexists){$game->widget=$widgetexists;}
                         $game->save();
@@ -122,8 +120,8 @@ class UpdateDatabaseController extends Controller
 
                         $newTags=$gameinfo['tags'];
 
-                        foreach(Tag::all()->pluck('name')->toArray() as $tag){
-                            $tagId=IntVal(Tag::where('name',$tag)->pluck('id'));
+                        foreach(Tag::all()->lists('name') as $tag){
+                            $tagId=IntVal(Tag::where('name',$tag)->value('id'));
                             if(in_array($tag,$newTags)&!in_array($tag,$dbTags)){
                                 $game->tags()->attach($tagId);
                                 

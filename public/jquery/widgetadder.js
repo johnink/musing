@@ -42,12 +42,14 @@ $.getJSON('/widget/',function(results){
 
 			}
 		});
+		}
 		if(users_widgets.length>=MAX_WIDGETS){$('.widget_add').animate({'opacity':.5});}
-
-	}
 	adjustPrimary();
-});
-
+}).error(function(req){
+		if(req.status===429){
+			flagAlert("Load failed. Too many requests. Wait a minute and try again.", '#widgets');
+		};
+	});
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
 
@@ -65,7 +67,7 @@ function Widget_Controls(i,tot,name){
 	var $widget_controls=$('<span></span>');
 	//push up button
 	if(i>0){
-		var $up = $('<span class="widget_up" id="widget_up_'+ i +'" onClick="upbutton('+ i +')">^</span>');
+		var $up = $('<span class="widget_up" id="widget_up_'+ i +'" onClick="upbutton('+ i +')">v</span>');
 		}
 
 	//push down button
@@ -108,8 +110,11 @@ function upbutton(i){
 				type: 'post',
 				data: {_token :token}
 			}
-		).fail(function(){
-		console.log("Swap failed")
+		).fail(function(req){
+		console.log("Swap failed");
+		if(req.status===429){
+			flagAlert("Swap failed. Too many requests. Wait a minute and try again.", '#widget_controls_' + i);
+		}
 	    });
 	}    
 }
@@ -126,8 +131,11 @@ function downbutton(i){
 				url: '/widget/down/' + i,
 				type: 'post',
 				data: {_token :token}
-			}).fail(function(){
-			console.log("Swap failed")
+			}).fail(function(req){
+				console.log("Swap failed");
+				if(req.status===429){
+					flagAlert("Swap failed. Too many requests. Wait a minute and try again.", '#widget_controls_' + i);
+				}
 	    });
 	}
 }
@@ -187,8 +195,12 @@ function subbutton(i){
 					});
 
 				}
-			}).fail(function(){
-				console.log("Delete failed")
+			}).fail(function(req){
+				console.log("Delete failed " + req.status);
+				if(req.status===429){
+					flagAlert("Delete failed. Too many requests. Wait a minute and try again.", '#widget_controls_' + i);
+				}
+
 	    	});
 		}
 	}
@@ -224,12 +236,12 @@ function swapAnimation(i){
 			animating = true;
 			$.when(selWid.animate({
 		    top: -distance
-			}, 450, 'easeOutElastic')
+			}, 450, 'easeOutBack')
 
 			,
 			prevWid.animate({
 		    top: distance2
-			}, 450, 'easeOutElastic')).done(function () {
+			}, 450, 'easeOutBack')).done(function () {
 			    prevWid.css('top', '0px');
 			    selWid.css('top', '0px');
 			    selWid.attr('id',selWid.attr('class') + '_' + newi).insertBefore(prevWid);
@@ -306,8 +318,11 @@ function storeWidget(gamename, fullgamename, i, animation){
 
 			}
 		}
-	}).fail(function(){
+	}).fail(function(req){
 		console.log("Add failed");
+			if(req.status===429){
+				flagAlert("Add failed. Too many requests. Wait a minute and try again.", '#widget_controls_' + i);
+			}
 	});
 
 }
