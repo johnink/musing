@@ -770,8 +770,9 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 .categoryIcon{
 	height:1.5em;
-	width:3em;
+	width:2.5em;
 	margin-left:-.5em;
+	margin-top:-.7em;
 }
 
 .excerpt{
@@ -791,6 +792,28 @@ article h2{
 .articleCategory a{
 	font-size:12pt;
 	color:#565F65;
+}
+
+.articleSocials{
+	margin:2em 0;
+}
+
+.articleSocials div{
+   display:inline;
+}
+
+.articleFacebook{
+	padding-right:1em;
+	position:relative;
+	bottom:.3em;
+}
+
+.articleTwitter{
+	padding:0 1em;
+}
+
+.articleGoogle{
+	padding-left:1em;
 }
 
 .nextPage{
