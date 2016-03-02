@@ -338,6 +338,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 .menuIcons{
 	width:1.8em;
+	height:1.1em;
 	fill:#cbcbcb;
 	transition:.1s;
 }
@@ -397,7 +398,11 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
     }
 
- header img{width:12em;}
+ 
+header img{
+		width:12em;
+		height:4.857142857em;
+	}
 
  header{
 	position:absolute;
@@ -765,6 +770,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 .categoryIcon{
 	height:1.5em;
+	width:3em;
 	margin-left:-.5em;
 }
 
@@ -785,6 +791,10 @@ article h2{
 .articleCategory a{
 	font-size:12pt;
 	color:#565F65;
+}
+
+.nextPage{
+	margin:1em;
 }
 
 

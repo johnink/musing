@@ -53,16 +53,16 @@ class Article extends Model
 
         
         switch($this->category){
-            case "Things":
+            case "things":
                 $this->full_category="Things to Consider";
             break;
-            case "Guest":
+            case "guest":
                 $this->full_category="Guest Article";
             break;
-            case "Blog":
+            case "blog":
                 $this->full_category="Blog";
             break;
-            case "Game":
+            case "game":
                 $this->full_category="New Game";
             break;
             default:

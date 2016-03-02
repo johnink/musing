@@ -47,15 +47,15 @@ ideas, self improvement, play, creative
 <br /><br />
 <h3>Using this site</h3>
 
-<a href="/gamelist"><h4><img src="/images/Game.svg" class="categoryIcon" alt="Games Icon" />Games</h4></a>
+<a href="/gamelist"><h4><img src="/images/game.svg" class="categoryIcon" alt="Games Icon" />Games</h4></a>
 
 <p>To get the mind rolling, Omusing features single-player improv games you can play to come up with ideas.  For these games you often need a piece of paper and a prompt.</p>
 
-<a href="/game/prompter"><h4><img src="/images/Prompter.svg" class="categoryIcon" alt="Prompter Icon" />Prompts</h4></a>
+<a href="/game/prompter"><h4><img src="/images/prompter.svg" class="categoryIcon" alt="Prompter Icon" />Prompts</h4></a>
 
 <p>A prompt serves as a starting point for your game. You can get prompts from variety of different places. They can be random or apply to your topic. Omusing features an in-browser prompter. <a href="/game/prompter">Click here</a> for more information.</p>
 
-<a href="/gamelist/widgets"><h4><img src="/images/Widget.svg" class="categoryIcon" alt="Widget Icon" />Widgets</h4></a>
+<a href="/gamelist/widgets"><h4><img src="/images/widget.svg" class="categoryIcon" alt="Widget Icon" />Widgets</h4></a>
 
 <p>Certain games have little helpers called widgets. These can be added to the home page or opened to their own separate tab by clicking the widget actions button underneath the widget.</p>
 
