@@ -45,7 +45,7 @@ ideas, self improvement, play, creative
                 <input type="text" name="name" class="form-control" id="name" value="{{{ Auth::user()->name }}}" />
 
                 <label for="website" class="showLabel">Website</label>
-                <input type="text" name="website" class="form-control" id="website" placeholder="Website" value="{{{ Auth::user()->website }}}">
+                <input type="url" name="website" class="form-control" id="website" placeholder="Website" value="{{{ Auth::user()->website }}}">
             
                 <input type="hidden" id="email" value="{{{ Auth::user()->email }}}" />
                 <div class="form-group">

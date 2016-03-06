@@ -54,7 +54,7 @@ ideas, self improvement, play, creative
 
             <div class="form-group">
                 <label for="website">Website</label>
-                <input type="text" name="website" class="form-control" id="website" placeholder="Website (Optional)" value="{{ old('website') }}">
+                <input type="url" name="website" class="form-control" id="website" placeholder="Website (Optional)" value="{{ old('website') }}">
             </div>
 
             <div class="form-group">

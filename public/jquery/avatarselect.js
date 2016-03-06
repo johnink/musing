@@ -75,6 +75,21 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 $("#email").blur(function(){getGravitar()});
 
 
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+http:// website on unfocus
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+$("#website").blur(function(){
+	var current_website = $("#website").val();
+	if(current_website!="" && !current_website.match("^http")){
+		$("#website").val("http://" + current_website);
+	}
+
+});
+
+
 
 
 

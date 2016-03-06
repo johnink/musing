@@ -35,7 +35,7 @@ class EditUserRequest extends Request
             $rules['email'] = 'email|max:255|unique:users';
         }
         if($this->website!=Auth::user()->website && $this->website!=""){
-            $rules['website'] = 'url';
+            $rules['website'] = 'active_url';
         }
 
         return $rules;

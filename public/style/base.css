@@ -876,6 +876,11 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	padding-left:1em;
 }
 
+.terms{
+	margin:1em 0;
+	font-size:16pt;
+}
+
 #changePassword, #updateEmail{
 	padding:1em 2em;
 	margin: 0 3em;
