@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"Artist",
+				"Artist"
+			],
+			[
+				"auth",
+				"Authentication"
+			],
+			[
 				"higher",
 				"higherwidgets"
 			]
@@ -12,18 +20,37 @@
 	"buffers":
 	[
 		{
-			"file": "app/Http/routes.php",
+			"contents": "@extends('layouts.main')\n\n@section('title')\nOmusing! Get Started\n@stop\n\n@section('description')\nA website dedicated to helping you find ideas. Providing tools and games to help you explore your mind and see what you find.\n@stop\n\n@section('keywords')\nideas, self improvement, play, creative\n@stop\n\n\n\n\n@section('scripts')\n\n@stop\n\n\n\n\n@section('primary')\n\n<div id=\"getstarted\">\n\n<h3>Good places to start</h3>\n\n<a href=\"http://www.omusing.com/articles/4\"><img src=\"/images/blog.svg\" class=\"categoryIcon\" alt=\"Article Icon\" />Every good idea has NOT been done.</a> - Let's get exploring.\n\n<a href=\"http://www.omusing.com/articles/7\"><img src=\"/images/article.svg\" class=\"categoryIcon\" alt=\"Article Icon\" />The Basics</a> - \n\n\n<h3>Using this site</h3>\n\n<a href=\"/gamelist\"><h4><img src=\"/images/game.svg\" class=\"categoryIcon\" alt=\"Games Icon\" />Games</h4></a>\n\n<p>To get the mind rolling, Omusing features single-player improv games you can play to come up with ideas.  For these games you often need a piece of paper and a prompt.</p>\n\n<a href=\"/game/prompter\"><h4><img src=\"/images/prompter.svg\" class=\"categoryIcon\" alt=\"Prompter Icon\" />Prompts</h4></a>\n\n<p>A prompt serves as a starting point for your game. You can get prompts from variety of different places. They can be random or apply to your topic. Omusing features an in-browser prompter. <a href=\"/game/prompter\">Click here</a> for more information.</p>\n\n<a href=\"/gamelist/widgets\"><h4><img src=\"/images/widget.svg\" class=\"categoryIcon\" alt=\"Widget Icon\" />Widgets</h4></a>\n\n<p>Certain games have little helpers called widgets. These can be added to the home page or opened to their own separate tab by clicking the widget actions button underneath the widget.</p>\n\n<img src=\"/images/widgetActionsDemo.png\" alt=\"An example of where the widget actions button is.\" />\n\n<h3>One more word</h3>\n\n<p>Omusing is currently in it's infancy. New features and articles will be rolled out every week. If you notice something out-of-place, or want to tell us what you think, send inquiries to <a href=\"mailto:john@omusing.com\">john@omusing.com.</a></p>\n\n<p>Also, be sure to keep up with updates through your favorite social:</p>\n\n@include('_social')\n\n\n\n<h3>Keep Exploring...</h3>\n\n<a class='button' href='/auth/register'>Register</a>\n\n</div>\n\n@stop\n\n@section('thirdary')\n\n	@include('_sidebar')\n\n@stop\n",
+			"file": "resources/views/getstarted.blade.php",
+			"file_size": 2204,
+			"file_write_time": 1456919845000000,
 			"settings":
 			{
-				"buffer_size": 1563,
+				"buffer_size": 2345,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/game.blade.php",
+			"file": "resources/views/articles/create.blade.php",
 			"settings":
 			{
-				"buffer_size": 1683,
+				"buffer_size": 634,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/articles/_form.blade.php",
+			"settings":
+			{
+				"buffer_size": 1666,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/articles/_articles.blade.php",
+			"settings":
+			{
+				"buffer_size": 876,
 				"line_ending": "Unix"
 			}
 		},
@@ -31,47 +58,23 @@
 			"file": "resources/views/dashboard.blade.php",
 			"settings":
 			{
-				"buffer_size": 3143,
+				"buffer_size": 4317,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/jquery/widgetadder.js",
+			"file": "resources/views/games/ideaBox.blade.php",
 			"settings":
 			{
-				"buffer_size": 9513,
+				"buffer_size": 1498,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/jquery/common.js",
+			"file": "resources/views/_menu.blade.php",
 			"settings":
 			{
-				"buffer_size": 37477,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/DashboardController.php",
-			"settings":
-			{
-				"buffer_size": 777,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "getstarted.php",
-			"settings":
-			{
-				"buffer_size": 3352,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/layouts/main.blade.php",
-			"settings":
-			{
-				"buffer_size": 1244,
+				"buffer_size": 8411,
 				"line_ending": "Unix"
 			}
 		}
@@ -79,11 +82,11 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 27.0,
 		"selected_items":
 		[
 		],
-		"width": 467.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -100,79 +103,134 @@
 	},
 	"file_history":
 	[
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/musing.sublime-workspace",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/.env",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/UpdateDatabaseController.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/whatsTheDeal/prejson.txt",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/whatsTheDeal/info.json",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/channelSwitcher/prejson.txt",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/prompter/info.json",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/prompter/prejson.txt",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/storage/logs/laravel.log",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/storage/framework/views/ebf29aa3afcb6df5bc521bca346952b0",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/storage/framework/views/d72d97cf18d0a6e435264e4e46acf0c5",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/storage/framework/views/b20bca7ac88f4edfc9aa1eea883146eb",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/storage/framework/views/869c9f7714bdb2cd9a4bf71a60b1d69a",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/storage/framework/views/16db8c76d91e84be1d3c887cf9270224",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/layouts/main.blade.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/GameController.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/style/base.css",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/ideaBox/info.json",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/auth/register.blade.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/auth/login.blade.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/vendor/env",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Middleware/RedirectIfAuthenticated.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/layouts/game.blade.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/welcome.blade.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Game.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_07_22_133421_add_widget_to_games_table.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/config/constants.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/DashboardController.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Widget.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/jquery/widgetadder.js",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/jquery/common.js",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/nikic/php-parser/test/code/parser/scalar/constantString.test",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/WidgetController.php",
-		"/Users/johnbreslin/Library/Application Support/Sublime Text 2/Packages/User/commentblock.sublime-snippet",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/channelSwitcher/channelSwitcher.js",
-		"/Users/johnbreslin/Desktop/blank.html",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/phpunit/phpunit-mock-objects/tests/_fixture/MethodCallbackByReference.php",
-		"/Users/johnbreslin/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Middleware/VerifyCsrfToken.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/jquery/jquery-ui.min.js",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/prompter/nounlist.csv",
-		"/Applications/MAMP/conf/apache/httpd.conf",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/tests/TestCase.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_06_30_183256_create_games.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/composer.json",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_07_06_094932_create_widgets_table.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/User.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/auth/edit.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/jquery/avatarselect.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/Auth/AuthEditController.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Requests/EditUserRequest.php",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/Auth/AuthController.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/games/ideaBox.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/lang/en/validation.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/UpdateDatabaseController.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/getstarted.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/_social.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/ArticlesController.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Article.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/articles/_articles.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/articles/_form.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/layouts/main.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/acronym/info.json",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/style/responsive.css",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/_menu.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/node_modules/sass/package.json",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/package.json",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/README.md",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/composer.lock",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/illuminate/html/HtmlServiceProvider.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/DashboardController.php",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/dashboard.blade.php",
-		"/Applications/MAMP/Library/modules/mod_rewrite.so",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/availablewidgets.blade.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Middleware/Authenticate.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_07_06_094724_drop_dashboards_from_users.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/channelSwitcher/info.json",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_07_04_170907_add_blogsm_to_games_table.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_07_04_171756_add_blogsm_to_users_table.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_07_04_145635_add_info_to_games_table.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_07_04_152320_add_tags_to_users_table.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/index.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Models/Game.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/articles/create.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/.env",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/game.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/articles/show.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/routes.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/GameController.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/games/channelSwitcher.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/games/themeSong.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/games/acronym.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/games/prompter.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/games/whatsTheDeal.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/auth/login.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/robots.txt",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/google/recaptcha/tests/ReCaptcha/ReCaptchaTest.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/terms.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/User.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Requests/Request.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/composer.json",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/errors/503.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/acronym/acronym.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2016_02_29_170550_add_website_to_users.php",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/getstarted.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/php/head.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/php/foot.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/common.js",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/widgetadder.js",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/games.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/widgets/ChannelSwitcher/channelSwitcher.js",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/sharedfunctions",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/widgets/prompter/words.json",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/jquery/widgets/prompter/nounlist.csv",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/prompter/prompter.js",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/musing.sublime-project",
-		"/C/Users/john/musing/prompter/prompter.php"
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/channelSwitcher/channelSwitcher.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/jquery/common.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/prompter/prompter.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/games/acronym.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/_sidebar.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2016_02_27_153634_add_description_to_articles.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/jquery/widgetadder.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/themeSong/info.json",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/prompter/info.json",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/channelSwitcher/info.json",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/games/base.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/layouts/barebones.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Requests/LoginRequest.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/node_modules/gulp/completion/bash",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Game.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2016_02_25_160149_remove_old_games_columns.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/whatsTheDeal/info.json",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/games/whatTheDeal.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/games/prompter.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/channelSwitcher/prejson.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/WidgetController.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Kernel.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/articles/index.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/images/LogoV2.svg",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/games.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/articles/_ad.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Providers/AppServiceProvider.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/_sidebarAd.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/articles/_showarticles.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/jquery/preview.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/seeds/ArticlesTableSeeder.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/seeds/DatabaseSeeder.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/storage/framework/views/e3fa57a347b45a64fb9e04033a865efcaa8e70f6.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/articles/edit.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Requests/ArticleRequest.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2016_02_05_115001_add_categorydraft_to_articles.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2016_02_01_114349_create_article_tag_pivot.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Providers/RouteServiceProvider.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Tag.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/storage/framework/views/5d8f06694d553bdf2a0e5aeb0f008e932645772f.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2016_02_01_114349_create_articles_tags_pivot.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/config/app.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Middleware/AuthenticateAdmin.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/config/auth.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Exceptions/Handler.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Providers/AuthServiceProvider.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2016_01_18_112816_create_articles_table.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/Auth/PasswordController.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/auth/reset.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/config/mail.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/auth/password.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/emails/password.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/emails/password.blade copy.html",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Template/css/bootstrap.min.css",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Libraries/Avatar.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/composer/ClassLoader.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/config/constants.php",
+		"/Users/johnbreslin/Desktop/temp.html",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/style/register.css",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_12_05_181107_add_avatar_to_users_table.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/storage/framework/views/869c9f7714bdb2cd9a4bf71a60b1d69a",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/AuthEditController.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/symfony/routing/Route.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/jquery/topgames.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/node_modules/gulp/node_modules/gulp-util/node_modules/replace-ext/test/main.js",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/style/gamelist.css",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/prompter/prejson.txt",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/widgetonly.blade.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/game.blade copy.php",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/images/menuButton.svg",
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/images/headerBG-02.svg"
 	],
 	"find":
 	{
@@ -191,6 +249,122 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"validator",
+			"answer",
+			"varied",
+			"randomFromArray",
+			"Business",
+			"Buisness",
+			"barber",
+			"prompter",
+			"widget_up",
+			"^",
+			"widget",
+			"Weather",
+			"professions",
+			"impacting",
+			"polka",
+			"\"Air Sports",
+			"breakdancing",
+			"Hobby",
+			"Lan",
+			"versus",
+			"investing",
+			"Principle",
+			"corpse",
+			"cigar",
+			"bar",
+			"pizza",
+			"spy",
+			"\\Session::flash",
+			"justify",
+			"article",
+			"border",
+			"sidemenu",
+			"Openmenu",
+			"value",
+			"adjustPrimary",
+			"fail",
+			"limit",
+			"widgets",
+			"detach",
+			"Form::model",
+			"lists",
+			"pluck",
+			"ControllerServiceProvider",
+			"ajax",
+			"header",
+			"userlogin",
+			"avatar",
+			"upArrow",
+			"upARrow",
+			"header",
+			"z-index",
+			"avatar",
+			"call",
+			"remember",
+			"\\session",
+			"session flash",
+			"widget_down",
+			"registerPart2",
+			"registrationpart2",
+			"registerpart2",
+			"loginfi",
+			"headerImg",
+			".form-control",
+			"calltoaction",
+			"contactforrouting\n#call",
+			"contactforrouting\ncall",
+			"contactforrouting\ncalltoaction",
+			"button",
+			"newgames",
+			"secondar",
+			"callto",
+			".secondary",
+			"calltoact",
+			"callto",
+			".jayz",
+			".primary",
+			"margin",
+			"clearfix",
+			"part2",
+			"registerPart1",
+			"label",
+			"tag",
+			"font",
+			"user/register",
+			"flash",
+			"user",
+			"user/logout",
+			"loginPath",
+			"user/login",
+			"please include an ",
+			"please include an '@' sign in",
+			"please include @ sign in",
+			"you are now logged in",
+			"box-shadow",
+			"constants",
+			"border-radius",
+			"widget_o",
+			"3em",
+			"widget_button",
+			"available_widgets",
+			"auth::check",
+			"check",
+			"easeOutBack",
+			"z-ind",
+			"}\n",
+			"/games/",
+			"extends",
+			"getFailedLoginMessage(",
+			"user/login",
+			"loginPath",
+			"auth/login",
+			"\"auth/login\"",
+			"store",
+			"swap",
+			"storeWidget",
+			"Ohmusing",
 			"OhMusing!",
 			"OhMusing",
 			"\\”",
@@ -202,17 +376,7 @@
 			"users_widgets",
 			".widget_controls",
 			"AddMenuOpen",
-			"console",
-			"ease",
-			"slideDown",
-			"_token",
-			"mod_rewrite",
-			"username",
-			"user",
-			"find",
-			"var_dump",
-			"$gameinfo->",
-			"prompter_option"
+			"console"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -220,6 +384,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"acronym",
 			"Omusing",
 			"”",
 			"“",
@@ -237,55 +402,54 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Http/routes.php",
+					"file": "resources/views/getstarted.blade.php",
 					"settings":
 					{
-						"buffer_size": 1563,
+						"buffer_size": 2345,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1011,
-								1011
+								717,
+								717
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 122.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "resources/views/game.blade.php",
+					"file": "resources/views/articles/create.blade.php",
 					"settings":
 					{
-						"buffer_size": 1683,
+						"buffer_size": 634,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								458,
-								458
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -295,18 +459,45 @@
 				},
 				{
 					"buffer": 2,
-					"file": "resources/views/dashboard.blade.php",
+					"file": "resources/views/articles/_form.blade.php",
 					"settings":
 					{
-						"buffer_size": 3143,
+						"buffer_size": 1666,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3048,
-								3048
+								1101,
+								1101
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 95.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "resources/views/articles/_articles.blade.php",
+					"settings":
+					{
+						"buffer_size": 876,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -321,79 +512,52 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "public/jquery/widgetadder.js",
+					"buffer": 4,
+					"file": "resources/views/dashboard.blade.php",
 					"settings":
 					{
-						"buffer_size": 9513,
+						"buffer_size": 4317,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3881,
-								3970
+								4256,
+								4256
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 68.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "public/jquery/common.js",
-					"settings":
-					{
-						"buffer_size": 37477,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								37193,
-								37193
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1278.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "app/Http/Controllers/DashboardController.php",
+					"file": "resources/views/games/ideaBox.blade.php",
 					"settings":
 					{
-						"buffer_size": 777,
+						"buffer_size": 1498,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								401,
-								401
+								1484,
+								1484
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -403,37 +567,10 @@
 				},
 				{
 					"buffer": 6,
-					"file": "getstarted.php",
+					"file": "resources/views/_menu.blade.php",
 					"settings":
 					{
-						"buffer_size": 3352,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "resources/views/layouts/main.blade.php",
-					"settings":
-					{
-						"buffer_size": 1244,
+						"buffer_size": 8411,
 						"regions":
 						{
 						},
@@ -450,7 +587,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 301.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -500,88 +637,516 @@
 		"selected_items":
 		[
 			[
+				"_m",
+				"resources/views/_menu.blade.php"
+			],
+			[
+				"idea",
+				"resources/views/games/ideaBox.blade.php"
+			],
+			[
+				"das",
+				"resources/views/dashboard.blade.php"
+			],
+			[
+				"article",
+				"resources/views/articles/_articles.blade.php"
+			],
+			[
+				"_form",
+				"resources/views/articles/_form.blade.php"
+			],
+			[
+				"create",
+				"resources/views/articles/create.blade.php"
+			],
+			[
+				"getstarted.blade.php",
+				"resources/views/getstarted.blade.php"
+			],
+			[
+				"authcon",
+				"app/Http/Controllers/Auth/AuthController.php"
+			],
+			[
+				"vali",
+				"resources/lang/en/validation.php"
+			],
+			[
+				"editus",
+				"app/Http/Requests/EditUserRequest.php"
+			],
+			[
+				"auth",
+				"app/Http/Controllers/Auth/AuthEditController.php"
+			],
+			[
+				"avatar",
+				"public/jquery/avatarselect.js"
+			],
+			[
+				"edit",
+				"resources/views/auth/edit.blade.php"
+			],
+			[
+				"register",
+				"resources/views/auth/register.blade.php"
+			],
+			[
 				"main",
 				"resources/views/layouts/main.blade.php"
+			],
+			[
+				"_fo",
+				"resources/views/articles/_form.blade.php"
+			],
+			[
+				"_arti",
+				"resources/views/articles/_articles.blade.php"
+			],
+			[
+				"_menu.",
+				"resources/views/_menu.blade.php"
+			],
+			[
+				"responsive.css",
+				"public/style/responsive.css"
+			],
+			[
+				"articles",
+				"app/Http/Controllers/ArticlesController.php"
+			],
+			[
+				"_soc",
+				"resources/views/_social.blade.php"
+			],
+			[
+				"gets",
+				"resources/views/getstarted.blade.php"
 			],
 			[
 				"update",
 				"app/Http/Controllers/UpdateDatabaseController.php"
 			],
 			[
-				"dash",
-				"app/Http/Controllers/DashboardController.php"
+				"getstarted.blade",
+				"resources/views/getstarted.blade.php"
 			],
 			[
-				"dashbo",
+				"dashboard.blade",
 				"resources/views/dashboard.blade.php"
-			],
-			[
-				"constant",
-				"vendor/nikic/php-parser/test/code/parser/scalar/constantString.test"
-			],
-			[
-				"dashboard",
-				"app/Http/Controllers/DashboardController.php"
-			],
-			[
-				"widget",
-				"app/Widget.php"
-			],
-			[
-				"_token",
-				"vendor/phpunit/phpunit-mock-objects/tests/_fixture/MethodCallbackByReference.php"
-			],
-			[
-				"csrf",
-				"vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php"
-			],
-			[
-				"blade",
-				"resources/views/layouts/main.blade.php"
-			],
-			[
-				"dashb",
-				"resources/views/dashboard.blade.php"
-			],
-			[
-				"updat",
-				"app/Http/Controllers/UpdateDatabaseController.php"
-			],
-			[
-				"",
-				"app/Http/Controllers/DashboardController.php"
-			],
-			[
-				"dashboa",
-				"app/Http/Controllers/DashboardController.php"
 			],
 			[
 				"dashboar",
 				"app/Http/Controllers/DashboardController.php"
 			],
 			[
+				"provider",
+				"vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php"
+			],
+			[
+				"html",
+				"vendor/illuminate/html/HtmlServiceProvider.php"
+			],
+			[
+				"composer.loc",
+				"composer.lock"
+			],
+			[
+				"package",
+				"package.json"
+			],
+			[
+				"p",
+				"node_modules/sass/package.json"
+			],
+			[
+				"routes",
+				"app/Http/routes.php"
+			],
+			[
+				"robot",
+				"public/robots.txt"
+			],
+			[
+				"login",
+				"resources/views/auth/login.blade.php"
+			],
+			[
+				"whats",
+				"resources/views/games/whatsTheDeal.blade.php"
+			],
+			[
+				"prompter",
+				"resources/views/games/prompter.blade.php"
+			],
+			[
+				"them",
+				"resources/views/games/themeSong.blade.php"
+			],
+			[
+				"channel",
+				"resources/views/games/channelSwitcher.blade.php"
+			],
+			[
+				"bas",
+				"public/style/base.css"
+			],
+			[
+				"gamecon",
+				"app/Http/Controllers/GameController.php"
+			],
+			[
+				"rout",
+				"app/Http/routes.php"
+			],
+			[
+				"val",
+				"resources/lang/en/validation.php"
+			],
+			[
+				"reca",
+				"vendor/google/recaptcha/tests/ReCaptcha/ReCaptchaTest.php"
+			],
+			[
+				"regi",
+				"resources/views/auth/register.blade.php"
+			],
+			[
+				"respon",
+				"public/style/responsive.css"
+			],
+			[
+				"authed",
+				"app/Http/Controllers/Auth/AuthEditController.php"
+			],
+			[
+				"g",
+				"getstarted.php"
+			],
+			[
+				"base",
+				"public/style/base.css"
+			],
+			[
+				"sho",
+				"resources/views/articles/show.blade.php"
+			],
+			[
+				"themsong",
+				"resources/views/games/themeSong.blade.php"
+			],
+			[
+				"responsive",
+				"public/style/responsive.css"
+			],
+			[
+				"base.css",
+				"public/style/base.css"
+			],
+			[
+				"common",
+				"public/jquery/common.js"
+			],
+			[
+				"widgetadder",
+				"public/jquery/widgetadder.js"
+			],
+			[
+				"b",
+				"public/style/base.css"
+			],
+			[
+				"prompter.j",
+				"public/games/prompter/prompter.js"
+			],
+			[
+				"getstarted",
+				"resources/views/getstarted.blade.php"
+			],
+			[
+				"get",
+				"getstarted.php"
+			],
+			[
+				"ba",
+				"public/style/base.css"
+			],
+			[
+				"",
+				"resources/views/articles/_articles.blade.php"
+			],
+			[
+				"articl",
+				"app/Http/Controllers/ArticlesController.php"
+			],
+			[
+				"creat",
+				"resources/views/articles/create.blade.php"
+			],
+			[
+				"base.",
+				"resources/views/games/base.blade.php"
+			],
+			[
+				"dashboard",
+				"resources/views/dashboard.blade.php"
+			],
+			[
+				"game.",
+				"resources/views/game.blade.php"
+			],
+			[
+				"sideba",
+				"resources/views/_sidebar.blade.php"
+			],
+			[
+				"widget",
+				"app/Http/Controllers/WidgetController.php"
+			],
+			[
+				"dashbo",
+				"app/Http/Controllers/DashboardController.php"
+			],
+			[
+				"respons",
+				"public/style/responsive.css"
+			],
+			[
+				"crea",
+				"resources/views/articles/create.blade.php"
+			],
+			[
+				"dash",
+				"app/Http/Controllers/DashboardController.php"
+			],
+			[
+				"game",
+				"resources/views/game.blade.php"
+			],
+			[
+				"index",
+				"resources/views/articles/index.blade.php"
+			],
+			[
+				"artic",
+				"app/Http/Controllers/ArticlesController.php"
+			],
+			[
+				"index.",
+				"resources/views/articles/index.blade.php"
+			],
+			[
 				"rou",
 				"app/Http/routes.php"
 			],
 			[
-				"auth",
+				"index.bl",
+				"resources/views/articles/index.blade.php"
+			],
+			[
+				"show",
+				"resources/views/articles/show.blade.php"
+			],
+			[
+				"5",
+				"storage/framework/views/5d8f06694d553bdf2a0e5aeb0f008e932645772f.php"
+			],
+			[
+				"5d",
+				"storage/framework/views/5d8f06694d553bdf2a0e5aeb0f008e932645772f.php"
+			],
+			[
+				"route",
+				"app/Http/routes.php"
+			],
+			[
+				"_f",
+				"resources/views/articles/_form.blade.php"
+			],
+			[
+				"authcontrol",
 				"app/Http/Controllers/Auth/AuthController.php"
+			],
+			[
+				"updated",
+				"app/Http/Controllers/UpdateDatabaseController.php"
+			],
+			[
+				"prov",
+				"vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php"
+			],
+			[
+				"widgetcontroller",
+				"app/Http/Controllers/WidgetController.php"
+			],
+			[
+				"blade",
+				"resources/views/dashboard.blade.php"
+			],
+			[
+				"streambuffer",
+				"vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php"
+			],
+			[
+				"password",
+				"app/Http/Controllers/Auth/PasswordController.php"
+			],
+			[
+				"authe",
+				"app/Http/Controllers/Auth/AuthEditController.php"
+			],
+			[
+				"bootstrap.css",
+				"vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Template/css/bootstrap.min.css"
+			],
+			[
+				"class",
+				"vendor/composer/ClassLoader.php"
+			],
+			[
+				"r",
+				"app/Http/routes.php"
+			],
+			[
+				"authcontroller",
+				"app/Http/Controllers/Auth/AuthController.php"
+			],
+			[
+				"ed",
+				"resources/views/auth/edit.blade.php"
+			],
+			[
+				"auth.bl",
+				"resources/views/auth/edit.blade.php"
+			],
+			[
+				"authco",
+				"app/Http/Controllers/Auth/AuthController.php"
+			],
+			[
+				"resp",
+				"public/style/responsive.css"
+			],
+			[
+				"edit.",
+				"resources/views/auth/edit.blade.php"
+			],
+			[
+				"widgetcontro",
+				"app/Http/Controllers/WidgetController.php"
+			],
+			[
+				"gamecontroller",
+				"app/Http/Controllers/GameController.php"
+			],
+			[
+				"widgetc",
+				"app/Http/Controllers/WidgetController.php"
+			],
+			[
+				"gamecont",
+				"app/Http/Controllers/GameController.php"
+			],
+			[
+				"registersu",
+				"vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php"
+			],
+			[
+				"authenticate",
+				"vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php"
+			],
+			[
+				"authenticates",
+				"vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php"
+			],
+			[
+				"controller",
+				"vendor/laravel/framework/src/Illuminate/Routing/Controller.php"
+			],
+			[
+				"blad",
+				"resources/views/dashboard.blade.php"
+			],
+			[
+				"prom",
+				"public/games/prompter/prompter.js"
+			],
+			[
+				"comm",
+				"public/jquery/common.js"
+			],
+			[
+				"wid",
+				"public/jquery/widgetadder.js"
+			],
+			[
+				"top",
+				"public/jquery/topgames.js"
+			],
+			[
+				"widgetcon",
+				"app/Http/Controllers/WidgetController.php"
+			],
+			[
+				"game.bl",
+				"resources/views/game.blade.php"
+			],
+			[
+				"getstar",
+				"resources/views/getstarted.blade.php"
+			],
+			[
+				"common.js",
+				"public/jquery/common.js"
+			],
+			[
+				"gamelist",
+				"public/style/gamelist.css"
 			],
 			[
 				"regist",
 				"resources/views/auth/register.blade.php"
 			],
 			[
-				"user",
-				"app/User.php"
+				"login.blade.php",
+				"resources/views/auth/login.blade.php"
+			],
+			[
+				"blade.",
+				"resources/views/dashboard.blade.php"
+			],
+			[
+				"main.",
+				"resources/views/layouts/main.blade.php"
 			],
 			[
 				"regis",
 				"resources/views/auth/register.blade.php"
 			],
 			[
-				"login",
-				"resources/views/auth/login.blade.php"
+				"widget.",
+				"app/Http/Controllers/WidgetController.php"
+			],
+			[
+				"constan",
+				"config/constants.php"
+			],
+			[
+				"dashb",
+				"resources/views/dashboard.blade.php"
+			],
+			[
+				"c",
+				"config/constants.php"
+			],
+			[
+				"games",
+				"resources/views/games.blade.php"
+			],
+			[
+				"updatd",
+				"app/Http/Controllers/UpdateDatabaseController.php"
 			]
 		],
 		"width": 0.0
@@ -598,6 +1163,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 331.0,
+	"side_bar_width": 388.0,
 	"status_bar_visible": true
 }

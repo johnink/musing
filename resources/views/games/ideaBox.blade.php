@@ -21,5 +21,6 @@
 	<ul>
 		<lh>Good Sources of Prompts</lh>
 		<li><a href="http://amzn.to/1QBtNdA">'Game of Things' cards</a></li>
+		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=omusing-20&marketplace=amazon&region=US&placement=B00CMUEYOE&asins=B00CMUEYOE&linkId=605a2a6dcd47970dbbd21053144cddde&show_border=true&link_opens_in_new_window=true"></iframe>
 	</ul>
 </div>
