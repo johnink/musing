@@ -169,6 +169,11 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 		display:block;
 	}
 
+	.video {
+		width: 300px;
+		height: 169px;
+	}
+
 	/* new games / top games */
 
 	.newGame, .topGame{
@@ -463,6 +468,11 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 		height:8em;
 		width:8em;
 		background-size: 8em 8em;
+	}
+
+	.video {
+		width: 560px;
+		height: 315px;
 	}
 
 
