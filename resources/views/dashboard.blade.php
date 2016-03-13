@@ -147,7 +147,7 @@ ideas, self improvement, play, creative, writing, drawing, blogging, social medi
 			</div>
 		@include('articles._articles')
 	</div>
-	<a class="nextPage button" href="http://localhost:8888/articles?page=2">More Articles</a>
+	<!-- temporary <a class="nextPage button" href="/articles?page=2">More Articles</a> -->
 	
 @stop
 
