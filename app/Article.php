@@ -65,6 +65,9 @@ class Article extends Model
             case "game":
                 $this->full_category="New Game";
             break;
+            case "recommendation":
+                $this->full_category="Review";
+            break;
             case "spotlight":
                 $this->full_category="Spotlight";
             break;
