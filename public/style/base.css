@@ -121,6 +121,7 @@ h1{
 
 .primary{
 	overflow:hidden;
+	font-size:1.3em;
 }
 
 .success{
@@ -772,7 +773,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	height:1.5em;
 	width:2.5em;
 	margin-left:-.5em;
-	margin-top:-.7em;
+	margin-top:.5em;
 }
 
 .excerpt{
@@ -787,6 +788,11 @@ article h2 a{
 
 article h2{
 	margin-top:0;
+}
+
+.articleCategory{
+	margin-bottom:-.5em;
+	margin-left:.2em;
 }
 
 .articleCategory a{
@@ -1085,7 +1091,6 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 
 
-
     
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
@@ -1115,6 +1120,29 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 .newGameText, .topGameText{
 	margin-left:4em;
+}
+
+
+/* + * x * + * x * + * x * + * x * + * x * + * x
+
+Random article Button
+
+x * + * x * + * x * + * x * + * x * + * x * + */
+
+.randomButton{
+	border-radius:100%;
+	width:5em;
+	height:5em;
+	background-color:#EE3F2A;
+	box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3) ;
+	position:fixed;
+	bottom:1em;
+	right:10em;
+	z-index:500;
+}
+
+.randomButtonText{
+	
 }
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
