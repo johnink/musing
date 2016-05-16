@@ -318,7 +318,15 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 
 
+	/* Random Button */
 
+	.randomButtonMobile{
+		display:none;
+	}
+
+	.randomButtonDesktop{
+		display:block;
+	}
 
 
 	/* Widget Specific */

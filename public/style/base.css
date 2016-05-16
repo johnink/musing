@@ -1131,17 +1131,41 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 .randomButton{
 	position:fixed;
-	bottom:0;
+	bottom:-6em;
 	z-index:500;
 	width:100%;
 	height:6em;
 }
 
 .randomButtonDesktop{
-	position:absolute;
-	margin:0 auto;
-	color:#EE3F2A;
-	top:2em;
+	margin:auto;
+	background-color:#EE3F2A;
+	color:white;
+	padding:2.5em 1em;
+	width:15em;
+	padding-right:1em;
+	line-height:2.5em;
+	vertical-align:center;
+	display:none;
+}
+
+.randomButtonDesktop img{
+	position:relative;
+	top:0;
+	left:0;
+	width:.9em;
+	height:.9em;
+	margin-top:-.4em;
+	margin-right:.5em;
+	transition:3s;
+}
+
+.randomButtonDesktop:hover img{
+	left:-2em;
+	top:-2em;
+	opacity:0;
+	width:1.1em;
+	height:1.1em;
 }
 
 .randomButtonMobile{
@@ -1152,7 +1176,6 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 	height:5em;
 	background-color:#EE3F2A;
 	box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3) ;
-
 }
 
 .randomButtonImage{

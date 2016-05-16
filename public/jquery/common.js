@@ -29,6 +29,15 @@ $(document).mouseup(function (e)
 	};
 });
 
+$(document).scroll(function(){
+	var y = $(this).scrollTop();
+	if( y > $(this).height() - 1500 ){
+		$(".randomButton").animate({bottom:0},1200,'easeOutBack')
+	}
+
+
+});
+
 
 /* + * x * + * x * + * x * + * x * + * x * + * x
 
