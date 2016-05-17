@@ -103,8 +103,6 @@ ideas, self improvement, play, creative
 	@include("games.$game->name")
 
 
-	<h1>Keep Exploring...</h1>
-
 
 @stop
 

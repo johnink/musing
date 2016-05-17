@@ -10,7 +10,7 @@
 				</a></div>
 			@endif
 			<h2>
-				<a href="/articles/{{$article->id}}/{{ isset(Auth::user()->name) && Auth::user()->name=='Admin' ? 'edit' : '' }}">
+				<a href="/articles/{{ Links::prettyLink($article->title) }}/{{ isset(Auth::user()->name) && Auth::user()->name=='Admin' ? 'edit' : '' }}">
 				{{ $article-> title}}
 				</a>
 				<br />
@@ -22,7 +22,7 @@
 
 			<div class="excerpt">{!! $article -> excerpt !!}</div>
 			<div class="continuereading">
-				<a href="/articles/{{$article->id}}">continue reading...</a>
+				<a href="/articles/{{ Links::prettyLink($article->title) }}">continue reading...</a>
 			</div>
 		</article>
 	@endforeach

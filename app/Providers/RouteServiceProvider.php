@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Libraries\Links;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -29,9 +30,13 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot($router);
 
         //$router->model('articles','App\Article');
-        $router->bind('articles', function($id){
-
-            return \App\Article::published()->findOrFail($id);
+        $router->bind('articles', function($input){
+            if(is_numeric($input)){
+                return \App\Article::published()->findOrFail($input);
+            }else{
+                $title = Links::unprettyLink($input);
+                return \App\Article::where("title",$title)->firstOrFail();
+            }
 
         });
 

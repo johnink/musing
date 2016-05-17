@@ -28,7 +28,9 @@ ideas, self improvement, play, creative
 
 <h3>Good places to start</h3>
 
-<a href="http://www.omusing.com/articles/4"><img src="/images/blog.svg" class="categoryIcon" alt="Article Icon" />Every good idea has NOT been done.</a> - First blog post.
+<p><a href="http://www.omusing.com/articles/4"><img src="/images/blog.svg" class="categoryIcon" alt="Article Icon" />Every good idea has NOT been done.</a> - First blog post.</p>
+
+<p><a href="http://www.omusing.com/articles/7"><img src="/images/things.svg" class="categoryIcon" alt="Article Icon" />The Basics</a> - Some simple things you can do to get started.</p>
 
 <h3>Using this site</h3>
 

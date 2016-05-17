@@ -26,6 +26,7 @@
 /*Route::get('/', function(){
 	return view('welcome');
 });*/
+
 Route::get('/','DashboardController@index');
 Route::get('home', 'DashboardController@index');
 
@@ -51,6 +52,7 @@ Route::get('/widgetonly/{game}','GameController@widgetOnly');
 
 Route::post('/articles/preview','ArticlesController@preview');
 Route::resource('articles','ArticlesController');
+
 
 
 //get started

@@ -36,6 +36,7 @@ class ArticlesController extends Controller
     	return view('articles.show',compact('article'));
     }
 
+
     public function preview(ArticleRequest $article){
         //to fix problem where ArticleRequest has tagList and Article has tags as an attribute.
         $article->tags = Tag::whereIn('id',$article->tagList)->get();       

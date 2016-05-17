@@ -1,6 +1,8 @@
+<?php $randomLink=Links::randomLink(); ?>
+
 <!DOCTYPE html>
 <html>
-
+	
 	<!--Omusing v1.2.0-->
 
 	<!-- John Ink CC 2015 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License www.johnink.com www.barelyanimated.com-->
@@ -49,7 +51,8 @@
 	</head>
 
 	<body>
-		<div id="ultraWrapper">
+
+			<div id="ultraWrapper">
 		
 			<div id="menu">
 				@include('_menu')
@@ -62,7 +65,7 @@
 
 		<div id="header">
 			<header>
-				<a href="/"><img src="/images/LogoV3.svg" alt="Omusing Logo Ideas to find Ideas" onerror="this.onerror=null; this.src='/images/LogoV3.png'"/></a>
+				<a href="/"><img src="/images/LogoV3.svg" alt="Omusing Logo Ideas to find Ideas" onerror="this.onerror=null; this.src='/images/LogoV3.png'" title="Go to a random article" /></a><span style="display:none">Omusing</span>
 			</header>
 			<div class="mobileMenuButton" onClick="openMenu()"><img class="menuButton" alt="Menu Button" src="/images/menuButton.svg" /></div>
 				@if(Auth::check())
@@ -126,6 +129,7 @@
 
 				@yield('primary')
 
+
 			</div>
 
 			<div class="thirdary">
@@ -133,8 +137,21 @@
 				@yield('thirdary')
 
 			</div>
+
 			
 		</div>
+
+
+		<a href="{{ $randomLink }}">
+			<div class="randomButton" title="Go to a random article">
+				
+					<div class="randomButtonDesktop button"><img src="/images/randombutton.svg" alt = "Random article" >Keep exploring...</div>
+					<div class="randomButtonMobile">
+						<img class="randomButtonImage" src="/images/randombutton.svg" alt = "Random article" >
+					</div >
+				
+			</div>
+		</a>
 
 		<div id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />Omusing content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. Please also review our <a href="/terms">terms of service.</a></div>
 	</div><!--end ultrawrapper-->

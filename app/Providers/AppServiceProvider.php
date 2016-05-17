@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App;
 use App\Game;
+use App\Libraries\Links;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
             $topGames=Game::all()->sortByDesc('popularity')->take(3);
             $view->with(['newGames'=>$newGames,'topGames'=>$topGames]);
         });
+
+
     }
 
     /**
