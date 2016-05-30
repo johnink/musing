@@ -121,11 +121,11 @@ x * + * x * + * x * + * x * + * x * + * x * + */
     
 function openMenu(){
 	if(menuOpen===false){
-		$('#menu').animate({'top':'6em'},400,'easeOutQuart');
+		$('#menu').animate({'top':'6em','display':'block'},400,'easeOutQuart');
 		menuOpen=true;
 	}
 	else{
-		$('#menu').animate({'top':'-15em'},400,'easeOutBounce');
+		$('#menu').animate({'top':'-30em','display':'none'},400,'easeOutBounce');
 		menuOpen=false;
 	}
 	
