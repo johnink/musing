@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-Omusing! {{$article -> title}}
+{{$article -> title}} - Omusing!
 @stop
 
 @section('description')
@@ -74,6 +74,8 @@ ideas, self improvement, play, creative
 	</ul>
 
 </article>
+
+@include('_comments')
 
 
 @stop

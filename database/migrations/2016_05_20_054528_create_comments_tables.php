@@ -20,13 +20,14 @@ class CreateCommentsTables extends Migration
             $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
             $table->integer('game_id')->nullable()->unsigned()->index();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
-            $table->text('text');
+            $table->text('body');
             $table->timestamp('flux_time');
             $table->timestamps();
         });
 
         Schema::create('comment_flags', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('message');
             $table->timestamps();
         });
 

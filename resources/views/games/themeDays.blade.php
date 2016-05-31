@@ -9,7 +9,7 @@
 
 	<p>"Theme Days" is an exercise to get you curious. It will help you grasp more pieces so you can put them together in interesting ways.</p>
 
-	<a href = "https://pixabay.com/en/pieces-of-the-puzzle-mix-hands-592798/" target="_blank"><img src="/games/themeDays/puzzle.jpg" class="game_img" alt="puzzle"/></a>
+	<a href = "https://pixabay.com/en/pieces-of-the-puzzle-mix-hands-592798/" target="_blank"><img src="/games/themeDays/puzzle.jpg" alt="puzzle"/></a>
 
 	<p>Every morning, make it a part of your routine to pick a prompt to serve as the theme for that day. Good prompts to consider include references made in books and songs you didn't understand, names of public figures you've heard but know nothing about, or just use random <a href = "http://omusing.com/game/prompter" target="_blank">prompts</a>.</p>
 

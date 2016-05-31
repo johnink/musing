@@ -41,6 +41,11 @@ class Article extends Model
         return $this->belongsToMany('App\Tag')->withTimestamps();
     }
 
+    public function comments(){
+        return $this->hasMany('App\Comment')->withTimestamps();
+    }
+
+
     //use $article->tag_list to pull a list of tag ids
     //used in _form.blade.php for articles
 
