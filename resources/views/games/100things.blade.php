@@ -16,13 +16,13 @@
 	<h2>Variations</h2>
 	<p>You can take an unstructured approach.</p>
 
-	<a href="/games/100things/pagebottle.png"><img src="/games/100things/pagebottle.png" alt="Example of less structured approach" /></a>
+	<a href="/games/100things/pagebottle.png"><img src="/games/100things/pagebottle.png" alt="Example of less structured approach" class="game_img" /></a>
 
 	<p>
 
 	<p>Alternatively, the book <a href="http://amzn.to/1VNTwlj" target="_blank">Creative Workshop</a> features a variation where you draw on a 10x10 grid.</p>
 
-	<a href="http://amzn.to/1VNTwlj" target="_blank"><img src="/games/100things/creativeworkshop.png" alt="Example from Creative Workshop" /></a>
+	<a href="http://amzn.to/1VNTwlj" target="_blank"><img src="/games/100things/creativeworkshop.png" alt="Example from Creative Workshop" class="game_img" /></a>
 
 	<p><blockquote style="font-size:1em;color:grey"><a href="http://amzn.to/1VNTwlj" target="_blank">Creative Workshop</a> is a book of project-oriented design exercises. If your aim is to work as a professional designer, this is a book worth looking into. Buying from the link below helps support Omusing.com.<br /><br/>
 
@@ -32,7 +32,7 @@
 
 	<p>You can also try to add a hundred details to a scene, like your own <i>Where's Waldo</i>:</p>
 
-	<a href="/games/100things/pagemall.png"><img src="/games/100things/pagemall.png" alt="Example of a scene." /></a>
+	<a href="/games/100things/pagemall.png"><img src="/games/100things/pagemall.png" alt="Example of a scene." class="game_img" /></a>
 
 	<p>Or, just make a complete mess. Who are you trying to impress?</p>
 
