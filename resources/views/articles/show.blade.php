@@ -75,7 +75,7 @@ ideas, self improvement, play, creative
 
 </article>
 
-@include('_comments')
+
 
 
 @stop
