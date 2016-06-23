@@ -2,7 +2,7 @@
 
 <div id="long_desc">
 	<h2>Basic Idea</h2>
-	<p>In this game, to take something to it's logical extremes, as if it were a character in a roleplaying game. Find a prompt. For this example, we'll use "clock." Start from the most basic version you can think of for your subject, and make it level one.</p>
+	<p>In this game, you will take something to it's logical extremes, as if it were a character in a roleplaying game. Find a prompt. For this example, we'll use "clock." Start from the most basic version you can think of for your subject, and make it level one.</p>
 	<a href="/games/powerLeveler/levelmaster_01.png" target="_blank" ><img src="/games/powerLeveler/levelmaster_01.png" target="_blank" alt="level 1 clock" style="width:90%;max-width:300px" /></a>
 	<p>From there, keep leveling your character. See how far you can take it.</p>
 	<a href="/games/powerLeveler/levelmaster_02.png" target="_blank" ><img src="/games/powerLeveler/levelmaster_02.png" target="_blank" alt="level 2 and 3 clock" style="width:90%;max-width:300px" /></a>
