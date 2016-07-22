@@ -72,5 +72,5 @@
 		<div class="button" onClick="preview()">Preview</div><br />
 
 		<div class="form-group">
-			{!! Form::submit($submitButtonText, ['class'=>'button']) !!}
+			{!! Form::submit("suck my ween", ['class'=>'button']) !!}
 		</div>

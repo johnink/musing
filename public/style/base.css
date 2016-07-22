@@ -236,7 +236,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 .form-control{
 	border-top:none;
-	border-right:none;
+
 	border-left:none;
 	box-shadow:none;
 	border-radius:0;
@@ -1047,7 +1047,7 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 
 
 #what_youll_need, #long_desc, #variations,#good_prompts{
-	margin:2em 3em;
+	margin:2em .5em;
 }
 
 #what_youll_need h2, #long_desc h2, #variations h2{
@@ -1065,6 +1065,10 @@ x * + * x * + * x * + * x * + * x * + * x * + */
 .game_img{
 	width:100%;
 	margin:1em 0;
+}
+
+.postit{
+	width:212px;
 }
 
 #widget_options{

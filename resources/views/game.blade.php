@@ -99,9 +99,10 @@ ideas, self improvement, play, creative
 		</div>
 
 	@endif
-
-	@include("games.$game->name")
-
+	<article>
+		@include("games.$game->name")
+	</article>
+	@include("_comments")
 
 
 @stop

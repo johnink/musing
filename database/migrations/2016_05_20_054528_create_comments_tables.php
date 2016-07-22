@@ -20,6 +20,7 @@ class CreateCommentsTables extends Migration
             $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
             $table->integer('game_id')->nullable()->unsigned()->index();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
+            $table->string('type');
             $table->text('body');
             $table->timestamp('flux_time');
             $table->timestamps();
@@ -44,6 +45,8 @@ class CreateCommentsTables extends Migration
      */
     public function down()
     {
-        Schema::drop('comments','comment_flags','comment_praises');
+        Schema::drop('comments');
+        Schema::drop('comment_flags');
+        Schema::drop('comment_praises');
     }
 }
