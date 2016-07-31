@@ -67,7 +67,7 @@ ideas, self improvement, play, creative
                 <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" id="password_confirmation">
             </div>
             <div class="captcha">
-                <div class="g-recaptcha" data-sitekey="6LemSiYTAAAAAGaWh_rmHauU3lHShlLZHsGDUqT1"></div>
+                <div class="g-recaptcha" data-sitekey="{{env('RECAPTCHA_PUBLIC')}}"></div>
             </div>
             <div class="terms"><input type="checkbox" name="terms" id="terms">
                 <label for="terms" class="showLabel">
