@@ -20,77 +20,70 @@
 	"buffers":
 	[
 		{
-			"contents": "@extends('layouts.main')\n\n@section('title')\nOmusing! Get Started\n@stop\n\n@section('description')\nA website dedicated to helping you find ideas. Providing tools and games to help you explore your mind and see what you find.\n@stop\n\n@section('keywords')\nideas, self improvement, play, creative\n@stop\n\n\n\n\n@section('scripts')\n\n@stop\n\n\n\n\n@section('primary')\n\n<div id=\"getstarted\">\n\n<h3>Good places to start</h3>\n\n<a href=\"http://www.omusing.com/articles/4\"><img src=\"/images/blog.svg\" class=\"categoryIcon\" alt=\"Article Icon\" />Every good idea has NOT been done.</a> - Let's get exploring.\n\n<a href=\"http://www.omusing.com/articles/7\"><img src=\"/images/article.svg\" class=\"categoryIcon\" alt=\"Article Icon\" />The Basics</a> - \n\n\n<h3>Using this site</h3>\n\n<a href=\"/gamelist\"><h4><img src=\"/images/game.svg\" class=\"categoryIcon\" alt=\"Games Icon\" />Games</h4></a>\n\n<p>To get the mind rolling, Omusing features single-player improv games you can play to come up with ideas.  For these games you often need a piece of paper and a prompt.</p>\n\n<a href=\"/game/prompter\"><h4><img src=\"/images/prompter.svg\" class=\"categoryIcon\" alt=\"Prompter Icon\" />Prompts</h4></a>\n\n<p>A prompt serves as a starting point for your game. You can get prompts from variety of different places. They can be random or apply to your topic. Omusing features an in-browser prompter. <a href=\"/game/prompter\">Click here</a> for more information.</p>\n\n<a href=\"/gamelist/widgets\"><h4><img src=\"/images/widget.svg\" class=\"categoryIcon\" alt=\"Widget Icon\" />Widgets</h4></a>\n\n<p>Certain games have little helpers called widgets. These can be added to the home page or opened to their own separate tab by clicking the widget actions button underneath the widget.</p>\n\n<img src=\"/images/widgetActionsDemo.png\" alt=\"An example of where the widget actions button is.\" />\n\n<h3>One more word</h3>\n\n<p>Omusing is currently in it's infancy. New features and articles will be rolled out every week. If you notice something out-of-place, or want to tell us what you think, send inquiries to <a href=\"mailto:john@omusing.com\">john@omusing.com.</a></p>\n\n<p>Also, be sure to keep up with updates through your favorite social:</p>\n\n@include('_social')\n\n\n\n<h3>Keep Exploring...</h3>\n\n<a class='button' href='/auth/register'>Register</a>\n\n</div>\n\n@stop\n\n@section('thirdary')\n\n	@include('_sidebar')\n\n@stop\n",
-			"file": "resources/views/getstarted.blade.php",
-			"file_size": 2204,
-			"file_write_time": 1456919845000000,
+			"file": "public/style/responsive.css",
 			"settings":
 			{
-				"buffer_size": 2345,
+				"buffer_size": 6092,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/articles/create.blade.php",
+			"file": "app/Http/Controllers/Auth/AuthController.php",
 			"settings":
 			{
-				"buffer_size": 634,
+				"buffer_size": 3938,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/articles/_form.blade.php",
+			"contents": "Package Control Messages\n========================\n\nTheme - Midnight\n----------------\n\n  # Install\n  ---------------\n  \n  Activate the 'Theme' and 'Color-Scheme' by modifying your user preferences file, which you can find using the menu item\n  `Preferences -> Settings - User` in Sublime Text.\n  \n  #### Example\n  ```\n  {\n    \"color_scheme\": \"Packages/Theme - Midnight/Midnight.dark.tmTheme\",\n    \"theme\": \"Midnight.sublime-theme\",\n  }\n  ```\n",
 			"settings":
 			{
-				"buffer_size": 1666,
-				"line_ending": "Unix"
+				"buffer_size": 441,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
 			}
 		},
 		{
-			"file": "resources/views/articles/_articles.blade.php",
+			"file": "/C/Users/John/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 876,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/dashboard.blade.php",
-			"settings":
-			{
-				"buffer_size": 4317,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/games/ideaBox.blade.php",
-			"settings":
-			{
-				"buffer_size": 1498,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/_menu.blade.php",
-			"settings":
-			{
-				"buffer_size": 8411,
+				"buffer_size": 161,
 				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
-		"height": 27.0,
+		"height": 392.0,
+		"last_filter": "Pack",
 		"selected_items":
 		[
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package Control",
+				"Package Control: Install Package"
+			]
 		],
-		"width": 449.0
+		"width": 732.0
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
 	},
 	"distraction_free":
 	{
@@ -101,8 +94,25 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/F/Another project that will never be/Oh!Musing/musing"
+	],
 	"file_history":
 	[
+		"/C/Users/John/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/F/Another project that will never be/Oh!Musing/musing/app/Widget.php",
+		"/F/Another project that will never be/Oh!Musing/musing/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+		"/F/Another project that will never be/Oh!Musing/musing/.env",
+		"/F/Another project that will never be/Oh!Musing/musing/resources/views/dashboard.blade.php",
+		"/F/Another project that will never be/Oh!Musing/musing/resources/views/auth/register.blade.php",
+		"/F/Another project that will never be/Oh!Musing/musing/resources/views/_menu.blade.php",
+		"/F/Another project that will never be/Oh!Musing/musing/resources/views/games/ideaBox.blade.php",
+		"/F/Another project that will never be/Oh!Musing/musing/resources/views/articles/_articles.blade.php",
+		"/F/Another project that will never be/Oh!Musing/musing/resources/views/articles/_form.blade.php",
+		"/F/Another project that will never be/Oh!Musing/musing/resources/views/articles/create.blade.php",
+		"/F/Another project that will never be/Oh!Musing/musing/resources/views/getstarted.blade.php",
+		"/F/Another project that will never be/Oh!Musing/musing/resources/views/auth/login.blade.php",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/style/base.css",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/ideaBox/info.json",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/auth/register.blade.php",
@@ -217,28 +227,15 @@
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/style/register.css",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/database/migrations/2015_12_05_181107_add_avatar_to_users_table.php",
 		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/storage/framework/views/869c9f7714bdb2cd9a4bf71a60b1d69a",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/AuthEditController.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/symfony/routing/Route.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/jquery/topgames.js",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/node_modules/gulp/node_modules/gulp-util/node_modules/replace-ext/test/main.js",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/style/gamelist.css",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/games/prompter/prejson.txt",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/widgetonly.blade.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/resources/views/game.blade copy.php",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/images/menuButton.svg",
-		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/public/images/headerBG-02.svg"
+		"/Users/johnbreslin/Desktop/Another project that will never be/Oh!Musing/musing/app/Http/Controllers/AuthEditController.php"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 			""
@@ -249,6 +246,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"loginf",
+			"6LcxoRkTAAAAACQvKLHSbmf8UQbiGS9eM8oQlHE1",
 			"validator",
 			"answer",
 			"varied",
@@ -374,9 +373,7 @@
 			"sort",
 			"users_widgets.count",
 			"users_widgets",
-			".widget_controls",
-			"AddMenuOpen",
-			"console"
+			".widget_controls"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -402,194 +399,124 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "resources/views/getstarted.blade.php",
+					"file": "public/style/responsive.css",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2345,
+						"buffer_size": 6092,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								717,
-								717
+								5918,
+								5918
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "resources/views/articles/create.blade.php",
+					"file": "app/Http/Controllers/Auth/AuthController.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 634,
+						"buffer_size": 3938,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								488,
+								488
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "resources/views/articles/_form.blade.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1666,
+						"buffer_size": 441,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1101,
-								1101
+								319,
+								434
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 95.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "resources/views/articles/_articles.blade.php",
+					"file": "/C/Users/John/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 876,
+						"buffer_size": 161,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								161,
+								161
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "resources/views/dashboard.blade.php",
-					"settings":
-					{
-						"buffer_size": 4317,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4256,
-								4256
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1278.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "resources/views/games/ideaBox.blade.php",
-					"settings":
-					{
-						"buffer_size": 1498,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1484,
-								1484
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "resources/views/_menu.blade.php",
-					"settings":
-					{
-						"buffer_size": 8411,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 301.0,
-						"zoom_level": 1.0
-					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -597,7 +524,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -626,16 +553,43 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "musing.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"authcontroller",
+				"app\\Http\\Controllers\\Auth\\AuthController.php"
+			],
+			[
+				"blade",
+				"resources\\views\\dashboard.blade.php"
+			],
+			[
+				"responsive.css",
+				"public/style/responsive.css"
+			],
+			[
+				"register",
+				"resources/views/auth/register.blade.php"
+			],
+			[
+				"login",
+				"resources/views/auth/login.blade.php"
+			],
 			[
 				"_m",
 				"resources/views/_menu.blade.php"
@@ -689,10 +643,6 @@
 				"resources/views/auth/edit.blade.php"
 			],
 			[
-				"register",
-				"resources/views/auth/register.blade.php"
-			],
-			[
 				"main",
 				"resources/views/layouts/main.blade.php"
 			],
@@ -707,10 +657,6 @@
 			[
 				"_menu.",
 				"resources/views/_menu.blade.php"
-			],
-			[
-				"responsive.css",
-				"public/style/responsive.css"
 			],
 			[
 				"articles",
@@ -767,10 +713,6 @@
 			[
 				"robot",
 				"public/robots.txt"
-			],
-			[
-				"login",
-				"resources/views/auth/login.blade.php"
 			],
 			[
 				"whats",
@@ -981,10 +923,6 @@
 				"app/Http/Controllers/WidgetController.php"
 			],
 			[
-				"blade",
-				"resources/views/dashboard.blade.php"
-			],
-			[
 				"streambuffer",
 				"vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php"
 			],
@@ -1007,10 +945,6 @@
 			[
 				"r",
 				"app/Http/routes.php"
-			],
-			[
-				"authcontroller",
-				"app/Http/Controllers/Auth/AuthController.php"
 			],
 			[
 				"ed",
@@ -1154,15 +1088,32 @@
 	"select_project":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
 		"width": 0.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 388.0,
-	"status_bar_visible": true
+	"side_bar_width": 241.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }
