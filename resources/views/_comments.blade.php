@@ -1,4 +1,4 @@
-
+{{--
 {!! Form::model($article = new \App\Article, ['url' => 'comment']) !!}
 
 	<div class="form-group">
@@ -19,3 +19,4 @@
 		{!! Form::submit("Submit", ['class'=>'button']) !!}
 	</div>
 {!! Form::close() !!}
+--}}
